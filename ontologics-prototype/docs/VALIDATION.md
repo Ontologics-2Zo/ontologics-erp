@@ -1,8 +1,43 @@
-# 실행 검증 — v2.6 실제 BOM v1.7 정합화·ABox / 이전 검사 기록
+# 실행 검증 — v2.6 실제 BOM 5개 등록·ABox 반영 / 이전 검사 기록
+
+## 이번 v2.6 최신 후속 — 실제 BOM 5개 등록·ABox 반영 — 2026-11-06
+
+앞선 v1.7 원본 정합화(96단위/69브라우저 항목) 이후, 나머지 실제 BOM의 등록 초안→검토→승인→반영과 ABox 전후 조회를 연결한 작업이다. 아래 기존 검사 기록은 그대로 보존하며 이번 기능의 실행 증거로 합산하지 않는다. 실제 원본은 같은 4모델·5스냅샷·356행이고, 신규 승인/반영 기록은 격리 브라우저의 합성 시연이다.
+
+| 이번 실제 실행 | 결과 |
+|---|---|
+| `npm run build` | TypeScript/Vite 통과. 최종 main468.15KB(gzip133.02KB), 공통706.41KB(gzip110.69KB). 500KB 청크 경고 유지 |
+| `npm test` | **128개 / 8파일 통과**. 이전96개에 실제5BOM 등록·투영·선택 구성 영향 검사32개 추가 |
+| 전체 Chrome `npx playwright test --config output/all-bom-validation/playwright.config.ts` | **74개 통과 / 신규 그래프 클릭 순서 실패1개**. 기존69+신규6 = 고유75개. 검토 모달이 열린 동안 뒤의 재확인 버튼을 찾던 시험 문제이며 아래에서 수정·재검 |
+| 신규 그래프1개 재검 `--config output/all-bom-validation/graph-final.config.ts ... --grep '실제 BOM 별도 그래프'` | **1개 통과**. 검토창을 닫은 다음 같은 게시를 재확인. 앱 동작 변경 없이 시험 순서 수정 |
+| 최종 맥락 보완 후 `--config output/all-bom-validation/context-final.config.ts --grep '실제 BOM 등록\|실제 BOM 별도 그래프\|객체 프리뷰\|이미지 일관성'` | **8개 통과**. 신규 등록/원본 객체 탐색 기록 이름, 원본 문서→구성별 등록 내역·AI, 제품·객체 탐색의 검토/반영, 프리뷰 시각 표현까지 재확인 |
+| `npm run test:graph` | **6개 통과**. 첫 일반 실행은 localhost 포트 권한(EPERM) 때문에 실행 불가, 로컬 네트워크 허용 후 재검. 서버 코드는 변경하지 않음 |
+| `python3 scripts/import-actual-boms.py --input /Users/steadyguk/Downloads/ontologics_solo_docs_data_v1.7.zip --check` | 원본5해시·356행·생성6파일 일치 |
+| 파일 보존 | 이미지32개 및 원본7·원본 JSON/카탈로그·포트·TBox 정의·패키지/lock·그래프 서버 등18파일을 직전 납품본과 바이트 대조: 전부 동일 |
+
+실행 환경: Node22.13.0/npm10.9.2/macOS Chrome, 앱5177·그래프5186·검증 프록시5189. 전체75개 실행은2026-11-06 14:21~14:26 KST, 신규 그래프 재검과 최종8개 맥락 검사는 이후14:29~14:30 KST다. 75개가 한 번에 통과한 실행이라고 기록하지 않는다. 최종 확인 범위는 고유75개이며 전체74+개별1 및 마지막 영향 경로8개의 기록을 함께 제공한다.
+
+중간 시도도 구분했다. 처음 focused 수집은 Node의 JSON import 속성 누락으로 시작되지 않았고 `actual-boms.ts`에 JSON 형식을 명시해 해결했다. 다음 focused는 기존10개 통과·신규5개에서 검토표 ID 텍스트 기대가 실패했다. 화면에서 이름으로 표시하는 객체를 행 선택→AI의 불변 ID로 확인하도록 고친 뒤 신규5개 전부 통과했다. 데이터/승인 검사를 삭제해 통과시키지 않았다.
+
+확인한 동작: 모든 실제 BOM의 접수 해시·구성별 확인란·초안→검토→Bob 승인→정확 반영, 자기 승인/Viewer/다른 회사·오래된 버전·내용 변조·동일 요청/중복 차단, 수량 불변, ABox 승인 전 불변/반영 후+2객체+3관계·새로고침, 원본과 기존 설계 관계 보존, Query/Graph/Inspector/AI 동일 선택, 별도 그래프의 업무v2/그래프v1 대기→재확인v2, 이미지 안정성과 실패/미등록, 라이트/다크·390px·800px 환산·키보드·늦은 AI 응답.
+
+- [전체 실행:74통과/1시험 순서 실패](../output/playwright/all-bom-final-report/index.html)
+- [그래프 재검1개](../output/playwright/all-bom-graph-final-report/index.html) · [최종 맥락8개](../output/playwright/all-bom-context-final-report/index.html)
+- [검증 요약](../output/all-bom-validation/verification-summary.json) · [파일 보존 결과](../output/all-bom-validation/preservation-check.json)
+- [반영 전후와 ABox 근거](../output/playwright/all-bom-evb-change-detail.png) · [별도 그래프](../output/playwright/all-bom-graph-relations.png)
+- [그래프 갱신 대기](../output/playwright/all-bom-graph-pending.png) · [다크](../output/playwright/all-bom-change-dark.png) · [390px](../output/playwright/all-bom-change-mobile.png)
+
+
+이번 검증에서는 다음 의미를 확인한다. 모델·구성·BOM 원문 행 및 설계 연결은 등록 전에 이미 조회 자료로 존재한다. 초안/검토 요청/승인 단계에는 등록 근거 객체·관계를 추가하지 않고, 정확 버전 반영 때 등록 기록1개·원본 문서1개와 `flow` 관계3개 및 구성 속성을 추가한다. 5개 원본을 새로 생성하거나 실제 장착·실물 입고·품질 확인을 검증한 것이 아니다. 원문의 단위·실장·정확 품번 미확인과 모든 수량·경고는 보존한다.
+
+이전 데이터의 처리도 구분한다. 정확한 L1 해시/근거가 있는 구형 초안은 기존 내용·해시를 유지하며, 식별 근거가 부족한 초안은 원본 재접수와 새 초안으로 안내한다. 과거 boolean-only L1 반영 기록에서 작성자·승인자·원본 관계를 추정하지 않는다. 새 구성별 등록이 완료된 고정 스냅샷을 중복 등록하지 않고 같은 요청 상태/기존 기록을 확인한다.
+
+미구현·미검증 경계: 임의 BOM 업로드·원문 정정/새 개정 생성·일반 OCR, 전체 BOM 자재 소요·사내 품목 매핑 승인·실물 재고/입고/장착·회로도/데이터시트 대조, 운영 인증·ERP DB·Agent 백엔드·RDF/SHACL·TBox 스키마 배포·다중 사용자·10만 객체 부하는 이번 범위에 포함하지 않는다. 실제 브라우저200% 확대와 운영 환경 성능은 수행 기록이 없는 한 미검증으로 유지한다.
+
 
 모든 검증은 로컬 React 프론트엔드와 Mock 도메인에 대한 결과다. 서버 권한·DB 트랜잭션·실 Agent·현장 실행·10만 객체의 수용을 의미하지 않는다. 아래 v2.6 후속 검사와 보존한 v2.5·v2.4·v2.3·v2.2·v2.1·v2.0 검사를 구분한다. 기존 기록의 수치를 이번 수행 수치로 바꾸지 않았다.
 
-## 이번 v2.6 추가 후속 — 실제 BOM v1.7 정합화·ABox — 2026-11-06
+## 이전 v2.6 후속 — 실제 BOM v1.7 정합화·ABox — 2026-11-06 (보존 기록)
 
 제공 패키지 `ontologics_solo_docs_data_v1.7.zip`의 원본/출처와 기존 v2.6를 대조한 후 Git 작업 앱에서 수행한 추가 변경이다. 앞선 클래스·구성도78단위/27브라우저 및 과거 기록과 구분한다. 로컬 Mock/UI 검증이며 운영 DB·권한·RDF 엔진·실 Agent·현장 검증이 아니다.
 

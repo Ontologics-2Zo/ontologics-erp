@@ -1,3 +1,5 @@
+import {actualBomForConfiguration} from './actual-boms';
+import {isBomRegistered} from './bom-registration';
 /** Home-table projections of the existing local fixture.
  * These records are presentation data, not an API, assignment, or new ledger.
  * They never change State and never infer a configuration from an unrelated demo.
@@ -144,7 +146,7 @@ export function buildConfigurationItems(s:State):ConfigurationItem[]{
    id:snapshot.id,contextObjectId:snapshot.id,modelId:snapshot.modelId,name:snapshot.name,
    modelName:model?.name??snapshot.modelId,revision:snapshot.revision,configLabel:snapshot.name,
    bomRows:snapshot.lines.length,bomUnit:'행',source:snapshot.source,
-   reviewStatus:reviewState(linkedDrafts,isL1&&s.bomApplied,actual?'원본 검토 전':'합성 스냅샷'),
+   reviewStatus:reviewState(linkedDrafts,actualBomForConfiguration(snapshot.id)?isBomRegistered(s,actualBomForConfiguration(snapshot.id)!.key):false,actual?'원본 검토 전':'합성 스냅샷'),
    materialStatus:isL1?{
     ...representative.materialStatus,label:'대표 품목 · '+representative.materialStatus.label,
     detail:'PART-TPS / U2의 합성 자재 검토만 표시합니다. 전체 BOM의 자재 확보 상태가 아닙니다. '+representative.materialStatus.detail,

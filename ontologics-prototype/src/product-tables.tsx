@@ -4,6 +4,7 @@ import {WorkflowTable,WorkflowPhoto,WorkflowObject} from './workflow-tables';
 import {SNAPSHOT_AT} from './entity-data';
 import catalog from './catalog.json';
 import {actualBoms,actualBomForSource,type ActualBomKey} from './actual-boms';
+import {getBomRegistration,isBomRegistered} from './bom-registration';
 
 export type ProductBomRow={row:number;sheet:string;cells:readonly string[];quantity:string;item:string;position:string;mount:string;diff:string};
 type Revision=ActualBomKey;
@@ -36,18 +37,18 @@ export function ProductBomTable({revision,rows}:{revision:Revision;rows:ProductB
   {id:'basis',header:'데이터 기준 · 근거',cell:c=><OriginalBasis revision={definition.revision} row={c.row.original.row} sourceId={definition.sourceId}/>}
  ]}/>;
 }
-export function ProductRegistrationTable({mapping,reviewed,uploaded}:{mapping:string;reviewed:boolean;uploaded:string}){
- const {s,evidence,go}=useApp();
- const source=catalog.find(c=>c.id==='SRC-L1-ods')!;
- const rows=[{id:'L1-REGISTRATION-INPUT',configuration:'CFG-POE-L1',mapping,reviewed,uploaded}];
+export function ProductRegistrationTable({revision,mapping,reviewed,uploaded}:{revision:ActualBomKey;mapping:string;reviewed:boolean;uploaded:string}){
+ const {s,evidence,go}=useApp(),definition=actualBoms[revision],isPoe=revision==='L'||revision==='L1';
+ const source=catalog.find(c=>c.id===definition.sourceId)!,registration=getBomRegistration(s,revision),registered=isBomRegistered(s,revision),matches=uploaded===source.sha256;
+ const rows=[{id:revision+'-REGISTRATION-INPUT',configuration:definition.configurationId,mapping,reviewed,uploaded}];
  return <WorkflowTable tableKey="product-registration" data={rows} getRowId={row=>row.id} contextId={row=>row.configuration} searchable={false} footer="현재 등록 입력의 요약입니다. 저장된 초안 ID나 승인 기록이 아닙니다. 초안 저장 후 검토·승인 목록에서 정확 버전과 작성자/승인자를 확인합니다." columns={[
   {id:'photo',header:'구성 참고',enableHiding:false,cell:c=><WorkflowPhoto id={c.row.original.configuration}/>},
-  {id:'object',header:'등록 대상',enableHiding:false,cell:c=><WorkflowObject id={c.row.original.configuration} detail="기존 명령의 고정 대상 · L1"/>},
-  {id:'mapping',accessorKey:'mapping',header:'입력 변형',cell:c=><div className="workflow-cell"><span>{c.getValue()}</span><small>원문 파일명 WROOM / 내부 WROVER 불일치 보존</small></div>},
-  {id:'source',header:'접수 · 등록 근거',cell:()=> <div className="workflow-cell"><Badge tone={uploaded?'blue':'amber'}>{uploaded?'대표 원본 해시 접수':'접수 전'}</Badge><button className="text-btn" onClick={()=>evidence(source.id)}>{source.id}</button><small>기존 등록 payload: L1 ODS · PDF</small>{uploaded&&uploaded!==source.sha256&&<small>접수 해시와 L1 ODS 등록 근거가 다름 · 확인 필요</small>}</div>},
-  {id:'status',header:'검토 · 반영 상태',cell:()=> <div className="workflow-cell"><Badge tone={reviewed?'blue':'amber'}>{reviewed?'미확인 보존 확인':'미확인 검토 전'}</Badge><small>{s.bomApplied?'기존 승인 구성 있음 · 현재 입력의 승인 아님':'등록 구성 미반영'}</small></div>},
-  {id:'unknown',header:'미확인',cell:()=> <div className="workflow-cell"><span>NA / NS / Opened 보존</span><small>실장·호환·확정 소요 미검증</small></div>},
+  {id:'object',header:'등록 대상',enableHiding:false,cell:c=><WorkflowObject id={c.row.original.configuration} detail={`${definition.modelName} · Rev ${definition.revision} · 고정 원본 스냅샷`}/>},
+  {id:'mapping',accessorKey:'mapping',header:'입력 범위',cell:c=><div className="workflow-cell"><span>{isPoe?c.getValue():'선택 구성 ID 일치'}</span><small>{isPoe?'파일명 WROOM / 내부 시트명 불일치 보존':'구성 변형·정확 MPN 미확인 유지'}</small></div>},
+  {id:'source',header:'접수 · 등록 근거',cell:()=> <div className="workflow-cell"><Badge tone={matches?'blue':'amber'}>{matches?'선택 원본 해시 접수 일치':uploaded?'다른 원본 접수':'접수 전'}</Badge><button className="text-btn" onClick={()=>evidence(source.id)}>{source.id}</button><small>SHA-256 {source.sha256.slice(0,12)}…</small>{uploaded&&!matches&&<small>접수 해시와 선택 구성의 등록 근거가 다름 · 확인 필요</small>}</div>},
+  {id:'status',header:'검토 · 반영 상태',cell:()=> <div className="workflow-cell"><Badge tone={reviewed?'blue':'amber'}>{reviewed?'미확인 보존 확인':'미확인 검토 전'}</Badge><small>{registered?'선택 구성 등록 반영됨 · 현재 입력의 승인 아님':'선택 구성 등록 미반영'}</small>{registration&&<small>초안 v{registration.draftVersion} → 데이터 v{registration.appliedDataVersion}</small>}</div>},
+  {id:'unknown',header:'미확인',cell:()=> <div className="workflow-cell"><span>미기재·NA / NS / Opened / Closed·중복 원문 보존</span><small>실장·단위·MPN·호환·확정 소요 미검증</small></div>},
   {id:'next',header:'다음 조치',cell:()=> <Button onClick={()=>go('UI05')}>저장 초안 검토 목록</Button>},
-  {id:'basis',header:'데이터 기준',cell:()=> <div className="workflow-cell"><OriginalBasis revision="L1"/><small>로컬 현재 v{s.version} · 미저장 입력</small></div>}
+  {id:'basis',header:'데이터 기준',cell:()=> <div className="workflow-cell"><OriginalBasis revision={definition.revision} sourceId={source.id}/><small>로컬 현재 v{s.version} · 미저장 입력</small></div>}
  ]}/>;
 }

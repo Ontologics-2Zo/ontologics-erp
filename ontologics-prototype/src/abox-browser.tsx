@@ -5,6 +5,7 @@ import {relations,type Entity,type Relation} from './entity-data';
 import type {QueryMeta} from './ports';
 import {Badge,Button,Notice,Panel,useStored} from './ui';
 import {OntologyObjectTable} from './ontology-tables';
+import {BomRegistrationOverview} from './bom-registration-changes';
 
 /** Export is an induced subgraph: a filtered file never contains dangling endpoints. */
 export function aboxExport(objects:Entity[],edges:Relation[]){
@@ -34,14 +35,16 @@ function ABoxQuery({children}:{children:ReactNode}){
  const objects=result?.objects??[],visible=objects.filter(object=>(type==='전체'||object.type===type)&&(source==='전체'||object.source===source));
  const complete=!!result&&result.meta.state==='ready'&&result.meta.exact&&result.meta.total!==null&&objects.length>=result.meta.total;
  // The Mock relation catalogue is filtered through the same current resolver; no global company counts leak.
- const allowed=relations.filter(edge=>ctx.resolve(edge.from)&&ctx.resolve(edge.to));
+ const allowed=ctx.relations.filter(edge=>ctx.resolve(edge.from)&&ctx.resolve(edge.to));
  const selected=ctx.selected;
+ useEffect(()=>{if(selected?.type==='BOM 등록 반영'||selected?.type==='원본 문서')M('flow')},[selected?.id]);
  return <>
   <div className="ext-statline"><div><small>전체 고유 업무 객체</small><strong>미집계</strong><span>구축 목표 100,000+</span></div><div><small>현재 QueryPort 검색 결과</small><strong>{result?.meta.total??'미집계'}<em>개</em></strong><span>회사 {ctx.company} · {result?.meta.exact?'정확':'미확인'} 집계</span></div><div><small>로드 / 유형·자료 일치</small><strong>{objects.length} / {visible.length}</strong><span>{complete?'조회 범위 전체':'부분 로드 · 전체 0으로 해석하지 않음'}</span></div><div><small>현재 업무 버전</small><strong>v{ctx.portContext.dataVersion}</strong><span>{result?.meta.asOf??'조회 대기'} · Mock</span></div></div>
   <Notice><strong>ABox · 개별 업무 객체</strong> — 실제 BOM 원문과 합성 재고·생산·납품 사건을 구분합니다. 클래스 정의를 클릭하는 TBox와 달리, 아래 객체 선택은 같은 ID의 속성·근거·관계·업무 AI로 연결됩니다. 운영 RDF 추론은 미연결입니다.</Notice>
   {children}
+  <BomRegistrationOverview/>
   <Panel title="권한 범위의 객체 목록" subtitle="100개씩 조회하고 표를 점진 확장합니다. 새 보드와 현재 수량도 공통 QueryPort에서 읽습니다." action={<Button disabled={!result||!!error} onClick={()=>download({company:ctx.company,asOf:result?.meta.asOf,dataVersion:result?.meta.dataVersion,origin:'local-mock-query',query,filters:{type,source},complete,queryTotal:result?.meta.total,loaded:objects.length,...aboxExport(visible,allowed)})}><ArrowDownToLine size={14}/>조회 결과 다운로드</Button>}>
-   <div className="ext-filter" data-view-state="true"><label><Search size={15}/><input aria-label="전체 지도 객체 검색" placeholder="이름 · ID · 유형 검색" value={search} onChange={event=>{Q(event.target.value);L(12)}}/></label><select aria-label="ABox 객체 유형" value={type} onChange={event=>{T(event.target.value);L(12)}}>{['전체','제품 모델','제품 구성','BOM 원문 품목','사내 품목','부품 로트','예약','생산작업','개별 보드','장착 사건','계약','납품회차','출하','클레임'].map(label=><option key={label}>{label}</option>)}</select><select aria-label="ABox 자료 구분" value={source} onChange={event=>{S(event.target.value);L(12)}}>{['전체','실제 공개 원본','합성 예시'].map(label=><option key={label}>{label}</option>)}</select><span>검색 {result?.meta.total??'미집계'} · 로드 {objects.length} · 확장 대상 {Math.min(limit,visible.length)}</span></div>
+   <div className="ext-filter" data-view-state="true"><label><Search size={15}/><input aria-label="전체 지도 객체 검색" placeholder="이름 · ID · 유형 검색" value={search} onChange={event=>{Q(event.target.value);L(12)}}/></label><select aria-label="ABox 객체 유형" value={type} onChange={event=>{T(event.target.value);L(12)}}>{['전체','제품 모델','제품 구성','BOM 원문 품목','사내 품목','부품 로트','예약','생산작업','개별 보드','장착 사건','계약','납품회차','출하','클레임','BOM 등록 반영','원본 문서'].map(label=><option key={label}>{label}</option>)}</select><select aria-label="ABox 자료 구분" value={source} onChange={event=>{S(event.target.value);L(12)}}>{['전체','실제 공개 원본','합성 예시'].map(label=><option key={label}>{label}</option>)}</select><span>검색 {result?.meta.total??'미집계'} · 로드 {objects.length} · 확장 대상 {Math.min(limit,visible.length)}</span></div>
    {busy&&<div role="status">업무 객체 조회 중…</div>}{error&&<Notice tone="warning">조회 실패 · {error} <Button onClick={()=>Retry(value=>value+1)}>같은 조건으로 재조회</Button></Notice>}
    {result?.meta.state==='stale'&&<Notice tone="warning">오래된 기준 · 현재 표시 버전을 확인하세요.</Notice>}
    {result&&<OntologyObjectTable rows={visible.slice(0,limit)} relations={allowed}/>}

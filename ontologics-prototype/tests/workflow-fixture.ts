@@ -1,3 +1,4 @@
+import {actualBoms} from '../src/actual-boms';
 import {initial,makeDraft,approve,apply,reserve,allocateMaterial,allocation,type Payload} from '../src/domain';
 
 /** Isolated browser test/capture data. Never imported by the application. */
@@ -24,7 +25,7 @@ export async function workflowFixture(){
  await commit({kind:'arrival',shipment:'SHP-02',qty:12,at:'2026-09-20T11:00:00+09:00',evidence:'DEMO-ARRIVAL-GRID-02'},'2차 출하 부분 도착 · 12대','UI08');
  for(const [payload,title,origin] of [
   [{kind:'trace',removed:'2026-09-12T09:00:00+09:00',coverage:true,evidence:'DEMO-TRACE-02'},'U104 제거·기간 보완','UI04'],
-  [{kind:'bom',mapping:'WROOM',reviewed:true,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 BOM 등록 검토','UI02']
+  [{kind:'bom',mapping:'WROOM',reviewed:true,sourceHash:actualBoms.L1.source.sha256,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 BOM 등록 검토','UI02']
  ] as [Payload,string,string][]){const draft=await makeDraft(state,payload,'Alice',title,origin);draft.id='DEMO-GRID-'+String(++sequence).padStart(2,'0');draft.requestKey='demo-grid-request-'+sequence;state.drafts.unshift({...draft,companyId:'A',status:'검토 요청'});}
  return state;
 }

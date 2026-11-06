@@ -1,18 +1,22 @@
 {
   "service": "ontologics",
-  "version": "UI v2.6 — v1.7 actual BOM alignment and current ABox",
+  "version": "UI v2.6 — all 5 actual BOM registrations and ABox application provenance",
   "date": "2026-11-06",
   "runtime": "browser Mock + separate loopback in-memory graph projection",
   "stack": "Existing React 19 + TypeScript + Vite retained",
   "verified_commands": [
-    "npm run dev -- --port 5175 --strictPort",
-    "npm run graph",
+    "npm run dev -- --port 5177 --strictPort",
+    "ONTO_GRAPH_ALLOWED_ORIGINS=http://127.0.0.1:5177 node server/graph-server.mjs --port 5186",
     "npm run build",
     "npm test",
-    "ONTO_PREVIEW_URL=http://127.0.0.1:5175 npx playwright test tests/product-grid.e2e.ts tests/ontology-grid.e2e.ts tests/new-workspaces.e2e.ts tests/flows.e2e.ts tests/media.e2e.ts tests/exploration.e2e.ts --grep '제품 원본 목록|BOM 원본행|BOM 정합성:|BOM 부품 구성도:|온톨로지 객체 표:|온톨로지 정책·버전 표:|클래스 탐색:|관리자 TBox 격리 초안:|AT01|AT03|AT04|변경 영향:|별도 그래프:|이미지|미디어|사진|이전 대상의 늦은 AI|그래프 연결의 반복'"
+    "npm run test:graph",
+    "npx playwright test --config output/all-bom-validation/playwright.config.ts",
+    "npx playwright test --config output/all-bom-validation/graph-final.config.ts tests/flows.e2e.ts --grep \"실제 BOM 별도 그래프\"",
+    "npx playwright test --config output/all-bom-validation/context-final.config.ts --grep \"실제 BOM 등록|실제 BOM 별도 그래프|객체 프리뷰|이미지 일관성\"",
+    "python3 scripts/import-actual-boms.py --input /Users/steadyguk/Downloads/ontologics_solo_docs_data_v1.7.zip --check"
   ],
-  "unit_tests_passed": 96,
-  "browser_tests_passed": 69,
+  "unit_tests_passed": 128,
+  "browser_tests_passed": 75,
   "server_connected": false,
   "published": false,
   "actual_board_types": 4,
@@ -156,7 +160,7 @@
       "browser_report": "output/playwright/class-components-final-report/index.html"
     }
   ],
-  "verification_time": "2026-11-06 12:45~12:51 KST",
+  "verification_time": "2026-11-06 14:21~14:30 KST",
   "dense_lists": {
     "work_items": 5,
     "configuration_rows": 8,
@@ -188,8 +192,8 @@
     "immutable_files_verified": 44,
     "unchanged_from": "v2.3"
   },
-  "new_browser_tests": 4,
-  "browser_report": "output/playwright/v17-final-report/index.html",
+  "new_browser_tests": 6,
+  "browser_report": "output/playwright/all-bom-final-report/index.html",
   "history_artifacts": {
     "v2.1": 21,
     "v2.2": 28,
@@ -234,7 +238,7 @@
     "unchanged_from": "v2.5"
   },
   "downloads_live_smoke": {
-    "status": "pending final file sync",
+    "status": "local release sync recorded in repository/REVIEW.json",
     "user_state_unchanged": true
   },
   "supplier_quote_cards": {
@@ -245,7 +249,7 @@
     "only_v26": true,
     "post_label_fix": "build and manual browser checks; no full 17-test rerun"
   },
-  "browser_validation_detail": "Final application full run:68 passed/1 isolated-proxy test failure. Test-only module fetch corrected and remaining1 passed separately. Not a single69-pass run. See verification-summary.json.",
+  "browser_validation_detail": "75 unique cases: full run74 passed/1 test click-order failure; remaining1 passed after closing modal before retry. Final context fixes:8 passed. Not a single75-pass run.",
   "change_impact": {
     "screens": [
       "UI02",
@@ -254,7 +258,7 @@
     ],
     "local_read_only_projection": true,
     "graph_properties_use_current_object": true,
-    "graph_edges_changed": false,
+    "graph_edges_changed": true,
     "actual_realtime_collaboration": false,
     "rdf_projection_connected": false,
     "approval_policy_changed": false
@@ -388,13 +392,13 @@
     "source_zip_sha256": "314b731fb899378961cffccadab2d1b49bf8f0cec0c376f9b101af67c90c13dc",
     "entities": 414,
     "relations": 405,
-    "registration_adapter": "existing exact L1 only",
+    "registration_adapter": "All5 fixed acquired snapshots, browser Mock only",
     "backend_added": false,
     "approval_policy_changed": false,
     "protected_files_identical": 40
   },
   "abox": {
-    "read_source": "shared current QueryPort",
+    "read_source": "shared current QueryPort and GraphPort, registration provenance included",
     "query_page_size": 100,
     "initial_table_rows": 12,
     "runtime_boards": true,
@@ -406,6 +410,51 @@
     "repository": "Ontologics-2Zo/ontologics-erp",
     "branch": "feat/v17-bom-alignment",
     "base": "31437ef5d9f170541b6ea9809613dc2b848a8a41",
-    "auto_merge": false
+    "auto_merge": false,
+    "pull_request": "https://github.com/Ontologics-2Zo/ontologics-erp/pull/2",
+    "merged": false
+  },
+  "previous_validation": [
+    {
+      "version": "UI v2.6 — v1.7 actual BOM alignment and current ABox",
+      "date": "2026-11-06",
+      "unit": 96,
+      "browser_report": "output/playwright/v17-final-report/index.html",
+      "browser_validation_detail": "Final application full run:68 passed/1 isolated-proxy test failure. Test-only module fetch corrected and remaining1 passed separately. Not a single69-pass run. See verification-summary.json.",
+      "verified_commands": [
+        "npm run dev -- --port 5175 --strictPort",
+        "npm run graph",
+        "npm run build",
+        "npm test",
+        "ONTO_PREVIEW_URL=http://127.0.0.1:5175 npx playwright test tests/product-grid.e2e.ts tests/ontology-grid.e2e.ts tests/new-workspaces.e2e.ts tests/flows.e2e.ts tests/media.e2e.ts tests/exploration.e2e.ts --grep '제품 원본 목록|BOM 원본행|BOM 정합성:|BOM 부품 구성도:|온톨로지 객체 표:|온톨로지 정책·버전 표:|클래스 탐색:|관리자 TBox 격리 초안:|AT01|AT03|AT04|변경 영향:|별도 그래프:|이미지|미디어|사진|이전 대상의 늦은 AI|그래프 연결의 반복'"
+      ]
+    }
+  ],
+  "all_bom_registration": {
+    "snapshots": [
+      "L",
+      "L1",
+      "ISO-N",
+      "EVB-C",
+      "GATEWAY-I"
+    ],
+    "unit_tests_passed": 128,
+    "browser_unique_cases_verified": 75,
+    "final_context_retests_passed": 8,
+    "source_bound_payload": true,
+    "approval_policy_changed": false,
+    "legacy_l1_boolean_infers_provenance": false,
+    "source_unknowns_preserved": true,
+    "operational_quantities_changed": false,
+    "per_apply_new_abox_objects": 2,
+    "per_apply_new_flow_relations": 3,
+    "initial_objects": 414,
+    "initial_relations": 405,
+    "all_five_registered_objects": 424,
+    "all_five_registered_relations": 420,
+    "mock_only": true,
+    "real_db_or_agent_added": false,
+    "tbox_definition_changed": false,
+    "public_api_changed": false
   }
 }

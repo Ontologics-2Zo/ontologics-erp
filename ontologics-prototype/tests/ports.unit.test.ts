@@ -1,4 +1,6 @@
 import {projectChangeImpact,impactNextStep} from '../src/change-impact-model';
+import {actualBomList} from '../src/actual-boms';
+import {buildBomRegistrationPayload} from '../src/bom-registration';
 import {auditBom,analyzeBomRows,type BomSourceRow} from '../src/bom-consistency';
 import sourceBom from '../src/bom-source.json';
 import sourceCatalog from '../src/catalog.json';
@@ -98,6 +100,21 @@ describe('local action recovery across reload',()=>{
 
 
 describe('읽기 전용 변경 영향 가정',()=>{
+ it.each(actualBomList)('$key 등록 가정과 반영 결과는 선택 구성에 한정하고 다른 구성 상태·수량을 유지',async bom=>{
+  const state={...initial(),demandConfirmed:true,reserved:60};
+  const payload=buildBomRegistrationPayload(bom.key,{reviewed:true,receivedSourceHash:bom.source.sha256});
+  const draft=await makeDraft(state,payload,'Alice','구성 등록','UI02'),before=JSON.stringify({state,draft});
+  const candidate=projectChangeImpact(state,draft);
+  expect(candidate.status).toBe('candidate');expect(candidate.current.bomApplied).toBe(false);expect(candidate.projected?.bomApplied).toBe(true);
+  expect(candidate.projected?.unsecured).toBe(40);expect(candidate.projected?.receiptAllocated).toBe(0);expect(JSON.stringify({state,draft})).toBe(before);
+  const approved=await approve(state,{...draft,status:'검토 요청'},'Bob');
+  expect(projectChangeImpact(state,approved).current.bomApplied).toBe(false);
+  const applied=await apply({...state,drafts:[approved]},approved);
+  expect(projectChangeImpact(applied,applied.drafts[0]).current.bomApplied).toBe(true);
+  const other=actualBomList.find(item=>item.key!==bom.key)!;
+  expect(projectChangeImpact(applied,undefined,undefined,other.key).current.bomApplied).toBe(false);
+ });
+
  it('합격 후보를 바꿔도 초안·원장·예약·할당은 보존하고 다음 확인만 재계산',async()=>{
   const state={...initial(),demandConfirmed:true,reserved:60};
   const payload:Payload={kind:'material_receipt',total:50,pass:40,fail:5,pending:5,evidence:'IMPACT-1'};

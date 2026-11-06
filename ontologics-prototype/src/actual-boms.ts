@@ -1,4 +1,4 @@
-import data from './actual-bom-data.json';
+import data from './actual-bom-data.json' with {type:'json'};
 
 export type ActualBomKey = 'L' | 'L1' | 'ISO-N' | 'EVB-C' | 'GATEWAY-I';
 export type ActualBomLine = {
