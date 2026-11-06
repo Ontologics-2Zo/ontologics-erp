@@ -1,0 +1,39 @@
+.supplier-card-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--border)}
+.supplier-list-check{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);cursor:pointer;line-height:1.5}
+.supplier-list-check input{margin:0;accent-color:var(--link)}
+.supplier-card-sorting,.supplier-card-sorting>label{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}
+.supplier-card-sorting select{max-width:220px;min-width:0;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:6px 8px;font:inherit}
+.supplier-quote-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px;align-items:stretch}
+.supplier-quote-card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:8px;background:var(--surface);overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.workflow-table .supplier-quote-card [data-column-id]{width:auto;min-width:0;max-width:none}
+.supplier-quote-card[data-comparison-selected=true]{border-color:var(--link);box-shadow:inset 0 3px 0 var(--link)}
+.supplier-quote-card[data-active=true]{outline:2px solid color-mix(in srgb,var(--link) 38%,transparent);outline-offset:2px}
+.supplier-quote-card:focus-visible{outline:3px solid var(--link);outline-offset:3px}
+.supplier-quote-card[data-list-selected=true] .supplier-card-actions{background:color-mix(in srgb,var(--link) 8%,var(--surface))}
+.supplier-card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:18px 16px 14px;border-bottom:1px solid var(--border)}
+.supplier-heading-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.supplier-symbol{display:flex;align-items:center;justify-content:center;width:38px;height:38px;flex-shrink:0;border-radius:7px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.supplier-card-heading h3{margin:0 0 5px;font-size:18px;line-height:1.25;color:var(--text)}
+.supplier-card-heading code{font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.supplier-card-labels{display:flex;align-items:flex-end;flex-direction:column;gap:6px}
+.supplier-current{display:inline-flex;gap:4px;align-items:center;font-size:11px;white-space:nowrap;color:var(--link)}
+.supplier-card-object{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);min-height:82px}
+.supplier-card-object>.workflow-object{min-width:0}
+.supplier-card-terms{margin:0;display:flex;flex-direction:column}
+.supplier-card-terms .supplier-term{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(0,1.3fr);align-items:start;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border)}
+.supplier-card-terms dt{font-size:12px;color:var(--muted);font-weight:500;line-height:1.6}
+.supplier-card-terms dd{margin:0;min-width:0;text-align:right;line-height:1.55;font-variant-numeric:tabular-nums}
+.supplier-card-terms dd>.workflow-stack{align-items:flex-end}
+.supplier-card-terms .workflow-numeric{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.supplier-card-terms .work-quantity strong{font-size:15px}
+.supplier-card-terms .supplier-term-cost{background:var(--surface-2)}
+.supplier-term-cost strong{font-size:17px}
+.supplier-card-terms .supplier-term-review{min-height:71px}
+.supplier-card-basis{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:12px 16px;margin-top:auto;font-size:11px;border-bottom:1px solid var(--border)}
+.supplier-card-basis>strong{font-size:11px;font-weight:500;color:var(--muted);line-height:1.6}
+.supplier-card-basis>.workflow-stack{align-items:flex-end;text-align:right;min-width:0}
+.supplier-card-basis .ext-link{max-width:100%;overflow-wrap:anywhere;text-align:right}
+.supplier-card-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;min-height:58px}
+.supplier-card-actions .button{white-space:normal;line-height:1.4}
+@media(max-width:1150px){.supplier-quote-cards{grid-template-columns:repeat(auto-fit,minmax(min(310px,100%),1fr))}}
+@media(max-width:600px){.supplier-card-tools{align-items:flex-start}.supplier-quote-cards{grid-template-columns:minmax(0,1fr);padding:10px;gap:12px}.supplier-card-heading{padding:15px 12px}.supplier-card-object,.supplier-card-terms .supplier-term,.supplier-card-basis,.supplier-card-actions{padding-left:12px;padding-right:12px}.supplier-card-terms .supplier-term{grid-template-columns:minmax(90px,.75fr) minmax(0,1.25fr);gap:8px}.supplier-card-sorting{width:100%}.supplier-card-sorting>label{flex:1}.supplier-card-sorting select{flex:1;width:120px}.supplier-card-labels{gap:4px}.supplier-card-heading h3{font-size:17px}}

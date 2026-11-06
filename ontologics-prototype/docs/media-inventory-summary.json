@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-11-04T15:27:58.966Z",
+  "scope": "Local company-A fixture registry; not a production tenant aggregate or manufacturer part master. Immutable IDs are never merged by name.",
+  "board_models": {
+    "total": 7,
+    "by_data_source": {
+      "실제 공개 원본": 1,
+      "원본 미확보": 3,
+      "합성 예시": 3
+    },
+    "by_media_kind": {
+      "reference-photo": 4,
+      "ai-reference": 3
+    }
+  },
+  "parts": {
+    "total": 174,
+    "by_data_source": {
+      "합성 예시": 26,
+      "실제 공개 원본": 148
+    },
+    "by_media_kind": {
+      "ai-reference": 172,
+      "unregistered": 2
+    },
+    "actual_bom_ids": 148,
+    "actual_designation_exact_unique": 76,
+    "actual_designation_whitespace_normalized_unique": 76,
+    "raw_package_keys": 35,
+    "unregistered": [
+      {
+        "id": "PART-POE-L-68",
+        "package": "SJ_1_SMALLER",
+        "reason": "솔더 점퍼/보드 설정 · 별도 부품 사진 대상 아님"
+      },
+      {
+        "id": "PART-POE-L1-67",
+        "package": "SJ_1_SMALLER",
+        "reason": "솔더 점퍼/보드 설정 · 별도 부품 사진 대상 아님"
+      }
+    ]
+  },
+  "snapshots": {
+    "total": 5,
+    "by_data_source": {
+      "실제 공개 원본": 2,
+      "합성 예시": 3
+    }
+  },
+  "assets": {
+    "total": 32,
+    "by_media_kind": {
+      "reference-photo": 4,
+      "ai-reference": 28
+    },
+    "bindings": 189,
+    "unique_files": 32,
+    "missing_files": [],
+    "unknown_entity_bindings": []
+  },
+  "evidence_eligible_assets": 0
+}

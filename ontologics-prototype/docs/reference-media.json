@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Optional local restoration of manufacturer reference photos excluded from the public Git repository.",
+  "rights": "제조사 공개 제품 사진 · 재배포 라이선스 미확인 · 로컬 참고용",
+  "assets": [
+    {
+      "id": "olimex-poe",
+      "path": "public/media/olimex-poe.jpg",
+      "url": "https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/images/ESP32-POE.jpg",
+      "sourcePage": "https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/",
+      "bytes": 41946,
+      "sha256": "314f5448ec304a0d7ea87b50e75171b9a0eac6ec14aa465483b7720a5b4f1f6c"
+    },
+    {
+      "id": "olimex-poeiso",
+      "path": "public/media/olimex-poeiso.jpg",
+      "url": "https://www.olimex.com/Products/IoT/ESP32/ESP32-POE-ISO/images/ESP32-POE-ISO-1.jpg",
+      "sourcePage": "https://www.olimex.com/Products/IoT/ESP32/ESP32-POE-ISO/",
+      "bytes": 33004,
+      "sha256": "96a250fea81b7f6e4de2cae8f7889058bab914276ffe59284cf40345b917f27a"
+    },
+    {
+      "id": "olimex-evb",
+      "path": "public/media/olimex-evb.jpg",
+      "url": "https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/images/ESP32-EVB-1.jpg",
+      "sourcePage": "https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/",
+      "bytes": 57620,
+      "sha256": "031cef3441e1d25ae5d27285b8d57c51e81e8085aa13fefd350ec55f41174970"
+    },
+    {
+      "id": "olimex-gateway",
+      "path": "public/media/olimex-gateway.jpg",
+      "url": "https://www.olimex.com/Products/IoT/ESP32/ESP32-GATEWAY/images/ESP32-GATEWAY-1.jpg",
+      "sourcePage": "https://www.olimex.com/Products/IoT/ESP32/ESP32-GATEWAY/open-source-hardware",
+      "bytes": 72669,
+      "sha256": "f50f1bea053e71e5108c758a9bfa9f7d81fd1a19c26929492577d6570f856d5a"
+    }
+  ]
+}

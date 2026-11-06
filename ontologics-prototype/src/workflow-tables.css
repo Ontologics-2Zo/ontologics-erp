@@ -1,0 +1,66 @@
+.workflow-table .table-scroll{max-height:580px}
+.workflow-table table{width:100%;table-layout:auto;min-width:1040px}
+.workflow-table th{white-space:normal;line-height:1.45;word-break:keep-all}
+.workflow-table td{height:62px;vertical-align:middle;line-height:1.5;min-width:90px;max-width:240px;white-space:normal;word-break:keep-all;overflow-wrap:break-word}
+.workflow-table [data-column-id=photo]{width:66px;min-width:66px;max-width:66px}
+.workflow-table [data-column-id=object]{width:200px;min-width:180px;max-width:240px}
+.workflow-table [data-column-id=basis]{width:180px;min-width:160px;max-width:210px}
+.workflow-table [data-column-id=owner],.workflow-table [data-column-id=author]{min-width:112px;width:118px;max-width:144px}
+.workflow-table [data-column-id=needDate]{min-width:100px;width:104px}
+.workflow-table [data-column-id=eventTime],.workflow-table [data-column-id=departure],.workflow-table [data-column-id=at]{min-width:148px;width:160px;font-size:11px}
+.workflow-table [data-column-id=quantity]{min-width:116px;width:124px;max-width:150px}
+.workflow-table [data-column-id=next],.workflow-table [data-column-id=action]{width:170px;min-width:150px;max-width:190px}
+.workflow-table td [data-quantity],.workflow-table .ext-num{display:block;text-align:right;font-variant-numeric:tabular-nums}
+.workflow-table td>.button{white-space:normal;text-align:left;line-height:1.5;font-size:11px}
+.workflow-object{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.workflow-object>.entity-chip-wrap{max-width:100%}
+.workflow-object .entity-chip{max-width:100%;white-space:normal;text-align:left}
+.workflow-object small,.workflow-basis small,.workflow-cell-note{font-size:11px;color:var(--muted);line-height:1.55;overflow-wrap:break-word}
+.workflow-basis{display:flex;flex-direction:column;gap:2px;font-size:11px;font-variant-numeric:tabular-nums}
+.workflow-basis>span{white-space:normal;overflow-wrap:anywhere}
+.workflow-table .work-quantity{min-width:70px}
+.workflow-table .work-quantity strong{font-size:14px}
+.workflow-table .work-quantity>span{max-width:170px;margin-left:auto}
+.workflow-row-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.workflow-stack{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.workflow-stack>small{font-size:11px;color:var(--muted);line-height:1.5}
+.workflow-cell{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.workflow-cell>small{font-size:11px;color:var(--muted);line-height:1.5}
+.workflow-numeric{text-align:right;font-variant-numeric:tabular-nums;display:block}
+.workflow-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.workflow-state-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.workflow-state-filter select{font:inherit;padding:6px 8px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--text)}
+.workflow-table[data-workflow-grid=quality-claims] [data-column-id=report]{width:220px;min-width:200px;max-width:260px}
+.workflow-table[data-workflow-grid=inventory-history] [data-column-id=detail]{min-width:250px;width:300px;max-width:440px}
+.workflow-table[data-workflow-grid^=trace-] [data-column-id=condition]{min-width:180px;width:190px}
+.workflow-table[data-workflow-grid^=trace-] [data-column-id=scope]{min-width:190px;width:210px}
+.workflow-table[data-workflow-grid^=trace-] [data-column-id=result],.workflow-table[data-workflow-grid^=trace-] [data-column-id=after]{min-width:150px;width:160px}
+.workflow-table[data-workflow-grid^=trace-] [data-column-id=mount],.workflow-table[data-workflow-grid^=trace-] [data-column-id=removed]{min-width:160px;width:170px}
+.workflow-table[data-workflow-grid^=trace-] [data-column-id=evidence]{min-width:125px;width:140px}
+.workflow-table[data-workflow-grid=product-sources] [data-column-id=source]{min-width:190px;width:205px;max-width:240px}
+.workflow-table[data-workflow-grid=product-sources] [data-column-id=unknown]{min-width:185px;width:210px;max-width:240px}
+.workflow-table[data-workflow-grid=product-registration] [data-column-id=source]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid^=evidence-] [data-column-id=document]{min-width:190px;width:210px;max-width:260px}
+.workflow-table[data-workflow-grid=evidence-documents] [data-column-id=body]{min-width:240px;width:300px;max-width:400px}
+.workflow-table[data-workflow-grid=evidence-sources] [data-column-id=unknowns]{min-width:160px;width:180px}
+.workflow-table[data-workflow-grid=evidence-sources] [data-column-id=revision]{min-width:145px;width:155px}
+.workflow-table[data-workflow-grid=board-registry] [data-column-id=configuration]{min-width:150px;width:170px}
+.workflow-table[data-workflow-grid=board-registry] [data-column-id=status]{min-width:150px;width:170px}
+.workflow-table[data-workflow-grid=ontology-policies] [data-column-id=policy]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid=ontology-policies] [data-column-id=scope],.workflow-table[data-workflow-grid=ontology-versions] [data-column-id=scope]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid=ontology-policies] [data-column-id=unknown]{min-width:210px;width:230px}
+.workflow-table[data-workflow-grid=ontology-versions] [data-column-id=layer]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid=operations-audit] [data-column-id=detail]{min-width:280px;width:360px;max-width:480px}
+.workflow-table[data-workflow-grid=operations-audit] [data-column-id=time]{min-width:145px;width:160px}
+.workflow-table[data-workflow-grid=operations-status] [data-column-id=name]{min-width:160px;width:180px}
+.workflow-table[data-workflow-grid=operations-status] [data-column-id=scope]{min-width:280px;width:340px;max-width:480px}
+.workflow-table[data-workflow-grid=operations-ports] [data-column-id=boundary]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid=operations-quantities] [data-column-id=state]{min-width:140px;width:160px}
+.workflow-table[data-workflow-grid=operations-quantities] [data-column-id=calculation]{min-width:180px;width:200px}
+.workflow-table[data-workflow-grid=requirements-definitions] [data-column-id=requirement]{min-width:200px;width:230px}
+.workflow-table[data-workflow-grid=requirements-definitions] [data-column-id=pages]{min-width:150px;width:170px}
+.workflow-table[data-workflow-grid=requirements-definitions] [data-column-id=implementation]{min-width:260px;width:300px;max-width:400px}
+.workflow-table[data-workflow-grid^=requirements-] [data-column-id=note]{min-width:300px;width:420px;max-width:560px}
+.workflow-table[data-workflow-grid=requirements-acceptance] [data-column-id=flow]{min-width:240px;width:280px}
+.workflow-table[data-workflow-grid=requirements-acceptance] [data-column-id=status]{min-width:200px;width:230px}
+@media(max-width:800px){.workflow-table td{max-width:210px}.workflow-table [data-column-id=object]{min-width:170px}.workflow-table .table-pagination>div{flex-wrap:wrap}.workflow-state-filter{width:100%}}

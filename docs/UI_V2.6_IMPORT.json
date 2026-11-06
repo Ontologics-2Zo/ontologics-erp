@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-11-06",
+  "sourceDelivery": "UI v2.6 — stable media during graph polling",
+  "sourceArchive": {
+    "name": "ontologics-ui-redesign-v2.6.zip",
+    "bytes": 200876127,
+    "sha256": "5de63e4adcde0ff32bb68f1c7ede985a1c3aca29971c2967fd9478d3b8e9a16a"
+  },
+  "baseCommit": "2abf33c45cc2d0b82a03ace692df04101e2a4502",
+  "applicationDirectory": "ontologics-prototype",
+  "sourceFiles": 149,
+  "unchangedFilesIncluded": 142,
+  "metadataAdaptedFiles": 3,
+  "localReferencePhotosExcluded": 4,
+  "sourceOriginalsUnchanged": true,
+  "v1_7Included": false,
+  "notes": [
+    "Generated outputs, dependencies and local tool metadata were excluded before the original 149-file inventory.",
+    "SOURCE_MANIFEST.json is the original delivery manifest, not a manifest of this Git import.",
+    "The 4 excluded photos can be restored locally from pinned URLs and verified against their original hashes.",
+    "Package version 1.0.0 is retained; the source delivery version is UI v2.6."
+  ],
+  "files": [
+    {
+      "path": "ontologics-prototype/.gitignore",
+      "sourceBytes": 77,
+      "sourceSha256": "64014973561e846671dfe689e44faa8110b56be171264383a94f0ae041644520",
+      "gitDisposition": "metadata-adapted",
+      "importSha256": "2a5a18d66c21398c0ff97745ab5cca6602cb4d1606c8fc6b24452c28e21eb1a4"
+    },
+    {
+      "path": "ontologics-prototype/DELIVERY.json",
+      "sourceBytes": 8634,
+      "sourceSha256": "94dc621011709ffad8e96ab6f29f8d41137f1b3e7c5d553a482772f50ec29b7f",
+      "gitDisposition": "unchanged",
+      "importSha256": "94dc621011709ffad8e96ab6f29f8d41137f1b3e7c5d553a482772f50ec29b7f"
+    },
+    {
+      "path": "ontologics-prototype/PROJECT_STATUS.md",
+      "sourceBytes": 31628,
+      "sourceSha256": "e42f327bd6e4ef9e1966f70823e7fdd1b727620c080ee4b56650ce912546e70a",
+      "gitDisposition": "unchanged",
+      "importSha256": "e42f327bd6e4ef9e1966f70823e7fdd1b727620c080ee4b56650ce912546e70a"
+    },
+    {
+      "path": "ontologics-prototype/README.md",
+      "sourceBytes": 15070,
+      "sourceSha256": "f26b72976c9e3926afc6c44a7f79435e32ea99c1cd36e53b2aa83a416df52ec7",
+      "gitDisposition": "unchanged",
+      "importSha256": "f26b72976c9e3926afc6c44a7f79435e32ea99c1cd36e53b2aa83a416df52ec7"
+    },
+    {
+      "path": "ontologics-prototype/SOURCE_MANIFEST.json",
+      "sourceBytes": 73999,
+      "sourceSha256": "e45bc49b10410c804e85b53d3d53826b1175b103304ef3ff7a5740e7d083aacc",
+      "gitDisposition": "unchanged",
+      "importSha256": "e45bc49b10410c804e85b53d3d53826b1175b103304ef3ff7a5740e7d083aacc"
+    },
+    {
+      "path": "ontologics-prototype/docs/BOM_SOURCE_AUDIT.md",
+      "sourceBytes": 3303,
+      "sourceSha256": "0fd944c40eacca544fc8c7fa09b02b7c21f5a08d84ec4da7bba939a9839ae03e",
+      "gitDisposition": "unchanged",
+      "importSha256": "0fd944c40eacca544fc8c7fa09b02b7c21f5a08d84ec4da7bba939a9839ae03e"
+    },
+    {
+      "path": "ontologics-prototype/docs/DECISIONS.md",
+      "sourceBytes": 1750,
+      "sourceSha256": "897479b673238bef4fd8e766c9a718d8c549b599ba1855a2c1eb915da28768a1",
+      "gitDisposition": "unchanged",
+      "importSha256": "897479b673238bef4fd8e766c9a718d8c549b599ba1855a2c1eb915da28768a1"
+    },
+    {
+      "path": "ontologics-prototype/docs/DEPLOYMENT.md",
+      "sourceBytes": 1233,
+      "sourceSha256": "d0d581b2d611fe19480621f6119bb71d64a3d7b1b1239b14a3b399b23eb5e626",
+      "gitDisposition": "unchanged",
+      "importSha256": "d0d581b2d611fe19480621f6119bb71d64a3d7b1b1239b14a3b399b23eb5e626"
+    },
+    {
+      "path": "ontologics-prototype/docs/DESIGN_TOKENS.md",
+      "sourceBytes": 6839,
+      "sourceSha256": "7dd265c5d6402b446c6814ba34023973d1101855f45811fa98c8e65919c2a860",
+      "gitDisposition": "unchanged",
+      "importSha256": "7dd265c5d6402b446c6814ba34023973d1101855f45811fa98c8e65919c2a860"
+    },
+    {
+      "path": "ontologics-prototype/docs/DOCUMENT_AMENDMENTS.md",
+      "sourceBytes": 42478,
+      "sourceSha256": "2c1e7acc1b84c6e070934f75a6028c200328121d17b12fee5a364c211779466a",
+      "gitDisposition": "unchanged",
+      "importSha256": "2c1e7acc1b84c6e070934f75a6028c200328121d17b12fee5a364c211779466a"
+    },
+    {
+      "path": "ontologics-prototype/docs/INFORMATION_ARCHITECTURE.md",
+      "sourceBytes": 10025,
+      "sourceSha256": "9a96ec600cba5d4f1b8354077b792d5b57d7d4627b909ac23226b2dd811d6a33",
+      "gitDisposition": "unchanged",
+      "importSha256": "9a96ec600cba5d4f1b8354077b792d5b57d7d4627b909ac23226b2dd811d6a33"
+    },
+    {
+      "path": "ontologics-prototype/docs/MEDIA_ASSET_AUDIT.md",
+      "sourceBytes": 12085,
+      "sourceSha256": "d89d8bf1fb395a5a89bc05f94af19f10555df8b6b19af2bd7622e0ef22817c6a",
+      "gitDisposition": "unchanged",
+      "importSha256": "d89d8bf1fb395a5a89bc05f94af19f10555df8b6b19af2bd7622e0ef22817c6a"
+    },
+    {
+      "path": "ontologics-prototype/docs/MEDIA_GENERATION_PROMPTS.json",
+      "sourceBytes": 31478,
+      "sourceSha256": "b406ad38d310e921eec8a8e64eebfb9952b8a371867187b09c7574db307949cf",
+      "gitDisposition": "metadata-adapted",
+      "importSha256": "cffd4719cb6ebb3ff4508249ebe74a256e0e5d722c9ee81cff42f772f0b936cd"
+    },
+    {
+      "path": "ontologics-prototype/docs/PROVENANCE.md",
+      "sourceBytes": 3642,
+      "sourceSha256": "f9f86254d6de24cf7c87a3960c95c3b84a9f67b638fa169e510cd2c0e7f1a541",
+      "gitDisposition": "unchanged",
+      "importSha256": "f9f86254d6de24cf7c87a3960c95c3b84a9f67b638fa169e510cd2c0e7f1a541"
+    },
+    {
+      "path": "ontologics-prototype/docs/REDESIGN_TRACEABILITY.md",
+      "sourceBytes": 78491,
+      "sourceSha256": "b055e7650774477e5b62fcd5d2e86dbbb487105eb1b65aeb62f10dc819d3288a",
+      "gitDisposition": "unchanged",
+      "importSha256": "b055e7650774477e5b62fcd5d2e86dbbb487105eb1b65aeb62f10dc819d3288a"
+    },
+    {
+      "path": "ontologics-prototype/docs/REQUIREMENT_TRACEABILITY.md",
+      "sourceBytes": 8504,
+      "sourceSha256": "cdc5f3ae31d0c7c78d6ab14b8e59e65b047fe02ce2a7a3004a067506b41c8abc",
+      "gitDisposition": "unchanged",
+      "importSha256": "cdc5f3ae31d0c7c78d6ab14b8e59e65b047fe02ce2a7a3004a067506b41c8abc"
+    },
+    {
+      "path": "ontologics-prototype/docs/VALIDATION.md",
+      "sourceBytes": 57971,
+      "sourceSha256": "90c347a2db3f6e006476f8dbfa318154c369dd1038293bc094b98e63c802c5f3",
+      "gitDisposition": "unchanged",
+      "importSha256": "90c347a2db3f6e006476f8dbfa318154c369dd1038293bc094b98e63c802c5f3"
+    },
+    {
+      "path": "ontologics-prototype/docs/history/DECISIONS_2026-11-03.md",
+      "sourceBytes": 1574,
+      "sourceSha256": "9637e8a5fee41da396f98642ad3ea971efe0211131f23d9ad3d3f5363856bd45",
+      "gitDisposition": "unchanged",
+      "importSha256": "9637e8a5fee41da396f98642ad3ea971efe0211131f23d9ad3d3f5363856bd45"
+    },
+    {
+      "path": "ontologics-prototype/docs/history/DEPLOYMENT_2026-11-03.md",
+      "sourceBytes": 1154,
+      "sourceSha256": "544354deff55cdc69d13b0215a7c69f2ae641ed1cad6fdac35d5781c03ea5349",
+      "gitDisposition": "unchanged",
+      "importSha256": "544354deff55cdc69d13b0215a7c69f2ae641ed1cad6fdac35d5781c03ea5349"
+    },
+    {
+      "path": "ontologics-prototype/docs/media-asset-inventory.csv",
+      "sourceBytes": 9757,
+      "sourceSha256": "889a7a9ff75bdce53457533f279d027ba31c41af4946b1740d2b9b586139fc49",
+      "gitDisposition": "unchanged",
+      "importSha256": "889a7a9ff75bdce53457533f279d027ba31c41af4946b1740d2b9b586139fc49"
+    },
+    {
+      "path": "ontologics-prototype/docs/media-board-inventory.csv",
+      "sourceBytes": 2881,
+      "sourceSha256": "dda330174622806637a72996c6fa0348896752dd6508068eb92753e451d56fa4",
+      "gitDisposition": "unchanged",
+      "importSha256": "dda330174622806637a72996c6fa0348896752dd6508068eb92753e451d56fa4"
+    },
+    {
+      "path": "ontologics-prototype/docs/media-inventory-summary.json",
+      "sourceBytes": 1554,
+      "sourceSha256": "1d274f5a6afcb835fe663d7bac3766873f660083b150092bb2b8cd870cc71edd",
+      "gitDisposition": "unchanged",
+      "importSha256": "1d274f5a6afcb835fe663d7bac3766873f660083b150092bb2b8cd870cc71edd"
+    },
+    {
+      "path": "ontologics-prototype/docs/media-package-inventory.csv",
+      "sourceBytes": 1532,
+      "sourceSha256": "3644a1330a037309db52d443ae8dc8db65fd044528b777b30d9e5ad481276645",
+      "gitDisposition": "unchanged",
+      "importSha256": "3644a1330a037309db52d443ae8dc8db65fd044528b777b30d9e5ad481276645"
+    },
+    {
+      "path": "ontologics-prototype/docs/media-part-inventory.csv",
+      "sourceBytes": 72240,
+      "sourceSha256": "8a5ab29c5c10dc4635f5cbf3ee4bfb6d424adfcc81baaa4533a8234dd5ad0988",
+      "gitDisposition": "unchanged",
+      "importSha256": "8a5ab29c5c10dc4635f5cbf3ee4bfb6d424adfcc81baaa4533a8234dd5ad0988"
+    },
+    {
+      "path": "ontologics-prototype/graph.html",
+      "sourceBytes": 385,
+      "sourceSha256": "44344e0c468e66e9f1a05709610898dd5a230d5d81bcd5a349ebd1ba4ebbf44c",
+      "gitDisposition": "unchanged",
+      "importSha256": "44344e0c468e66e9f1a05709610898dd5a230d5d81bcd5a349ebd1ba4ebbf44c"
+    },
+    {
+      "path": "ontologics-prototype/index.html",
+      "sourceBytes": 449,
+      "sourceSha256": "9e9223526dc712709c3158e3f7f84330c4d7d8d43d3bd40c05da9c6e7b5fcbf8",
+      "gitDisposition": "unchanged",
+      "importSha256": "9e9223526dc712709c3158e3f7f84330c4d7d8d43d3bd40c05da9c6e7b5fcbf8"
+    },
+    {
+      "path": "ontologics-prototype/package-lock.json",
+      "sourceBytes": 100262,
+      "sourceSha256": "ffcd421ab7c6dabc903e2ece2109e5b058b3d8a946a62efefc59345f52c98945",
+      "gitDisposition": "unchanged",
+      "importSha256": "ffcd421ab7c6dabc903e2ece2109e5b058b3d8a946a62efefc59345f52c98945"
+    },
+    {
+      "path": "ontologics-prototype/package.json",
+      "sourceBytes": 813,
+      "sourceSha256": "a5bd9387bc18081922106ef6ac181de05b2ec8a512137c863d50f8c3581b219c",
+      "gitDisposition": "metadata-adapted",
+      "importSha256": "f51695a0fd87e5bf44714d9c738e17de14f20add324b50da2b7f09b0070a9074"
+    },
+    {
+      "path": "ontologics-prototype/playwright.config.ts",
+      "sourceBytes": 373,
+      "sourceSha256": "c4d7712c35f8acbbba5e88c4a2a7137200826182d120b663c1be4cb6c516344c",
+      "gitDisposition": "unchanged",
+      "importSha256": "c4d7712c35f8acbbba5e88c4a2a7137200826182d120b663c1be4cb6c516344c"
+    },
+    {
+      "path": "ontologics-prototype/public/evidence/L-WROOM.ods",
+      "sourceBytes": 23415,
+      "sourceSha256": "ef4f04d46ca8f3961f6ac528320011679a14c57007717b5972c32551e9c51a5e",
+      "gitDisposition": "unchanged",
+      "importSha256": "ef4f04d46ca8f3961f6ac528320011679a14c57007717b5972c32551e9c51a5e"
+    },
+    {
+      "path": "ontologics-prototype/public/evidence/L-WROOM.pdf",
+      "sourceBytes": 32844,
+      "sourceSha256": "e268ebf562c5e6b36dab7bcd377922c7cb5883ad88ba024f8b949d0e9cae89d0",
+      "gitDisposition": "unchanged",
+      "importSha256": "e268ebf562c5e6b36dab7bcd377922c7cb5883ad88ba024f8b949d0e9cae89d0"
+    },
+    {
+      "path": "ontologics-prototype/public/evidence/L1-WROOM.ods",
+      "sourceBytes": 23857,
+      "sourceSha256": "773c8b3fb0fa9f9c354586d12fd6bffd02b156b94d07e23e671c1205ab918e95",
+      "gitDisposition": "unchanged",
+      "importSha256": "773c8b3fb0fa9f9c354586d12fd6bffd02b156b94d07e23e671c1205ab918e95"
+    },
+    {
+      "path": "ontologics-prototype/public/evidence/L1-WROOM.pdf",
+      "sourceBytes": 37140,
+      "sourceSha256": "30e2e7c881d9a7c74cd95b1a63af4ac2ac7ae623ea05ec16e9faaf5ad19f3e9a",
+      "gitDisposition": "unchanged",
+      "importSha256": "30e2e7c881d9a7c74cd95b1a63af4ac2ac7ae623ea05ec16e9faaf5ad19f3e9a"
+    },
+    {
+      "path": "ontologics-prototype/public/evidence/catalog.json",
+      "sourceBytes": 2357,
+      "sourceSha256": "1b2fe560895d9baecdde156602188877564d813812546e8fa84706eacaee1cf2",
+      "gitDisposition": "unchanged",
+      "importSha256": "1b2fe560895d9baecdde156602188877564d813812546e8fa84706eacaee1cf2"
+    },
+    {
+      "path": "ontologics-prototype/public/media/array.png",
+      "sourceBytes": 1551300,
+      "sourceSha256": "3c74d8bde8981d59dbf483d45a59b43daaa3c29af8ec9c473322de523750330f",
+      "gitDisposition": "unchanged",
+      "importSha256": "3c74d8bde8981d59dbf483d45a59b43daaa3c29af8ec9c473322de523750330f"
+    },
+    {
+      "path": "ontologics-prototype/public/media/battery-connector.png",
+      "sourceBytes": 1313448,
+      "sourceSha256": "0f6444e372086770ace469aef594fce2e7221f40decb67ea41c18c08fdceffc2",
+      "gitDisposition": "unchanged",
+      "importSha256": "0f6444e372086770ace469aef594fce2e7221f40decb67ea41c18c08fdceffc2"
+    },
+    {
+      "path": "ontologics-prototype/public/media/board-io.png",
+      "sourceBytes": 1841593,
+      "sourceSha256": "a1d27d45c67e0aeb105800c65eeb82ed70129dc45a420b872785e0c210ee516c",
+      "gitDisposition": "unchanged",
+      "importSha256": "a1d27d45c67e0aeb105800c65eeb82ed70129dc45a420b872785e0c210ee516c"
+    },
+    {
+      "path": "ontologics-prototype/public/media/board-power.png",
+      "sourceBytes": 1822811,
+      "sourceSha256": "07dd86c1dcca9e69cffe4d4992297c5da85e534263bbab5e282bbeff7c885431",
+      "gitDisposition": "unchanged",
+      "importSha256": "07dd86c1dcca9e69cffe4d4992297c5da85e534263bbab5e282bbeff7c885431"
+    },
+    {
+      "path": "ontologics-prototype/public/media/board-sense.png",
+      "sourceBytes": 1925387,
+      "sourceSha256": "ce9d6d45bdddff78138e0325e9d9d49c2b108bab95aca544dfb869a9852f46b5",
+      "gitDisposition": "unchanged",
+      "importSha256": "ce9d6d45bdddff78138e0325e9d9d49c2b108bab95aca544dfb869a9852f46b5"
+    },
+    {
+      "path": "ontologics-prototype/public/media/boxed-header.png",
+      "sourceBytes": 1598349,
+      "sourceSha256": "f8985c7748aaa3f336ef4a96b845c182a074b76c55719e95d6e166ff9a8fae70",
+      "gitDisposition": "unchanged",
+      "importSha256": "f8985c7748aaa3f336ef4a96b845c182a074b76c55719e95d6e166ff9a8fae70"
+    },
+    {
+      "path": "ontologics-prototype/public/media/crystal.png",
+      "sourceBytes": 1560515,
+      "sourceSha256": "33d160d25860f6fe00d5a6141eda19588900bb55a99c44a4d0e89f82464e6d5a",
+      "gitDisposition": "unchanged",
+      "importSha256": "33d160d25860f6fe00d5a6141eda19588900bb55a99c44a4d0e89f82464e6d5a"
+    },
+    {
+      "path": "ontologics-prototype/public/media/diode.png",
+      "sourceBytes": 1488662,
+      "sourceSha256": "bf86b804f8d28904ddf38f767979fbbdfb7223e9950397f9cf91046b80ef8547",
+      "gitDisposition": "unchanged",
+      "importSha256": "bf86b804f8d28904ddf38f767979fbbdfb7223e9950397f9cf91046b80ef8547"
+    },
+    {
+      "path": "ontologics-prototype/public/media/electrolytic.png",
+      "sourceBytes": 1395754,
+      "sourceSha256": "8e48c1aea423bcebb2cec5aab2b06fa28a702a04f30501e581b7b87358f342a2",
+      "gitDisposition": "unchanged",
+      "importSha256": "8e48c1aea423bcebb2cec5aab2b06fa28a702a04f30501e581b7b87358f342a2"
+    },
+    {
+      "path": "ontologics-prototype/public/media/esd.png",
+      "sourceBytes": 1757756,
+      "sourceSha256": "ef1c0828e6b6f040c09b35c685ef9296f6eaecf261c6b8b217781deb502d92a1",
+      "gitDisposition": "unchanged",
+      "importSha256": "ef1c0828e6b6f040c09b35c685ef9296f6eaecf261c6b8b217781deb502d92a1"
+    },
+    {
+      "path": "ontologics-prototype/public/media/ferrite.png",
+      "sourceBytes": 1464547,
+      "sourceSha256": "314c58e7a75705fa61444df75d6d46fa3085cd87e663cb804fead7a49fe71878",
+      "gitDisposition": "unchanged",
+      "importSha256": "314c58e7a75705fa61444df75d6d46fa3085cd87e663cb804fead7a49fe71878"
+    },
+    {
+      "path": "ontologics-prototype/public/media/header.png",
+      "sourceBytes": 1309144,
+      "sourceSha256": "f2da650064ca9fac8643c16a4d9df10d440f45135f552b91b7cf514418583d04",
+      "gitDisposition": "unchanged",
+      "importSha256": "f2da650064ca9fac8643c16a4d9df10d440f45135f552b91b7cf514418583d04"
+    },
+    {
+      "path": "ontologics-prototype/public/media/inductor.png",
+      "sourceBytes": 1625826,
+      "sourceSha256": "b98cd4a4d01da8d8fda9d241d97c815867d376e91ca3851afb2c2459c8c08b96",
+      "gitDisposition": "unchanged",
+      "importSha256": "b98cd4a4d01da8d8fda9d241d97c815867d376e91ca3851afb2c2459c8c08b96"
+    },
+    {
+      "path": "ontologics-prototype/public/media/led.png",
+      "sourceBytes": 1403664,
+      "sourceSha256": "8ff0c6bde60af21128a91d66abedf6416fc00b7c17c9e30b7f73bd9b0e7909f6",
+      "gitDisposition": "unchanged",
+      "importSha256": "8ff0c6bde60af21128a91d66abedf6416fc00b7c17c9e30b7f73bd9b0e7909f6"
+    },
+    {
+      "path": "ontologics-prototype/public/media/micro-usb.png",
+      "sourceBytes": 1546678,
+      "sourceSha256": "cb7306b488942772de81035a565ca90cf94d1590e190f448fcf27a6dabb38f16",
+      "gitDisposition": "unchanged",
+      "importSha256": "cb7306b488942772de81035a565ca90cf94d1590e190f448fcf27a6dabb38f16"
+    },
+    {
+      "path": "ontologics-prototype/public/media/microsd.png",
+      "sourceBytes": 1594898,
+      "sourceSha256": "75d0e46706306b9d314bc03960068cdbd01759381c8c31e11737e1b8403bed12",
+      "gitDisposition": "unchanged",
+      "importSha256": "75d0e46706306b9d314bc03960068cdbd01759381c8c31e11737e1b8403bed12"
+    },
+    {
+      "path": "ontologics-prototype/public/media/mlcc.png",
+      "sourceBytes": 1640681,
+      "sourceSha256": "75aeadaa23b83bf9f54c398fe7a44b3fa41ebd37a081313695cf8a7e737271de",
+      "gitDisposition": "unchanged",
+      "importSha256": "75aeadaa23b83bf9f54c398fe7a44b3fa41ebd37a081313695cf8a7e737271de"
+    },
+    {
+      "path": "ontologics-prototype/public/media/olimex-evb.jpg",
+      "sourceBytes": 57620,
+      "sourceSha256": "031cef3441e1d25ae5d27285b8d57c51e81e8085aa13fefd350ec55f41174970",
+      "gitDisposition": "excluded-local-reference-photo",
+      "importSha256": null
+    },
+    {
+      "path": "ontologics-prototype/public/media/olimex-gateway.jpg",
+      "sourceBytes": 72669,
+      "sourceSha256": "f50f1bea053e71e5108c758a9bfa9f7d81fd1a19c26929492577d6570f856d5a",
+      "gitDisposition": "excluded-local-reference-photo",
+      "importSha256": null
+    },
+    {
+      "path": "ontologics-prototype/public/media/olimex-poe.jpg",
+      "sourceBytes": 41946,
+      "sourceSha256": "314f5448ec304a0d7ea87b50e75171b9a0eac6ec14aa465483b7720a5b4f1f6c",
+      "gitDisposition": "excluded-local-reference-photo",
+      "importSha256": null
+    },
+    {
+      "path": "ontologics-prototype/public/media/olimex-poeiso.jpg",
+      "sourceBytes": 33004,
+      "sourceSha256": "96a250fea81b7f6e4de2cae8f7889058bab914276ffe59284cf40345b917f27a",
+      "gitDisposition": "excluded-local-reference-photo",
+      "importSha256": null
+    },
+    {
+      "path": "ontologics-prototype/public/media/pcb.png",
+      "sourceBytes": 1571656,
+      "sourceSha256": "db48cdf56564dc3793c68bdcbc3da46a7f460379c2926697ba3203473f46a5ae",
+      "gitDisposition": "unchanged",
+      "importSha256": "db48cdf56564dc3793c68bdcbc3da46a7f460379c2926697ba3203473f46a5ae"
+    },
+    {
+      "path": "ontologics-prototype/public/media/qfn.png",
+      "sourceBytes": 1665008,
+      "sourceSha256": "53ae1b1111bfb4f70730171dfc18e73bd02e7ce46f0c2f62ed5e1f2d90fe9dae",
+      "gitDisposition": "unchanged",
+      "importSha256": "53ae1b1111bfb4f70730171dfc18e73bd02e7ce46f0c2f62ed5e1f2d90fe9dae"
+    },
+    {
+      "path": "ontologics-prototype/public/media/resistor.png",
+      "sourceBytes": 1547929,
+      "sourceSha256": "84419b7432bc4b499f3b064b9294c1488abe0d8677c9310aa388ea4279957fea",
+      "gitDisposition": "unchanged",
+      "importSha256": "84419b7432bc4b499f3b064b9294c1488abe0d8677c9310aa388ea4279957fea"
+    },
+    {
+      "path": "ontologics-prototype/public/media/rfmodule.png",
+      "sourceBytes": 1563904,
+      "sourceSha256": "4e1c6df247db3bb8c8c2a9fd33afca44e273a32168a4f6e00baa40657eaa6304",
+      "gitDisposition": "unchanged",
+      "importSha256": "4e1c6df247db3bb8c8c2a9fd33afca44e273a32168a4f6e00baa40657eaa6304"
+    },
+    {
+      "path": "ontologics-prototype/public/media/rj45.png",
+      "sourceBytes": 1821831,
+      "sourceSha256": "da0c3996f5b07b1bfc35b0bf4c45eb3200ff38bebead214db431e800fb398407",
+      "gitDisposition": "unchanged",
+      "importSha256": "da0c3996f5b07b1bfc35b0bf4c45eb3200ff38bebead214db431e800fb398407"
+    },
+    {
+      "path": "ontologics-prototype/public/media/soic8.png",
+      "sourceBytes": 1673404,
+      "sourceSha256": "3303f18a2ab598adeaf41413abee99a3858a36a80c7c93a6b3e6dfa4e50968ff",
+      "gitDisposition": "unchanged",
+      "importSha256": "3303f18a2ab598adeaf41413abee99a3858a36a80c7c93a6b3e6dfa4e50968ff"
+    },
+    {
+      "path": "ontologics-prototype/public/media/sot23.png",
+      "sourceBytes": 1436670,
+      "sourceSha256": "b08f2a4e9a367d2786281bff815c94fb58129948b6a346357e2a96379f95a526",
+      "gitDisposition": "unchanged",
+      "importSha256": "b08f2a4e9a367d2786281bff815c94fb58129948b6a346357e2a96379f95a526"
+    },
+    {
+      "path": "ontologics-prototype/public/media/sot5.png",
+      "sourceBytes": 1585475,
+      "sourceSha256": "13cb70d95850e3441ab8ed11bd8bb5cca8c188dcb1e05e0464247fc8f3b810e1",
+      "gitDisposition": "unchanged",
+      "importSha256": "13cb70d95850e3441ab8ed11bd8bb5cca8c188dcb1e05e0464247fc8f3b810e1"
+    },
+    {
+      "path": "ontologics-prototype/public/media/ssop20.png",
+      "sourceBytes": 1735100,
+      "sourceSha256": "89a1cc2b9ab7b88b5bebad2010a2675e51323a34e18adc7edd206278c3922ec0",
+      "gitDisposition": "unchanged",
+      "importSha256": "89a1cc2b9ab7b88b5bebad2010a2675e51323a34e18adc7edd206278c3922ec0"
+    },
+    {
+      "path": "ontologics-prototype/public/media/tactile.png",
+      "sourceBytes": 1557986,
+      "sourceSha256": "154e5a3b3065a2cf7d940c1ce080cee8615358c2f762e3045a111f1f43f5b796",
+      "gitDisposition": "unchanged",
+      "importSha256": "154e5a3b3065a2cf7d940c1ce080cee8615358c2f762e3045a111f1f43f5b796"
+    },
+    {
+      "path": "ontologics-prototype/public/media/terminal.png",
+      "sourceBytes": 1665364,
+      "sourceSha256": "cc2a921dbf56adf220f92f37600c36c6a4e123802346eab372753cbd713a570e",
+      "gitDisposition": "unchanged",
+      "importSha256": "cc2a921dbf56adf220f92f37600c36c6a4e123802346eab372753cbd713a570e"
+    },
+    {
+      "path": "ontologics-prototype/scripts/media-inventory.mjs",
+      "sourceBytes": 7306,
+      "sourceSha256": "77a189d5387be0943ed694913fab5e9916618cafca8202093baa98783d218038",
+      "gitDisposition": "unchanged",
+      "importSha256": "77a189d5387be0943ed694913fab5e9916618cafca8202093baa98783d218038"
+    },
+    {
+      "path": "ontologics-prototype/server/graph-server.mjs",
+      "sourceBytes": 2112,
+      "sourceSha256": "91fae324bbfffe5b23b7ddc715078476b75935cf73c6d50c88e3792c8713f4d7",
+      "gitDisposition": "unchanged",
+      "importSha256": "91fae324bbfffe5b23b7ddc715078476b75935cf73c6d50c88e3792c8713f4d7"
+    },
+    {
+      "path": "ontologics-prototype/server/graph-service.mjs",
+      "sourceBytes": 15201,
+      "sourceSha256": "1396d6c3d854588eb221068576765a0c3986b13000b8cb663283d24e3b981593",
+      "gitDisposition": "unchanged",
+      "importSha256": "1396d6c3d854588eb221068576765a0c3986b13000b8cb663283d24e3b981593"
+    },
+    {
+      "path": "ontologics-prototype/src/board-workspace.tsx",
+      "sourceBytes": 11987,
+      "sourceSha256": "fcd1c2100fd7842b1c0514917ab4cc1b06309a2b4b6673bd98cf92dca50548c4",
+      "gitDisposition": "unchanged",
+      "importSha256": "fcd1c2100fd7842b1c0514917ab4cc1b06309a2b4b6673bd98cf92dca50548c4"
+    },
+    {
+      "path": "ontologics-prototype/src/bom-source.json",
+      "sourceBytes": 27206,
+      "sourceSha256": "2b9693011d2c159462c5111eba229313a76e9c9dae600d6c6cd92e8eaa673927",
+      "gitDisposition": "unchanged",
+      "importSha256": "2b9693011d2c159462c5111eba229313a76e9c9dae600d6c6cd92e8eaa673927"
+    },
+    {
+      "path": "ontologics-prototype/src/catalog.json",
+      "sourceBytes": 2357,
+      "sourceSha256": "1b2fe560895d9baecdde156602188877564d813812546e8fa84706eacaee1cf2",
+      "gitDisposition": "unchanged",
+      "importSha256": "1b2fe560895d9baecdde156602188877564d813812546e8fa84706eacaee1cf2"
+    },
+    {
+      "path": "ontologics-prototype/src/change-impact-model.ts",
+      "sourceBytes": 3870,
+      "sourceSha256": "6a56707e8aa5ec44f8b0ccb9b8e1c367b3fc5523d576a6c695c14e3fa654567c",
+      "gitDisposition": "unchanged",
+      "importSha256": "6a56707e8aa5ec44f8b0ccb9b8e1c367b3fc5523d576a6c695c14e3fa654567c"
+    },
+    {
+      "path": "ontologics-prototype/src/change-impact.css",
+      "sourceBytes": 4106,
+      "sourceSha256": "2699ac53be97dfba35ba044abef45f14bbdd7c3ed5c9526e9e980962b8ea528a",
+      "gitDisposition": "unchanged",
+      "importSha256": "2699ac53be97dfba35ba044abef45f14bbdd7c3ed5c9526e9e980962b8ea528a"
+    },
+    {
+      "path": "ontologics-prototype/src/change-impact.tsx",
+      "sourceBytes": 9840,
+      "sourceSha256": "d7ca77f196ff255cbd2fe86d6a5109aced0b578aeb5f8d1cd2da2937c8ef2664",
+      "gitDisposition": "unchanged",
+      "importSha256": "d7ca77f196ff255cbd2fe86d6a5109aced0b578aeb5f8d1cd2da2937c8ef2664"
+    },
+    {
+      "path": "ontologics-prototype/src/context.tsx",
+      "sourceBytes": 818,
+      "sourceSha256": "8749e62dfc454274f45f494641a2f81b58eba5584ba5918c9e769634dc439d34",
+      "gitDisposition": "unchanged",
+      "importSha256": "8749e62dfc454274f45f494641a2f81b58eba5584ba5918c9e769634dc439d34"
+    },
+    {
+      "path": "ontologics-prototype/src/domain.ts",
+      "sourceBytes": 18660,
+      "sourceSha256": "c7299c76183ea4b9c6d49e5bda15cfa52eb7f569b0f282d55dc7e679daa79cce",
+      "gitDisposition": "unchanged",
+      "importSha256": "c7299c76183ea4b9c6d49e5bda15cfa52eb7f569b0f282d55dc7e679daa79cce"
+    },
+    {
+      "path": "ontologics-prototype/src/entity-data.ts",
+      "sourceBytes": 13481,
+      "sourceSha256": "a950992419e9f18a9ac954947a7a570c899676d03533f40f16f8a77ad0f7b49e",
+      "gitDisposition": "unchanged",
+      "importSha256": "a950992419e9f18a9ac954947a7a570c899676d03533f40f16f8a77ad0f7b49e"
+    },
+    {
+      "path": "ontologics-prototype/src/entity.tsx",
+      "sourceBytes": 15519,
+      "sourceSha256": "22d7011731fca830be26607a2175b9c2d3490b70778d0c0448090c508783de26",
+      "gitDisposition": "unchanged",
+      "importSha256": "22d7011731fca830be26607a2175b9c2d3490b70778d0c0448090c508783de26"
+    },
+    {
+      "path": "ontologics-prototype/src/evidence-workspace.tsx",
+      "sourceBytes": 10627,
+      "sourceSha256": "f932565cf04a70e02413b7f189271ce241bc55d087ae3f567706480ec42bd5a3",
+      "gitDisposition": "unchanged",
+      "importSha256": "f932565cf04a70e02413b7f189271ce241bc55d087ae3f567706480ec42bd5a3"
+    },
+    {
+      "path": "ontologics-prototype/src/explorer.tsx",
+      "sourceBytes": 17593,
+      "sourceSha256": "3005577f15a33259c717f2ca99a3d5487befc21a27af1e9aea0ec4544f1c6544",
+      "gitDisposition": "unchanged",
+      "importSha256": "3005577f15a33259c717f2ca99a3d5487befc21a27af1e9aea0ec4544f1c6544"
+    },
+    {
+      "path": "ontologics-prototype/src/extended.css",
+      "sourceBytes": 12794,
+      "sourceSha256": "86359958678d7f57a18e9494dcd02429f449dd5811c83c8d865b5b8783389188",
+      "gitDisposition": "unchanged",
+      "importSha256": "86359958678d7f57a18e9494dcd02429f449dd5811c83c8d865b5b8783389188"
+    },
+    {
+      "path": "ontologics-prototype/src/extended.tsx",
+      "sourceBytes": 15730,
+      "sourceSha256": "6e961c1bda9ea9ef6da61107784ffb737557b8323ac97ec669945793981f61cf",
+      "gitDisposition": "unchanged",
+      "importSha256": "6e961c1bda9ea9ef6da61107784ffb737557b8323ac97ec669945793981f61cf"
+    },
+    {
+      "path": "ontologics-prototype/src/graph-connection.css",
+      "sourceBytes": 1137,
+      "sourceSha256": "c02f7c794730eebdad549bbad540223790e47e102ea2bfb7e2570fb217c85af2",
+      "gitDisposition": "unchanged",
+      "importSha256": "c02f7c794730eebdad549bbad540223790e47e102ea2bfb7e2570fb217c85af2"
+    },
+    {
+      "path": "ontologics-prototype/src/graph-connection.tsx",
+      "sourceBytes": 9533,
+      "sourceSha256": "51eba942b9fc801aa31beb9485b4fa47f93976030638be5a92ceb9440ddf4a4a",
+      "gitDisposition": "unchanged",
+      "importSha256": "51eba942b9fc801aa31beb9485b4fa47f93976030638be5a92ceb9440ddf4a4a"
+    },
+    {
+      "path": "ontologics-prototype/src/graph-projection.ts",
+      "sourceBytes": 3767,
+      "sourceSha256": "74a759c91c150aab5c59e8a5978d929045526d65ecfbcb778ec23c27fbe48a68",
+      "gitDisposition": "unchanged",
+      "importSha256": "74a759c91c150aab5c59e8a5978d929045526d65ecfbcb778ec23c27fbe48a68"
+    },
+    {
+      "path": "ontologics-prototype/src/graph-view.css",
+      "sourceBytes": 13094,
+      "sourceSha256": "b1d44b1a263f4a039bfba33b48da225931193318d5111544eff825cf540bb404",
+      "gitDisposition": "unchanged",
+      "importSha256": "b1d44b1a263f4a039bfba33b48da225931193318d5111544eff825cf540bb404"
+    },
+    {
+      "path": "ontologics-prototype/src/graph-view.tsx",
+      "sourceBytes": 29204,
+      "sourceSha256": "30a223ea59e757f221b148ab70ea909500728b33b6e97e51a5df0ef37c70c711",
+      "gitDisposition": "unchanged",
+      "importSha256": "30a223ea59e757f221b148ab70ea909500728b33b6e97e51a5df0ef37c70c711"
+    },
+    {
+      "path": "ontologics-prototype/src/main.tsx",
+      "sourceBytes": 29095,
+      "sourceSha256": "18203df81e339f7b9330ad830d6fd15ffcc09ee33446df263f73e118788bd6ae",
+      "gitDisposition": "unchanged",
+      "importSha256": "18203df81e339f7b9330ad830d6fd15ffcc09ee33446df263f73e118788bd6ae"
+    },
+    {
+      "path": "ontologics-prototype/src/material-tables.tsx",
+      "sourceBytes": 8663,
+      "sourceSha256": "ff2868ee94cd3ac09998bfb89b29923a0c112c779e5b883cef8e5ae545f87b4a",
+      "gitDisposition": "unchanged",
+      "importSha256": "ff2868ee94cd3ac09998bfb89b29923a0c112c779e5b883cef8e5ae545f87b4a"
+    },
+    {
+      "path": "ontologics-prototype/src/media-data.ts",
+      "sourceBytes": 7076,
+      "sourceSha256": "ffebe055e92c00028b38cae8acca462ec0e34fa55fac3d18aa03e048f6f7cf20",
+      "gitDisposition": "unchanged",
+      "importSha256": "ffebe055e92c00028b38cae8acca462ec0e34fa55fac3d18aa03e048f6f7cf20"
+    },
+    {
+      "path": "ontologics-prototype/src/media.css",
+      "sourceBytes": 4177,
+      "sourceSha256": "3bf6f7882cc86e62f7b9cf217e8e6e32663893d5f1a2c6488fff3cc28f2c6ce4",
+      "gitDisposition": "unchanged",
+      "importSha256": "3bf6f7882cc86e62f7b9cf217e8e6e32663893d5f1a2c6488fff3cc28f2c6ce4"
+    },
+    {
+      "path": "ontologics-prototype/src/media.tsx",
+      "sourceBytes": 6974,
+      "sourceSha256": "81c31a7cf29f4f8d8cade89c6622d6fb12147da6c331ad393d6741339257f04c",
+      "gitDisposition": "unchanged",
+      "importSha256": "81c31a7cf29f4f8d8cade89c6622d6fb12147da6c331ad393d6741339257f04c"
+    },
+    {
+      "path": "ontologics-prototype/src/ontology-tables.tsx",
+      "sourceBytes": 7076,
+      "sourceSha256": "39e6889a586659144645f1e4c787aa8b080b8cbc98200689c895651d79ecc1c8",
+      "gitDisposition": "unchanged",
+      "importSha256": "39e6889a586659144645f1e4c787aa8b080b8cbc98200689c895651d79ecc1c8"
+    },
+    {
+      "path": "ontologics-prototype/src/ontology-workspace.tsx",
+      "sourceBytes": 19364,
+      "sourceSha256": "05f51f61a00ec33cb56c75fc078039dad94feca84e945c47928c362d2aa540d8",
+      "gitDisposition": "unchanged",
+      "importSha256": "05f51f61a00ec33cb56c75fc078039dad94feca84e945c47928c362d2aa540d8"
+    },
+    {
+      "path": "ontologics-prototype/src/operations-workspace.tsx",
+      "sourceBytes": 15019,
+      "sourceSha256": "496493a78c164a45a4c8299040a9188c2de8fd71698badb0c8ce269944179477",
+      "gitDisposition": "unchanged",
+      "importSha256": "496493a78c164a45a4c8299040a9188c2de8fd71698badb0c8ce269944179477"
+    },
+    {
+      "path": "ontologics-prototype/src/ports.ts",
+      "sourceBytes": 19348,
+      "sourceSha256": "7b84d50d1c92a4ce4f20215e4d0994f95b7c78b6ffbe8f8325e5fac831c0080e",
+      "gitDisposition": "unchanged",
+      "importSha256": "7b84d50d1c92a4ce4f20215e4d0994f95b7c78b6ffbe8f8325e5fac831c0080e"
+    },
+    {
+      "path": "ontologics-prototype/src/product-tables.tsx",
+      "sourceBytes": 7794,
+      "sourceSha256": "f46d02aa63ae5b358438c1f0bf480c7ce0d300b8557af701b7fa3fcd4b1d183b",
+      "gitDisposition": "unchanged",
+      "importSha256": "f46d02aa63ae5b358438c1f0bf480c7ce0d300b8557af701b7fa3fcd4b1d183b"
+    },
+    {
+      "path": "ontologics-prototype/src/product-workspace.tsx",
+      "sourceBytes": 6400,
+      "sourceSha256": "abe697d893ef459db4793f88dd126173a29d2efa3f17712209c6bfc89d0deafd",
+      "gitDisposition": "unchanged",
+      "importSha256": "abe697d893ef459db4793f88dd126173a29d2efa3f17712209c6bfc89d0deafd"
+    },
+    {
+      "path": "ontologics-prototype/src/production-tables.tsx",
+      "sourceBytes": 17078,
+      "sourceSha256": "e3916b315402127b564860bfe8d36a00b0ffe866f4bdef56f9f7e428e940e374",
+      "gitDisposition": "unchanged",
+      "importSha256": "e3916b315402127b564860bfe8d36a00b0ffe866f4bdef56f9f7e428e940e374"
+    },
+    {
+      "path": "ontologics-prototype/src/purchase-tables.tsx",
+      "sourceBytes": 11875,
+      "sourceSha256": "23b40c4d9b938dfffcd57eb289c7f085b0c54fbcdd8083c79e3dc40b928cceeb",
+      "gitDisposition": "unchanged",
+      "importSha256": "23b40c4d9b938dfffcd57eb289c7f085b0c54fbcdd8083c79e3dc40b928cceeb"
+    },
+    {
+      "path": "ontologics-prototype/src/quality-tables.tsx",
+      "sourceBytes": 13037,
+      "sourceSha256": "2c4befd989e19305417b070e3869a5ddff1d2b87f0c4e4d05a7a47ff9a3b9d7d",
+      "gitDisposition": "unchanged",
+      "importSha256": "2c4befd989e19305417b070e3869a5ddff1d2b87f0c4e4d05a7a47ff9a3b9d7d"
+    },
+    {
+      "path": "ontologics-prototype/src/quality-workspace.tsx",
+      "sourceBytes": 9689,
+      "sourceSha256": "0bedb37e31832a8a72a2d9a307ec9a822227cffbba9f796fab23522c04624687",
+      "gitDisposition": "unchanged",
+      "importSha256": "0bedb37e31832a8a72a2d9a307ec9a822227cffbba9f796fab23522c04624687"
+    },
+    {
+      "path": "ontologics-prototype/src/redesign.css",
+      "sourceBytes": 34101,
+      "sourceSha256": "310cff5359cf580215af43f6573d0b3a2497bc5585fadb23055cb3807475d034",
+      "gitDisposition": "unchanged",
+      "importSha256": "310cff5359cf580215af43f6573d0b3a2497bc5585fadb23055cb3807475d034"
+    },
+    {
+      "path": "ontologics-prototype/src/request-forms.css",
+      "sourceBytes": 2270,
+      "sourceSha256": "31f589ae4cb396f2122ed57d8efaa618c0fa917bcedc8f374136337f4fbf5c7c",
+      "gitDisposition": "unchanged",
+      "importSha256": "31f589ae4cb396f2122ed57d8efaa618c0fa917bcedc8f374136337f4fbf5c7c"
+    },
+    {
+      "path": "ontologics-prototype/src/request-forms.tsx",
+      "sourceBytes": 17311,
+      "sourceSha256": "1ccfcf95ccc47e661b7e3397d85dc8021f86cd835492e6c08fc0a960a0368388",
+      "gitDisposition": "unchanged",
+      "importSha256": "1ccfcf95ccc47e661b7e3397d85dc8021f86cd835492e6c08fc0a960a0368388"
+    },
+    {
+      "path": "ontologics-prototype/src/requirements-workspace.tsx",
+      "sourceBytes": 10752,
+      "sourceSha256": "9720838c562cb6d02ae9e6f216aee6a8168be8bbfb18a1b705387ed7cb054de8",
+      "gitDisposition": "unchanged",
+      "importSha256": "9720838c562cb6d02ae9e6f216aee6a8168be8bbfb18a1b705387ed7cb054de8"
+    },
+    {
+      "path": "ontologics-prototype/src/requirements.json",
+      "sourceBytes": 31380,
+      "sourceSha256": "9c88ca58d131de87047503271633075996f1e26e9b1582e1b06db464e1474b93",
+      "gitDisposition": "unchanged",
+      "importSha256": "9c88ca58d131de87047503271633075996f1e26e9b1582e1b06db464e1474b93"
+    },
+    {
+      "path": "ontologics-prototype/src/reviews.tsx",
+      "sourceBytes": 15666,
+      "sourceSha256": "b15f41513bd3fb6b7e87f717fc2cc7cb16efb968227f49fd2307c40a5bffd0c7",
+      "gitDisposition": "unchanged",
+      "importSha256": "b15f41513bd3fb6b7e87f717fc2cc7cb16efb968227f49fd2307c40a5bffd0c7"
+    },
+    {
+      "path": "ontologics-prototype/src/screens.tsx",
+      "sourceBytes": 23822,
+      "sourceSha256": "db2352a089a08cb7f671a062227c8a02c1358d9bf84d461bb40a1566f4890f3a",
+      "gitDisposition": "unchanged",
+      "importSha256": "db2352a089a08cb7f671a062227c8a02c1358d9bf84d461bb40a1566f4890f3a"
+    },
+    {
+      "path": "ontologics-prototype/src/style.css",
+      "sourceBytes": 22940,
+      "sourceSha256": "9790e46216b3eff6cec67d0cff23e348e7d7ac3ffb24b945a5145b4cc7b7d99b",
+      "gitDisposition": "unchanged",
+      "importSha256": "9790e46216b3eff6cec67d0cff23e348e7d7ac3ffb24b945a5145b4cc7b7d99b"
+    },
+    {
+      "path": "ontologics-prototype/src/supplier-quotes.css",
+      "sourceBytes": 4805,
+      "sourceSha256": "230a53d67b0f64cc31116dba85933564e3f4dd3b5e03fef10335854422d36616",
+      "gitDisposition": "unchanged",
+      "importSha256": "230a53d67b0f64cc31116dba85933564e3f4dd3b5e03fef10335854422d36616"
+    },
+    {
+      "path": "ontologics-prototype/src/supplier-quotes.tsx",
+      "sourceBytes": 4380,
+      "sourceSha256": "3593d23722f0272636b4955189c909ac4271aa22d9f9c3f8c3940f32c55c7dcb",
+      "gitDisposition": "unchanged",
+      "importSha256": "3593d23722f0272636b4955189c909ac4271aa22d9f9c3f8c3940f32c55c7dcb"
+    },
+    {
+      "path": "ontologics-prototype/src/trace-workspace.tsx",
+      "sourceBytes": 12716,
+      "sourceSha256": "ff0bc5c40d5c7f9985ca5d31a663ec6263aa8d3647bfb0207cce84275a11416a",
+      "gitDisposition": "unchanged",
+      "importSha256": "ff0bc5c40d5c7f9985ca5d31a663ec6263aa8d3647bfb0207cce84275a11416a"
+    },
+    {
+      "path": "ontologics-prototype/src/ui.tsx",
+      "sourceBytes": 11426,
+      "sourceSha256": "a5d0e766008fb4b032cf547e1f5b2ea47d28e3458649b347eb16df8dad7151e1",
+      "gitDisposition": "unchanged",
+      "importSha256": "a5d0e766008fb4b032cf547e1f5b2ea47d28e3458649b347eb16df8dad7151e1"
+    },
+    {
+      "path": "ontologics-prototype/src/work-items.ts",
+      "sourceBytes": 18346,
+      "sourceSha256": "609b3bce56f73f15a5e87046a3270f0ccccf66f4967509d1dc4b5a3b1e912815",
+      "gitDisposition": "unchanged",
+      "importSha256": "609b3bce56f73f15a5e87046a3270f0ccccf66f4967509d1dc4b5a3b1e912815"
+    },
+    {
+      "path": "ontologics-prototype/src/work-tables.css",
+      "sourceBytes": 9180,
+      "sourceSha256": "1ebbb434b9e4278b9ac8f73c7280507fec9acfb956244f21fb5caa7df140fc50",
+      "gitDisposition": "unchanged",
+      "importSha256": "1ebbb434b9e4278b9ac8f73c7280507fec9acfb956244f21fb5caa7df140fc50"
+    },
+    {
+      "path": "ontologics-prototype/src/work-tables.tsx",
+      "sourceBytes": 10882,
+      "sourceSha256": "a4807a4758f022cf789665c3ae8de0e7ca89cc144f3834975cfb251bf27b957e",
+      "gitDisposition": "unchanged",
+      "importSha256": "a4807a4758f022cf789665c3ae8de0e7ca89cc144f3834975cfb251bf27b957e"
+    },
+    {
+      "path": "ontologics-prototype/src/workflow-tables.css",
+      "sourceBytes": 6977,
+      "sourceSha256": "22ef1b10b0335d34008b35c12269e0d33d76452eec90dae4a6f9245d78a24082",
+      "gitDisposition": "unchanged",
+      "importSha256": "22ef1b10b0335d34008b35c12269e0d33d76452eec90dae4a6f9245d78a24082"
+    },
+    {
+      "path": "ontologics-prototype/src/workflow-tables.tsx",
+      "sourceBytes": 3851,
+      "sourceSha256": "cb5941573957971d6782cde7879e819c0adad2a8c701b96189ad99920b83d26e",
+      "gitDisposition": "unchanged",
+      "importSha256": "cb5941573957971d6782cde7879e819c0adad2a8c701b96189ad99920b83d26e"
+    },
+    {
+      "path": "ontologics-prototype/start.command",
+      "sourceBytes": 284,
+      "sourceSha256": "0e1ffb3695365d58ca09efeb9bf92e781e9002d87e5202577eada23cb94d9637",
+      "gitDisposition": "unchanged",
+      "importSha256": "0e1ffb3695365d58ca09efeb9bf92e781e9002d87e5202577eada23cb94d9637"
+    },
+    {
+      "path": "ontologics-prototype/tests/board-grid.e2e.ts",
+      "sourceBytes": 7637,
+      "sourceSha256": "aa9d0196057965cd11bf87579b2e86469f0f0ed1d604ec919671782c3f924a19",
+      "gitDisposition": "unchanged",
+      "importSha256": "aa9d0196057965cd11bf87579b2e86469f0f0ed1d604ec919671782c3f924a19"
+    },
+    {
+      "path": "ontologics-prototype/tests/dense-grid.e2e.ts",
+      "sourceBytes": 10659,
+      "sourceSha256": "76e92457b17071802981663c490db61ad64f31fcaeb7d3ead44c2a4b37e31305",
+      "gitDisposition": "unchanged",
+      "importSha256": "76e92457b17071802981663c490db61ad64f31fcaeb7d3ead44c2a4b37e31305"
+    },
+    {
+      "path": "ontologics-prototype/tests/domain.unit.test.ts",
+      "sourceBytes": 7959,
+      "sourceSha256": "306ce3e1448a6ac0a77bea1435e0159efa4c0c793596cba0beddfeda8abf2cf2",
+      "gitDisposition": "unchanged",
+      "importSha256": "306ce3e1448a6ac0a77bea1435e0159efa4c0c793596cba0beddfeda8abf2cf2"
+    },
+    {
+      "path": "ontologics-prototype/tests/evidence-grid.e2e.ts",
+      "sourceBytes": 7099,
+      "sourceSha256": "495a87b0012a051fc71bba3ed7bb74bbb0a34f55d33de0b64313e9334c18fbf3",
+      "gitDisposition": "unchanged",
+      "importSha256": "495a87b0012a051fc71bba3ed7bb74bbb0a34f55d33de0b64313e9334c18fbf3"
+    },
+    {
+      "path": "ontologics-prototype/tests/exploration.e2e.ts",
+      "sourceBytes": 9055,
+      "sourceSha256": "5d8546d35f06e95dbc4c6c4fba47a69daaac27434f678976d72aa39e1b4bc2a2",
+      "gitDisposition": "unchanged",
+      "importSha256": "5d8546d35f06e95dbc4c6c4fba47a69daaac27434f678976d72aa39e1b4bc2a2"
+    },
+    {
+      "path": "ontologics-prototype/tests/flows.e2e.ts",
+      "sourceBytes": 27499,
+      "sourceSha256": "3d5efac6a297ddc6d5af184e008fbc4802830364c149e9c64df1965227d9cc04",
+      "gitDisposition": "unchanged",
+      "importSha256": "3d5efac6a297ddc6d5af184e008fbc4802830364c149e9c64df1965227d9cc04"
+    },
+    {
+      "path": "ontologics-prototype/tests/graph-service.node.mjs",
+      "sourceBytes": 9777,
+      "sourceSha256": "44fba74227989e80d480a503c42e1b74d5139d7db01d565375ca460ad71c7fdd",
+      "gitDisposition": "unchanged",
+      "importSha256": "44fba74227989e80d480a503c42e1b74d5139d7db01d565375ca460ad71c7fdd"
+    },
+    {
+      "path": "ontologics-prototype/tests/material-grid.e2e.ts",
+      "sourceBytes": 6621,
+      "sourceSha256": "c8a8dc9c924a49c4916d304d492eb9847eb180464a47027a5a910a0b6f3b30e8",
+      "gitDisposition": "unchanged",
+      "importSha256": "c8a8dc9c924a49c4916d304d492eb9847eb180464a47027a5a910a0b6f3b30e8"
+    },
+    {
+      "path": "ontologics-prototype/tests/material-quality-fixture.ts",
+      "sourceBytes": 2524,
+      "sourceSha256": "07182640a75350f5e349e9ba65164220195345f5202dadf0fb5e33873bd9367f",
+      "gitDisposition": "unchanged",
+      "importSha256": "07182640a75350f5e349e9ba65164220195345f5202dadf0fb5e33873bd9367f"
+    },
+    {
+      "path": "ontologics-prototype/tests/media.e2e.ts",
+      "sourceBytes": 10103,
+      "sourceSha256": "1378e0236fa881f82e2175a0251303b0f742e930bfbc39e1f14bb66c9a09ba46",
+      "gitDisposition": "unchanged",
+      "importSha256": "1378e0236fa881f82e2175a0251303b0f742e930bfbc39e1f14bb66c9a09ba46"
+    },
+    {
+      "path": "ontologics-prototype/tests/media.unit.test.ts",
+      "sourceBytes": 4158,
+      "sourceSha256": "0d706878735996fd9c884a5bbe9ae11be9381a08b6ce7be28de2b5ed21ebe173",
+      "gitDisposition": "unchanged",
+      "importSha256": "0d706878735996fd9c884a5bbe9ae11be9381a08b6ce7be28de2b5ed21ebe173"
+    },
+    {
+      "path": "ontologics-prototype/tests/new-workspaces.e2e.ts",
+      "sourceBytes": 9124,
+      "sourceSha256": "4753c27e2b9838c5cab11b1d82f6c270f179fae7a8e6071c876a7154b896eced",
+      "gitDisposition": "unchanged",
+      "importSha256": "4753c27e2b9838c5cab11b1d82f6c270f179fae7a8e6071c876a7154b896eced"
+    },
+    {
+      "path": "ontologics-prototype/tests/ontology-grid.e2e.ts",
+      "sourceBytes": 5950,
+      "sourceSha256": "d550f9f1a84360cac75bd388465f74d83ebc38804532809a9b7fc5fd308cb88b",
+      "gitDisposition": "unchanged",
+      "importSha256": "d550f9f1a84360cac75bd388465f74d83ebc38804532809a9b7fc5fd308cb88b"
+    },
+    {
+      "path": "ontologics-prototype/tests/operations-grid.e2e.ts",
+      "sourceBytes": 7689,
+      "sourceSha256": "aee3f28c3339070355b0d544b49a61447e906c46a4dda0d92fd6a52d8297c940",
+      "gitDisposition": "unchanged",
+      "importSha256": "aee3f28c3339070355b0d544b49a61447e906c46a4dda0d92fd6a52d8297c940"
+    },
+    {
+      "path": "ontologics-prototype/tests/ports.unit.test.ts",
+      "sourceBytes": 16752,
+      "sourceSha256": "a762aaad6e3992f2a13afa36c450fbafddcb7e57a0b16cf040dc4784e4648ed7",
+      "gitDisposition": "unchanged",
+      "importSha256": "a762aaad6e3992f2a13afa36c450fbafddcb7e57a0b16cf040dc4784e4648ed7"
+    },
+    {
+      "path": "ontologics-prototype/tests/product-grid.e2e.ts",
+      "sourceBytes": 6457,
+      "sourceSha256": "e7c5a3ff5ed4684ed28b03cc18b2b57f75750ff26492c566a93c9d5c920db44a",
+      "gitDisposition": "unchanged",
+      "importSha256": "e7c5a3ff5ed4684ed28b03cc18b2b57f75750ff26492c566a93c9d5c920db44a"
+    },
+    {
+      "path": "ontologics-prototype/tests/quality-grid.e2e.ts",
+      "sourceBytes": 6221,
+      "sourceSha256": "9f0d280f99452293bc419d3032ea3e19a3d2508b3cca579a93a5997cd72dae36",
+      "gitDisposition": "unchanged",
+      "importSha256": "9f0d280f99452293bc419d3032ea3e19a3d2508b3cca579a93a5997cd72dae36"
+    },
+    {
+      "path": "ontologics-prototype/tests/registration-evidence-fixture.ts",
+      "sourceBytes": 2826,
+      "sourceSha256": "0d3ae98d77d21a2742eed526b2b0137d4651b5e19182e24a54678ad0cb37a38b",
+      "gitDisposition": "unchanged",
+      "importSha256": "0d3ae98d77d21a2742eed526b2b0137d4651b5e19182e24a54678ad0cb37a38b"
+    },
+    {
+      "path": "ontologics-prototype/tests/request-forms.e2e.ts",
+      "sourceBytes": 5593,
+      "sourceSha256": "60601234088e37f604d5a852407d36019132019016c4f0e305c5e50729f05f6d",
+      "gitDisposition": "unchanged",
+      "importSha256": "60601234088e37f604d5a852407d36019132019016c4f0e305c5e50729f05f6d"
+    },
+    {
+      "path": "ontologics-prototype/tests/requirements-grid.e2e.ts",
+      "sourceBytes": 6748,
+      "sourceSha256": "964b0946028e6401e555168de7b76417af499ed0533c7fb0854f83951ad423d5",
+      "gitDisposition": "unchanged",
+      "importSha256": "964b0946028e6401e555168de7b76417af499ed0533c7fb0854f83951ad423d5"
+    },
+    {
+      "path": "ontologics-prototype/tests/review-grid.e2e.ts",
+      "sourceBytes": 6848,
+      "sourceSha256": "ba7ca97582abeee06e66a6f20788d9f355af5ed41aa20efed09cf2989831018c",
+      "gitDisposition": "unchanged",
+      "importSha256": "ba7ca97582abeee06e66a6f20788d9f355af5ed41aa20efed09cf2989831018c"
+    },
+    {
+      "path": "ontologics-prototype/tests/trace-grid.e2e.ts",
+      "sourceBytes": 5668,
+      "sourceSha256": "a0868e51c3f7fd5eed04fdc0c5b386c1ff7dad2aa131c62d1099af563ca3456b",
+      "gitDisposition": "unchanged",
+      "importSha256": "a0868e51c3f7fd5eed04fdc0c5b386c1ff7dad2aa131c62d1099af563ca3456b"
+    },
+    {
+      "path": "ontologics-prototype/tests/work-items.unit.test.ts",
+      "sourceBytes": 9381,
+      "sourceSha256": "ce84836483077b5c32190c2d687605302fc2056cf08d5cfd6812fbc397c913d7",
+      "gitDisposition": "unchanged",
+      "importSha256": "ce84836483077b5c32190c2d687605302fc2056cf08d5cfd6812fbc397c913d7"
+    },
+    {
+      "path": "ontologics-prototype/tests/workflow-fixture.ts",
+      "sourceBytes": 3296,
+      "sourceSha256": "f2ba66978ccbb22f773d6002e81655c7283f60462237fbdae0c4ad73eb1afea2",
+      "gitDisposition": "unchanged",
+      "importSha256": "f2ba66978ccbb22f773d6002e81655c7283f60462237fbdae0c4ad73eb1afea2"
+    },
+    {
+      "path": "ontologics-prototype/tests/workflow-grid.e2e.ts",
+      "sourceBytes": 6551,
+      "sourceSha256": "4839615b9e86d1164a55177bf712d997dd054ab16cfe1c55a06c1435db7f3b67",
+      "gitDisposition": "unchanged",
+      "importSha256": "4839615b9e86d1164a55177bf712d997dd054ab16cfe1c55a06c1435db7f3b67"
+    },
+    {
+      "path": "ontologics-prototype/tsconfig.json",
+      "sourceBytes": 291,
+      "sourceSha256": "54dfc5440ca6375db6c587e78e902009ad0128952cc50855ed8afb5ac5ebba32",
+      "gitDisposition": "unchanged",
+      "importSha256": "54dfc5440ca6375db6c587e78e902009ad0128952cc50855ed8afb5ac5ebba32"
+    },
+    {
+      "path": "ontologics-prototype/vite.config.ts",
+      "sourceBytes": 323,
+      "sourceSha256": "275da7ea0926b24c404bed261fe1db1f38ef187ba23c55ceb8089afeec0ceb80",
+      "gitDisposition": "unchanged",
+      "importSha256": "275da7ea0926b24c404bed261fe1db1f38ef187ba23c55ceb8089afeec0ceb80"
+    },
+    {
+      "path": "ontologics-prototype/vitest.config.ts",
+      "sourceBytes": 119,
+      "sourceSha256": "73cd9bc1a25238eff0e84d26cbc8d44f33a24b11342486bf68054dfeca326c30",
+      "gitDisposition": "unchanged",
+      "importSha256": "73cd9bc1a25238eff0e84d26cbc8d44f33a24b11342486bf68054dfeca326c30"
+    }
+  ]
+}
