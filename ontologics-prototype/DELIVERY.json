@@ -1,0 +1,289 @@
+{
+  "service": "ontologics",
+  "version": "UI v2.6 — stable media during graph polling",
+  "date": "2026-11-05",
+  "runtime": "browser Mock + separate loopback in-memory graph projection",
+  "stack": "Existing React 19 + TypeScript + Vite retained",
+  "verified_commands": [
+    "npm run dev -- --port 5175 --strictPort",
+    "npm run graph",
+    "npm run build",
+    "npm test",
+    "ONTO_PREVIEW_URL=http://127.0.0.1:5175 npm run test:e2e -- tests/media.e2e.ts tests/flows.e2e.ts -g '이미지|미디어|사진|별도 그래프|그래프 연결의 반복'"
+  ],
+  "unit_tests_passed": 72,
+  "browser_tests_passed": 9,
+  "server_connected": false,
+  "published": false,
+  "actual_board_types": 1,
+  "actual_bom_snapshots": 2,
+  "synthetic_board_types": 3,
+  "synthetic_bom_snapshots": 3,
+  "actual_missing_models": [
+    "ESP32-POE-ISO",
+    "ESP32-EVB",
+    "ESP32-GATEWAY"
+  ],
+  "actual_200_percent_zoom_verified": false,
+  "narrow_viewports_verified": [
+    390,
+    800
+  ],
+  "media_assets": {
+    "reference_photo": 4,
+    "ai_reference": 28,
+    "total": 32
+  },
+  "media_board_models": {
+    "reference_photo": 4,
+    "ai_reference": 3,
+    "unregistered": 0
+  },
+  "media_part_objects": {
+    "ai_reference": 172,
+    "unregistered": 2,
+    "total": 174
+  },
+  "media_verified_actual_photos": 0,
+  "media_cad_renders": 0,
+  "prior_verification": [
+    {
+      "version": "v2.0",
+      "date": "2026-11-04 23:14 KST",
+      "unit": 54,
+      "browser": 19
+    },
+    {
+      "version": "v2.1",
+      "date": "2026-11-05 00:30~00:31 KST",
+      "unit": 59,
+      "browser": 24
+    },
+    {
+      "version": "v2.2",
+      "date": "2026-11-05 11:37~11:38 KST",
+      "unit": 69,
+      "browser": 27
+    },
+    {
+      "version": "v2.3",
+      "date": "2026-11-05 12:52~12:54 KST",
+      "unit": 69,
+      "browser": 31,
+      "post_layout_subset_passed": 4,
+      "downloads_live_smoke": {
+        "url": "http://127.0.0.1:5174",
+        "time": "2026-11-05 13:00 KST",
+        "workspaces": 4,
+        "photo_and_draft_context": true,
+        "ledger_unchanged": true,
+        "page_errors": 0
+      }
+    },
+    {
+      "version": "v2.4",
+      "date": "2026-11-05 14:21~14:23 KST",
+      "unit": 69,
+      "browser": 37,
+      "downloads_live_smoke": {
+        "url": "http://127.0.0.1:5174",
+        "time": "2026-11-05 14:29 KST",
+        "workspaces": 3,
+        "photo_and_object_context": true,
+        "ledger_unchanged": true,
+        "page_errors": 0
+      }
+    },
+    {
+      "version": "v2.5",
+      "date": "2026-11-05 14:48~14:50 KST",
+      "unit": 69,
+      "browser": 43,
+      "downloads_live_smoke": {
+        "url": "http://127.0.0.1:5174",
+        "time": "2026-11-05 14:53 KST",
+        "workspaces": 3,
+        "photo_and_object_context": true,
+        "exact_draft_navigation": true,
+        "ledger_unchanged": true,
+        "page_errors": 0
+      }
+    },
+    {
+      "version": "v2.6 dense lists",
+      "date": "2026-11-05 15:22~15:24 KST",
+      "unit": 69,
+      "browser": 49,
+      "browser_report": "output/playwright/governance-browser-report-v2.6.html"
+    },
+    {
+      "version": "UI v2.6 — supplier quote cards follow-up",
+      "date": "2026-11-05 21시대 KST",
+      "unit": 69,
+      "browser": 17,
+      "browser_report": "output/playwright/supplier-cards-browser-report/index.html"
+    },
+    {
+      "version": "UI v2.6 — change impact and graph state follow-up",
+      "date": "2026-11-05 22시대 KST",
+      "unit": 72,
+      "browser": 14,
+      "detail": "13 existing tests passed initially; 1 new test passed after graph-root and test-locator fixes. Not a final full 14-test run."
+    },
+    {
+      "version": "UI v2.6 — separate local graph server follow-up",
+      "date": "2026-11-05 22:49~23:02 KST",
+      "unit": 72,
+      "browser": 21,
+      "server": 6,
+      "detail": "21 tests passed on5177; after theme/status style and timeout-test additions, finalbuild and3 live scenarios passed on5175+5176. Earlier20-test run had one row-count expectationfailure, retainedseparately."
+    }
+  ],
+  "verification_time": "2026-11-05 23:27~23:31 KST",
+  "dense_lists": {
+    "work_items": 5,
+    "configuration_rows": 8,
+    "models": 7,
+    "view_state_scope": "company + actor",
+    "data_and_media_unchanged_from": "v2.1"
+  },
+  "media_generated_this_version": 0,
+  "workflow_lists": {
+    "purchase": 4,
+    "planning_production_delivery": 8,
+    "review_history": 2,
+    "shared": "WorkflowTable",
+    "state_scope": "company + actor",
+    "public_contract_changed": false
+  },
+  "capture_data": "Isolated browser test state; user local records preserved during this change",
+  "narrow_viewports_verified_this_version": [
+    390
+  ],
+  "material_quality_lists": {
+    "material_inventory": 4,
+    "trace_mount": 2,
+    "claim_quality": 5,
+    "shared": "WorkflowTable",
+    "state_scope": "company + actor",
+    "public_contract_changed": false,
+    "approval_policy_changed": false,
+    "immutable_files_verified": 44,
+    "unchanged_from": "v2.3"
+  },
+  "new_browser_tests": 1,
+  "browser_report": "output/playwright/image-flicker-fixed-report/index.html",
+  "history_artifacts": {
+    "v2.1": 21,
+    "v2.2": 28,
+    "v2.3": 45,
+    "v2.4": 64,
+    "v2.5": 83
+  },
+  "registration_evidence_lists": {
+    "product": 3,
+    "individual_boards": 2,
+    "documents_evidence": 2,
+    "revision_bom_rows": {
+      "L": 74,
+      "L1": 74
+    },
+    "source_documents": 4,
+    "synthetic_evidence_records": 7,
+    "shared": "WorkflowTable",
+    "state_scope": "company + actor",
+    "public_contract_changed": false,
+    "approval_policy_changed": false,
+    "immutable_files_verified": 44,
+    "unchanged_from": "v2.4"
+  },
+  "governance_lists": {
+    "ontology": 3,
+    "operations": 4,
+    "requirements": 4,
+    "requirement_definitions": 45,
+    "decisions": 7,
+    "acceptance_definitions": 8,
+    "integration_boundaries": 6,
+    "shared": "WorkflowTable",
+    "reference_mode_preserves_business_selection": true,
+    "state_scope": "company + actor",
+    "public_contract_changed": false,
+    "approval_policy_changed": false,
+    "immutable_files_verified": 45,
+    "unchanged_from": "v2.5"
+  },
+  "downloads_live_smoke": {
+    "url": "http://127.0.0.1:5175",
+    "graph_url": "http://127.0.0.1:5176",
+    "time": "2026-11-05 23:30 KST",
+    "isolated_test_profile": true,
+    "scenario_passed": 9,
+    "user_state_unchanged": true,
+    "approval_apply_separate": true,
+    "graph_properties_updated": true,
+    "account_revocation_late_response": true,
+    "network_timeout_and_retry": true
+  },
+  "supplier_quote_cards": {
+    "suppliers": 2,
+    "data_changed": false,
+    "approval_policy_changed": false,
+    "public_contract_changed": false,
+    "only_v26": true,
+    "post_label_fix": "build and manual browser checks; no full 17-test rerun"
+  },
+  "browser_validation_detail": "Beforefix reproducer failed as expected due to replacedbusiness tableimage DOM. Final72unit and9 focusedbrowser checks passed; earlier21/49 fullbrowser and6 servertests were not rerun.",
+  "change_impact": {
+    "screens": [
+      "UI02",
+      "UI05",
+      "UI07"
+    ],
+    "local_read_only_projection": true,
+    "graph_properties_use_current_object": true,
+    "graph_edges_changed": false,
+    "actual_realtime_collaboration": false,
+    "rdf_projection_connected": false,
+    "approval_policy_changed": false
+  },
+  "local_graph_server_connected": true,
+  "separate_graph": {
+    "port": 5176,
+    "business_port": 5175,
+    "v20_port": 5174,
+    "mode": "local-mock-projection",
+    "persistent": false,
+    "rdf_engine": false,
+    "real_auth": false,
+    "multi_user_editing": false,
+    "same_entity_ids": true,
+    "fixture_entities": 202,
+    "fixture_relations": 191,
+    "new_edges_invented": false,
+    "approval_policy_changed": false,
+    "production_public_api_finalized": false,
+    "poll_ms": 700,
+    "simulated_projection_delay_ms": 400,
+    "session_ttl_hours": 2,
+    "delivery_limits": {
+      "nodes": 5000,
+      "relations": 10000,
+      "bytes": 4194304
+    },
+    "actual_100000_load_test": false,
+    "media_assets_changed": false
+  },
+  "delivery_file": "ontologics-ui-redesign-v2.6.zip",
+  "image_stability": {
+    "unchanged_status_preserves_view": true,
+    "full_snapshot_only_when_completed_sequence_changes": true,
+    "idle_image_requests_observed": 0,
+    "idle_full_snapshot_requests_observed": 0,
+    "business_and_graph_image_nodes_retained": true,
+    "existing_media_assets_unchanged": 32,
+    "immutable_business_data_media_files_verified": 35,
+    "graph_content_removed": false,
+    "tests_auto_run_in_app": false
+  }
+}

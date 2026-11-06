@@ -1,0 +1,22 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+
+# Import validation and local-only files
+output/
+.openai/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+
+# Manufacturer reference photos: redistribution rights are unconfirmed.
+# Restore locally with npm run assets:fetch; never force-add these files.
+/public/media/olimex-poe.jpg
+/public/media/olimex-poeiso.jpg
+/public/media/olimex-evb.jpg
+/public/media/olimex-gateway.jpg

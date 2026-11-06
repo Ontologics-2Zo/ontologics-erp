@@ -1,0 +1,201 @@
+{
+  "generatedAt": "2026-11-05",
+  "assets": [
+    {
+      "id": "board-io",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One unbranded generic compact green industrial digital I/O printed circuit board for 24V signals, rows of green screw terminal blocks, a central controller, small black protection components and passives. Generic arrangement for a synthetic IO-24 demo; do not label channel count or voltages.",
+      "method": "built-in image_gen",
+      "file": "public/media/board-io.png",
+      "original": "exec-368f6369-8700-4d85-8434-723d1074b210.png"
+    },
+    {
+      "id": "board-sense",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One unbranded generic compact green sensor interface printed circuit board, a central ADC chip, four small terminal connection groups and isolated signal circuitry. Generic arrangement for synthetic SENSE-4 demo, no readable markings.",
+      "method": "built-in image_gen",
+      "file": "public/media/board-sense.png",
+      "original": "exec-dbdcd872-bc2e-43bb-b0e5-18455a52811d.png"
+    },
+    {
+      "id": "board-power",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One unbranded generic compact green power distribution printed circuit board, screw terminals, copper power traces, black protection devices and a few capacitors, no indicator text. Generic arrangement for synthetic PWR-12 demo, not a precise design.",
+      "method": "built-in image_gen",
+      "file": "public/media/board-power.png",
+      "original": "exec-26e67284-2c7b-4032-96c6-af94ccec1e21.png"
+    },
+    {
+      "id": "resistor",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked surface mount chip resistor, black rectangular ceramic top, light ceramic underside and two silver end terminations, no printed resistance code. Generic chip resistor family, no size claim.",
+      "method": "built-in image_gen",
+      "file": "public/media/resistor.png",
+      "original": "exec-77c0e300-3ef7-4dd8-b3db-5b23387cc078.png"
+    },
+    {
+      "id": "mlcc",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked tan multilayer ceramic chip capacitor with two metallic silver end terminations. Generic MLCC, no size or capacitance claim.",
+      "method": "built-in image_gen",
+      "file": "public/media/mlcc.png",
+      "original": "exec-86b8c16c-8e07-45fa-ae46-cef786de2a61.png"
+    },
+    {
+      "id": "soic8",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked black SOIC-8 integrated circuit package, exactly four silver gull-wing leads on each of two opposing long sides (eight leads total), blank top. Generic package only.",
+      "method": "built-in image_gen",
+      "file": "public/media/soic8.png",
+      "original": "exec-780da6df-43f6-4428-a117-dc5b21ec6985.png"
+    },
+    {
+      "id": "qfn",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked black square flat no-lead integrated circuit package, small silver terminations along lower edges, no visible pin numbering. Generic QFN family.",
+      "method": "built-in image_gen",
+      "file": "public/media/qfn.png",
+      "original": "exec-5e5f4913-2c14-41b5-8ec3-0224751aa7f0.png"
+    },
+    {
+      "id": "sot23",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked small black SOT-23 three terminal transistor package, exactly two silver gullwing leads on one long side and one on opposite side. Blank top.",
+      "method": "built-in image_gen",
+      "file": "public/media/sot23.png",
+      "original": "exec-f829b34e-4fcc-4938-b715-aa685c5aa7a9.png"
+    },
+    {
+      "id": "diode",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked two terminal black rectangular surface mount diode with metal silver end terminations, generic axial-free SMD family, no code.",
+      "method": "built-in image_gen",
+      "file": "public/media/diode.png",
+      "original": "exec-d62c6593-8e67-4027-9fc9-45242da396b6.png"
+    },
+    {
+      "id": "terminal",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic green two-position PCB screw terminal block connector, two metal screw heads and two circular wire entry holes. No symbols or markings.",
+      "method": "built-in image_gen",
+      "file": "public/media/terminal.png",
+      "original": "exec-a903d008-936d-4b5e-8c7b-ceb1f2ec113e.png"
+    },
+    {
+      "id": "crystal",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic surface-mount quartz crystal oscillator package: small rounded rectangular metallic silver lid on dark ceramic base with subtle gold contact pads at bottom edges. Completely blank metal lid.",
+      "method": "built-in image_gen",
+      "file": "public/media/crystal.png",
+      "original": "exec-c22623fa-a960-4516-9cda-cae67b028c50.png"
+    },
+    {
+      "id": "tactile",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic low-profile PCB tactile pushbutton switch, square silver metal frame with central small round dark actuator and small metal side contacts. No text or symbols.",
+      "method": "built-in image_gen",
+      "file": "public/media/tactile.png",
+      "original": "exec-ea5016a7-b38b-488a-a047-f7edad826490.png"
+    },
+    {
+      "id": "micro-usb",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic micro USB female receptacle PCB component, small silver stamped shielding shell, dark interior tongue and tiny rear terminals, unconnected, no markings.",
+      "method": "built-in image_gen",
+      "file": "public/media/micro-usb.png",
+      "original": "exec-8773d1ae-93b0-4f01-80ed-41b05c775f04.png"
+    },
+    {
+      "id": "rj45",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic shielded RJ45 Ethernet female jack PCB component, silver rectangular shell, black interior opening and small contacts, small translucent indicator windows, no writing, no logo.",
+      "method": "built-in image_gen",
+      "file": "public/media/rj45.png",
+      "original": "exec-5435e4a1-2627-4d46-957a-dc1b0111dd85.png"
+    },
+    {
+      "id": "microsd",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic empty microSD card socket for a printed circuit board, thin silver stamped metal shell, dark insulating base and small side solder feet. No card, no text.",
+      "method": "built-in image_gen",
+      "file": "public/media/microsd.png",
+      "original": "exec-3cf49920-6856-4c13-813e-517a4f2327be.png"
+    },
+    {
+      "id": "header",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic unshrouded single row of ten straight square gold male header pins held in a black plastic insulating strip, unmarked. No wires or PCB.",
+      "method": "built-in image_gen",
+      "file": "public/media/header.png",
+      "original": "exec-4292e6a1-1dfd-4db5-81b4-93ca2558ea37.png"
+    },
+    {
+      "id": "pcb",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic unpopulated green printed circuit board, subtle copper traces under green solder mask, silver solder pads and four mounting holes, no mounted components. No letters, numbers, brand marks, reference designators or words.",
+      "method": "built-in image_gen",
+      "file": "public/media/pcb.png",
+      "original": "exec-84335172-3dbb-4ed2-adba-e41840448778.png"
+    },
+    {
+      "id": "esd",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic bidirectional leadless ESD protection diode chip, very small low-profile dark charcoal rectangular ceramic body with two silver metal end terminations and no external projecting leads. No polarity stripe, no printing, no text, no exact model claim. Generic 0402-class protective component reference, not a dimensional or polarity diagram.",
+      "method": "built-in image_gen",
+      "file": "public/media/esd.png",
+      "original": "exec-e8e74cbb-1ad9-4422-a71c-b69e188e3560.png"
+    },
+    {
+      "id": "array",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single unmarked surface mount resistor array: elongated black rectangular ceramic body, four metallic terminations spaced along each of its two opposing long sides. Generic resistor network, no size claim.",
+      "method": "built-in image_gen",
+      "file": "public/media/array.png",
+      "original": "exec-44b82816-be06-4bff-861e-07fb0b693fbb.png"
+    },
+    {
+      "id": "ferrite",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single surface mount ferrite bead, small dark gray matte rectangular ceramic block with two silver end caps. No printing, generic EMI bead.",
+      "method": "built-in image_gen",
+      "file": "public/media/ferrite.png",
+      "original": "exec-6e3d9d0b-ede8-46f1-8877-91f4818f934a.png"
+    },
+    {
+      "id": "inductor",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic shielded power inductor, compact dark charcoal square ferrite body and rounded recessed top, two visible low silver mounting contacts, no markings.",
+      "method": "built-in image_gen",
+      "file": "public/media/inductor.png",
+      "original": "exec-eb34856e-7066-4065-9150-8b5bd0c10777.png"
+    },
+    {
+      "id": "electrolytic",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single upright generic aluminum electrolytic capacitor: silver cylinder top with vent cross, plain dark sleeve without any writing or symbols, two metal leads below, no printed polarity or voltage.",
+      "method": "built-in image_gen",
+      "file": "public/media/electrolytic.png",
+      "original": "exec-8920a6b7-9e52-4be1-b61c-adfaab79db68.png"
+    },
+    {
+      "id": "sot5",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic black SOT-23-5 semiconductor package, exactly three silver gull-wing leads on one long side and two on opposite side, five total, completely blank top.",
+      "method": "built-in image_gen",
+      "file": "public/media/sot5.png",
+      "original": "exec-4c55944c-0554-4d65-9d0c-14f32842c3a4.png"
+    },
+    {
+      "id": "ssop20",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic black SSOP-20 rectangular integrated circuit package, exactly ten fine silver gullwing leads on each of two long sides, twenty total, completely blank top.",
+      "method": "built-in image_gen",
+      "file": "public/media/ssop20.png",
+      "original": "exec-d94b0c2c-5ec9-4504-9746-9ec69d10f19d.png"
+    },
+    {
+      "id": "rfmodule",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic compact radio module on small green printed circuit substrate, plain unmarked silver RF shielding can and a small exposed gold printed antenna region. No chip text, no logos or approval marks. Generic wireless module reference, not an exact branded module.",
+      "method": "built-in image_gen",
+      "file": "public/media/rfmodule.png",
+      "original": "exec-ad63f6e7-1203-488a-a62e-13bd96768f3e.png"
+    },
+    {
+      "id": "led",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic unpowered surface-mount LED component, off-white rectangular ceramic base, clear small lens with pale yellow semiconductor inside, two metallic end contacts. No light emission, no writing, no claimed light color.",
+      "method": "built-in image_gen",
+      "file": "public/media/led.png",
+      "original": "exec-0ebc240a-7337-485a-b774-0ddde10c6603.png"
+    },
+    {
+      "id": "battery-connector",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic small white two-pin surface-mount PCB battery connector, upright top-entry rectangular plastic housing, two gold contacts visible through two cavities on top, tiny silver PCB solder mounting tabs. Generic 2mm pitch connector type, no exact dimensions or manufacturer claim.",
+      "method": "built-in image_gen",
+      "file": "public/media/battery-connector.png",
+      "original": "exec-84a18527-91a7-4d4e-a6b9-d77a360bcc5e.png"
+    },
+    {
+      "id": "boxed-header",
+      "prompt": "Use case: product-mockup. Asset type: reusable photographic reference for a dense manufacturing ERP, not an engineering rendering. Single object centered, seamless cool light gray (#eef2f6) studio background, soft upper left diffuse light, realistic materials, subtle grounded shadow, consistent elevated three-quarter view showing top and front, generous 16% margin on all sides, square image. No text, letters, numbers, brand logos, certification marks, barcodes, serial numbers, watermarks or labels anywhere. No wires, hands, tools or decorative props. This is a generic illustrative device, not any exact real manufacturer's design. One single generic black shrouded rectangular PCB box header connector with two rows of five gold pins inside a rectangular black plastic surround, ten pins total, key notch in wall, short silver solder feet below. Unmarked generic 10-pin connector.",
+      "method": "built-in image_gen",
+      "file": "public/media/boxed-header.png",
+      "original": "exec-04b49bf7-977a-4222-b180-7e825ef8c007.png"
+    }
+  ]
+}

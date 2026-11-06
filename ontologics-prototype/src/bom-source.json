@@ -1,0 +1,1506 @@
+{
+  "L": [
+    {
+      "row": 2,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "Quantity",
+        "Designation",
+        "Package",
+        "Designator"
+      ]
+    },
+    {
+      "row": 3,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "0.03R/1%/R1206",
+        "R1206",
+        "R28"
+      ]
+    },
+    {
+      "row": 4,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.7R/R0402",
+        "R0402",
+        "R33"
+      ]
+    },
+    {
+      "row": 5,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "10R/R0402",
+        "R0402",
+        "R40"
+      ]
+    },
+    {
+      "row": 6,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "4",
+        "49.9R/1%/R0402",
+        "R0402",
+        "R10,R11,R12,R13"
+      ]
+    },
+    {
+      "row": 7,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "3",
+        "220R/R0402",
+        "R0402",
+        "R24,R46, R47"
+      ]
+    },
+    {
+      "row": 8,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "3",
+        "1k/R0402",
+        "R0402",
+        "R3,R20 ,R21"
+      ]
+    },
+    {
+      "row": 9,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "8",
+        "2.2k/R0402",
+        "R0402",
+        "R5,R6,R8,R14,R15, R31 ,R35,R41"
+      ]
+    },
+    {
+      "row": 10,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "3",
+        "RA1206_(4X0603)_4B8_2.2k",
+        "RA1206",
+        "RM1,RM2,RM3"
+      ]
+    },
+    {
+      "row": 11,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.42k/1%/1/16W/R0402",
+        "R0402",
+        "R27"
+      ]
+    },
+    {
+      "row": 12,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.7k/R2512",
+        "R2512",
+        "R42"
+      ]
+    },
+    {
+      "row": 13,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "5.23k/1%/R0402",
+        "R0402",
+        "R34"
+      ]
+    },
+    {
+      "row": 14,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "11",
+        "10k/R0402",
+        "R0402",
+        "R1,R2,R18,R19,R25,R32, R36,R37, R39,R48, R51"
+      ]
+    },
+    {
+      "row": 15,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "12.1k/1%/R0402",
+        "R0402",
+        "R26"
+      ]
+    },
+    {
+      "row": 16,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "24.9k/1%/R0402",
+        "R0402",
+        "R7"
+      ]
+    },
+    {
+      "row": 17,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "30.1k/1%/R0402",
+        "R0402",
+        "R38"
+      ]
+    },
+    {
+      "row": 18,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "47k/R0402",
+        "R0402",
+        "R4"
+      ]
+    },
+    {
+      "row": 19,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "49.9k/1%/R0402",
+        "R0402",
+        "R30"
+      ]
+    },
+    {
+      "row": 20,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "100k/R0402",
+        "R0402",
+        "R9"
+      ]
+    },
+    {
+      "row": 21,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "130k/R0402",
+        "R0402",
+        "R50"
+      ]
+    },
+    {
+      "row": 22,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "180k/1%/R0402",
+        "R0402",
+        "R23"
+      ]
+    },
+    {
+      "row": 23,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "220k/R0402",
+        "R0402",
+        "R29"
+      ]
+    },
+    {
+      "row": 24,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "470k/R0402",
+        "R0402",
+        "R17, R22"
+      ]
+    },
+    {
+      "row": 25,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "3",
+        "FB0805/600R/2A",
+        "L0805",
+        "L1, L3,L5"
+      ]
+    },
+    {
+      "row": 26,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "2.2uH/1.5A/DCR=72mR/ 20%/3.00x3.00x1.50mm/ CD32(NR3015T2R2M)",
+        "CD32",
+        "L2"
+      ]
+    },
+    {
+      "row": 27,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "33uH/2.1A/DCR=0.1R/20%/ DBS135(PD3316MT330)",
+        "DBS135",
+        "L4"
+      ]
+    },
+    {
+      "row": 28,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "12pF/50V/5%/COG/C0402",
+        "C0402",
+        "C23"
+      ]
+    },
+    {
+      "row": 29,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "27pF/50V/5%/C0G/C0402",
+        "C0402",
+        "C4, C5"
+      ]
+    },
+    {
+      "row": 30,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1nF/50V/10%/X7R/C0402",
+        "C0402",
+        "C19"
+      ]
+    },
+    {
+      "row": 31,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1nF/2000V/10%/X7R/C1206",
+        "C1206",
+        "C2"
+      ]
+    },
+    {
+      "row": 32,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "6",
+        "100nF/16V/10%/X7R/C0402",
+        "C0402",
+        "C8,C11,C14,C15 , C16,C18"
+      ]
+    },
+    {
+      "row": 33,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "100nF/100V/10%/X7R/C0603",
+        "C0603",
+        "C12, C24"
+      ]
+    },
+    {
+      "row": 34,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1uF/10V/20%/X5R/C0603",
+        "C0603",
+        "C20"
+      ]
+    },
+    {
+      "row": 35,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "2.2uF/6.3V/10%/X5R/C0603",
+        "C0603",
+        "C17"
+      ]
+    },
+    {
+      "row": 36,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "15uF/100V/20%/RM2.5/ 6.3x11mm(Farnell:1281844)",
+        "CPOL-RM2.5mm_ 6.3x11mm_PTH",
+        "C27"
+      ]
+    },
+    {
+      "row": 37,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "6",
+        "22uF/6.3V/20%/X5R/C0603",
+        "C0603",
+        "C1,C6,C7,C9,C10 ,C13"
+      ]
+    },
+    {
+      "row": 38,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "47uF/6.3V/20%/X5R/C0805",
+        "C_0805_5MIL_DWS",
+        "C3, C22"
+      ]
+    },
+    {
+      "row": 39,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "470uF/10V/20%/Low_ESR/ RM2.5/6.0x11mm",
+        "CPOL-RM2.5mm_ 6.3x11mm_PTH",
+        "C25"
+      ]
+    },
+    {
+      "row": 40,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "BAT54C(SOT23-3)",
+        "SOT23-3",
+        "D2"
+      ]
+    },
+    {
+      "row": 41,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "4",
+        "1N5819S4(SOD-123)",
+        "SOD-123",
+        "D4,D6,D7, D9"
+      ]
+    },
+    {
+      "row": 42,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "1N5822/SS34/SMA",
+        "SMA",
+        "D1, D3"
+      ]
+    },
+    {
+      "row": 43,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SS510/100V/5A/0.85V/ DO214AB(SMC)",
+        "DO214AB(SMC)",
+        "D5"
+      ]
+    },
+    {
+      "row": 44,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SMAJ58A/SMA",
+        "SMA",
+        "D8"
+      ]
+    },
+    {
+      "row": 45,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "ESDS314DBVR(SOT-23-5)",
+        "SOT-23-5",
+        "TVS1"
+      ]
+    },
+    {
+      "row": 46,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LED/RED/0603",
+        "LED_0603",
+        "PWR1"
+      ]
+    },
+    {
+      "row": 47,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LED/GREEN/0603",
+        "LED_0603",
+        "LNK1"
+      ]
+    },
+    {
+      "row": 48,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "LED/YELLOW/0603",
+        "LED_0603",
+        "ACT1,CHRG1"
+      ]
+    },
+    {
+      "row": 49,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "BC817-40(SOT23)",
+        "SOT23",
+        "Q2, Q3"
+      ]
+    },
+    {
+      "row": 50,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LMUN2211LT1G(SOT-23)",
+        "SOT23",
+        "T1"
+      ]
+    },
+    {
+      "row": 51,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "3",
+        "WPM2015-3/TR",
+        "SOT23",
+        "FET1,FET2, FET3"
+      ]
+    },
+    {
+      "row": 52,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "BL4054B-42TPRN(SOT23-5)",
+        "SOT-23-5",
+        "U3"
+      ]
+    },
+    {
+      "row": 53,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "CH340T(SSOP20W)",
+        "SSOP-20W",
+        "U1"
+      ]
+    },
+    {
+      "row": 54,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "ESP32-WROOM-32E",
+        "ESP32-WROVER (WROOM)- UNIVERSAL_ MODULE",
+        "U6"
+      ]
+    },
+    {
+      "row": 55,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LAN8710A-EZC(QFN32)",
+        "QFN32",
+        "U4"
+      ]
+    },
+    {
+      "row": 56,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SY8089AAAC(SOT23-5)",
+        "SOT-23-5",
+        "U7"
+      ]
+    },
+    {
+      "row": 57,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TPS2376D(SO-8)",
+        "SOIC-8",
+        "U2"
+      ]
+    },
+    {
+      "row": 58,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TX4138(ESOIC-8)",
+        "ESOIC-8",
+        "U5"
+      ]
+    },
+    {
+      "row": 59,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "Q12MHz/20pF/10ppm/4P/3.2x2.5mm",
+        "TSX-3.2x2.5mm",
+        "Q1"
+      ]
+    },
+    {
+      "row": 60,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "IT1185AU2",
+        "IT1185AU2",
+        "BUT1,RST1"
+      ]
+    },
+    {
+      "row": 61,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "DW02S",
+        "DW02S",
+        "BAT1"
+      ]
+    },
+    {
+      "row": 62,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "MISB-SWMM-5B-LF(USB_MICRO)",
+        "MISB-SWMM-5B_LF",
+        "USB-UART1"
+      ]
+    },
+    {
+      "row": 63,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "RJP-003TC1(LPJ4112CNL)",
+        "RJP-003TC1 (LPJ4112CNL)",
+        "LAN_CON1"
+      ]
+    },
+    {
+      "row": 64,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TFC-9P-1.7H(ATFFS150A01BR016)",
+        "uSD(TFC-9P-1.xH)",
+        "MICRO_SD1"
+      ]
+    },
+    {
+      "row": 65,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "P-B-V-10-LF",
+        "GBH-254-SMT-10",
+        "UEXT1"
+      ]
+    },
+    {
+      "row": 68,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "Opened",
+        "SJ_1_SMALLER",
+        "BAT_SENS_E1"
+      ]
+    },
+    {
+      "row": 71,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NA/R0402",
+        "R0402",
+        "R44,R49"
+      ]
+    },
+    {
+      "row": 72,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(10R/R0402)",
+        "R0402",
+        "R45"
+      ]
+    },
+    {
+      "row": 73,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(22R/R0603)",
+        "R0603",
+        "R43"
+      ]
+    },
+    {
+      "row": 74,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(10k/R0402)",
+        "R0402",
+        "R16"
+      ]
+    },
+    {
+      "row": 75,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(220pF/100V/C0603)",
+        "C0603",
+        "C26"
+      ]
+    },
+    {
+      "row": 76,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(100nF/16V/10%/X7R/C0402 )",
+        "C0402",
+        "C28"
+      ]
+    },
+    {
+      "row": 77,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(10uF/6.3V/20%/X5R/C0603)",
+        "C0603",
+        "C21"
+      ]
+    },
+    {
+      "row": 78,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NA(GG0402052R542P)",
+        "D0402",
+        "TVS2,TVS3"
+      ]
+    },
+    {
+      "row": 79,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(SN74LVC1G04DBVR(SOT23-5))",
+        "SOT-23-5",
+        "U8"
+      ]
+    },
+    {
+      "row": 82,
+      "sheet": "ESP32-PoE_Rev_J-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NS(HN1x10)",
+        "HN1x10",
+        "EXT1, EXT2"
+      ]
+    }
+  ],
+  "L1": [
+    {
+      "row": 2,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "Quantity",
+        "Designation",
+        "Package",
+        "Designator"
+      ]
+    },
+    {
+      "row": 3,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "0.03R/1%/R1206",
+        "R1206",
+        "R28"
+      ]
+    },
+    {
+      "row": 4,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.7R/R0402",
+        "R0402",
+        "R33"
+      ]
+    },
+    {
+      "row": 5,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "10R/R0402",
+        "R0402",
+        "R40"
+      ]
+    },
+    {
+      "row": 6,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "4",
+        "49.9R/1%/R0402",
+        "R0402",
+        "R10,R11,R12,R13"
+      ]
+    },
+    {
+      "row": 7,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "3",
+        "220R/R0402",
+        "R0402",
+        "R24,R46, R47"
+      ]
+    },
+    {
+      "row": 8,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "3",
+        "1k/R0402",
+        "R0402",
+        "R3,R20 ,R21"
+      ]
+    },
+    {
+      "row": 9,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "7",
+        "2.2k/R0402",
+        "R0402",
+        "R5,R8,R14,R15, R31 ,R35,R41"
+      ]
+    },
+    {
+      "row": 10,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "3",
+        "RA1206_(4X0603)_4B8_2.2k",
+        "RA1206",
+        "RM1,RM2,RM3"
+      ]
+    },
+    {
+      "row": 11,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.42k/1%/1/16W/R0402",
+        "R0402",
+        "R27"
+      ]
+    },
+    {
+      "row": 12,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "4.7k/R2512",
+        "R2512",
+        "R42"
+      ]
+    },
+    {
+      "row": 13,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "5.23k/1%/R0402",
+        "R0402",
+        "R34"
+      ]
+    },
+    {
+      "row": 14,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "11",
+        "10k/R0402",
+        "R0402",
+        "R1,R2,R6,R18,R19,R25, R32,R36,R37, R39,R48"
+      ]
+    },
+    {
+      "row": 15,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "12.1k/1%/R0402",
+        "R0402",
+        "R26"
+      ]
+    },
+    {
+      "row": 16,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "24.9k/1%/R0402",
+        "R0402",
+        "R7"
+      ]
+    },
+    {
+      "row": 17,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "30.1k/1%/R0402",
+        "R0402",
+        "R38"
+      ]
+    },
+    {
+      "row": 18,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "47k/R0402",
+        "R0402",
+        "R4"
+      ]
+    },
+    {
+      "row": 19,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "49.9k/1%/R0402",
+        "R0402",
+        "R30"
+      ]
+    },
+    {
+      "row": 20,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "100k/R0402",
+        "R0402",
+        "R9"
+      ]
+    },
+    {
+      "row": 21,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "180k/1%/R0402",
+        "R0402",
+        "R23"
+      ]
+    },
+    {
+      "row": 22,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "220k/R0402",
+        "R0402",
+        "R29"
+      ]
+    },
+    {
+      "row": 23,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "470k/R0402",
+        "R0402",
+        "R17, R22"
+      ]
+    },
+    {
+      "row": 24,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "3",
+        "FB0805/600R/2A",
+        "L0805",
+        "L1, L3,L5"
+      ]
+    },
+    {
+      "row": 25,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "2.2uH/1.5A/DCR=72mR/ 20%/3.00x3.00x1.50mm/ CD32(NR3015T2R2M)",
+        "CD32",
+        "L2"
+      ]
+    },
+    {
+      "row": 26,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "33uH/2.1A/DCR=0.1R/20%/ DBS135(PD3316MT330)",
+        "DBS135",
+        "L4"
+      ]
+    },
+    {
+      "row": 27,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "12pF/50V/5%/COG/C0402",
+        "C0402",
+        "C23"
+      ]
+    },
+    {
+      "row": 28,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "27pF/50V/5%/C0G/C0402",
+        "C0402",
+        "C4, C5"
+      ]
+    },
+    {
+      "row": 29,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1nF/50V/10%/X7R/C0402",
+        "C0402",
+        "C19"
+      ]
+    },
+    {
+      "row": 30,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1nF/2000V/10%/X7R/C1206",
+        "C1206",
+        "C2"
+      ]
+    },
+    {
+      "row": 31,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "6",
+        "100nF/16V/10%/X7R/C0402",
+        "C0402",
+        "C8,C11,C14,C15 , C16,C18"
+      ]
+    },
+    {
+      "row": 32,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "100nF/100V/10%/X7R/C0603",
+        "C0603",
+        "C12, C24"
+      ]
+    },
+    {
+      "row": 33,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "1uF/10V/20%/X5R/C0603",
+        "C0603",
+        "C20"
+      ]
+    },
+    {
+      "row": 34,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "2.2uF/6.3V/10%/X5R/C0603",
+        "C0603",
+        "C17"
+      ]
+    },
+    {
+      "row": 35,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "15uF/100V/20%/RM2.5/ 6.3x11mm(Farnell:1281844)",
+        "CPOL-RM2.5mm_ 6.3x11mm_PTH",
+        "C27"
+      ]
+    },
+    {
+      "row": 36,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "6",
+        "22uF/6.3V/20%/X5R/C0603",
+        "C0603",
+        "C1,C6,C7,C9,C10 ,C13"
+      ]
+    },
+    {
+      "row": 37,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "47uF/6.3V/20%/X5R/C0805",
+        "C_0805_5MIL_DWS",
+        "C3, C22"
+      ]
+    },
+    {
+      "row": 38,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "470uF/10V/20%/Low_ESR/ RM2.5/6.0x11mm",
+        "CPOL-RM2.5mm_ 6.3x11mm_PTH",
+        "C25"
+      ]
+    },
+    {
+      "row": 39,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "BAT54C(SOT23-3)",
+        "SOT23-3",
+        "D2"
+      ]
+    },
+    {
+      "row": 40,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "4",
+        "1N5819S4(SOD-123)",
+        "SOD-123",
+        "D4,D6,D7, D9"
+      ]
+    },
+    {
+      "row": 41,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "1N5822/SS34/SMA",
+        "SMA",
+        "D1, D3"
+      ]
+    },
+    {
+      "row": 42,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SS510/100V/5A/0.85V/ DO214AB(SMC)",
+        "DO214AB(SMC)",
+        "D5"
+      ]
+    },
+    {
+      "row": 43,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SMAJ58A/SMA",
+        "SMA",
+        "D8"
+      ]
+    },
+    {
+      "row": 44,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "ESDS314DBVR(SOT-23-5)",
+        "SOT-23-5",
+        "TVS1"
+      ]
+    },
+    {
+      "row": 45,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LED/RED/0603",
+        "LED_0603",
+        "PWR1"
+      ]
+    },
+    {
+      "row": 46,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LED/GREEN/0603",
+        "LED_0603",
+        "LNK1"
+      ]
+    },
+    {
+      "row": 47,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "LED/YELLOW/0603",
+        "LED_0603",
+        "ACT1,CHRG1"
+      ]
+    },
+    {
+      "row": 48,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "BC817-40(SOT23)",
+        "SOT23",
+        "Q2, Q3"
+      ]
+    },
+    {
+      "row": 49,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LMUN2211LT1G(SOT-23)",
+        "SOT23",
+        "T1"
+      ]
+    },
+    {
+      "row": 50,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "3",
+        "WPM2015-3/TR",
+        "SOT23",
+        "FET1,FET2, FET3"
+      ]
+    },
+    {
+      "row": 51,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "BL4054B-42TPRN(SOT23-5)",
+        "SOT-23-5",
+        "U3"
+      ]
+    },
+    {
+      "row": 52,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "CH340T(SSOP20W)",
+        "SSOP-20W",
+        "U1"
+      ]
+    },
+    {
+      "row": 53,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "ESP32-WROOM-32E",
+        "ESP32-WROVER (WROOM)- UNIVERSAL_ MODULE",
+        "U6"
+      ]
+    },
+    {
+      "row": 54,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "LAN8710A-EZC(QFN32)",
+        "QFN32",
+        "U4"
+      ]
+    },
+    {
+      "row": 55,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "SY8089AAAC(SOT23-5)",
+        "SOT-23-5",
+        "U7"
+      ]
+    },
+    {
+      "row": 56,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TPS2375D(SO-8)",
+        "SOIC-8",
+        "U2"
+      ]
+    },
+    {
+      "row": 57,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TX4138(ESOIC-8)",
+        "ESOIC-8",
+        "U5"
+      ]
+    },
+    {
+      "row": 58,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "Q12MHz/20pF/10ppm/4P/3.2x2.5mm",
+        "TSX-3.2x2.5mm",
+        "Q1"
+      ]
+    },
+    {
+      "row": 59,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "IT1185AU2",
+        "IT1185AU2",
+        "BUT1,RST1"
+      ]
+    },
+    {
+      "row": 60,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "DW02S",
+        "DW02S",
+        "BAT1"
+      ]
+    },
+    {
+      "row": 61,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "MISB-SWMM-5B-LF(USB_MICRO)",
+        "MISB-SWMM-5B_LF",
+        "USB-UART1"
+      ]
+    },
+    {
+      "row": 62,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "RJP-003TC1(LPJ4112CNL)",
+        "RJP-003TC1 (LPJ4112CNL)",
+        "LAN_CON1"
+      ]
+    },
+    {
+      "row": 63,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "TFC-9P-1.7H(ATFFS150A01BR016)",
+        "uSD(TFC-9P-1.xH)",
+        "MICRO_SD1"
+      ]
+    },
+    {
+      "row": 64,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "P-B-V-10-LF",
+        "GBH-254-SMT-10",
+        "UEXT1"
+      ]
+    },
+    {
+      "row": 67,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "Opened",
+        "SJ_1_SMALLER",
+        "BAT_SENS_E1"
+      ]
+    },
+    {
+      "row": 69,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(130k/R0402)",
+        "R0402",
+        "R50"
+      ]
+    },
+    {
+      "row": 70,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NA/R0402",
+        "R0402",
+        "R44,R49"
+      ]
+    },
+    {
+      "row": 71,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(10R/R0402)",
+        "R0402",
+        "R45"
+      ]
+    },
+    {
+      "row": 72,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(22R/R0603)",
+        "R0603",
+        "R43"
+      ]
+    },
+    {
+      "row": 73,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NA(10k/R0402)",
+        "R0402",
+        "R16, R51"
+      ]
+    },
+    {
+      "row": 74,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(220pF/100V/C0603)",
+        "C0603",
+        "C26"
+      ]
+    },
+    {
+      "row": 75,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(100nF/16V/10%/X7R/C0402 )",
+        "C0402",
+        "C28"
+      ]
+    },
+    {
+      "row": 76,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(10uF/6.3V/20%/X5R/C0603)",
+        "C0603",
+        "C21"
+      ]
+    },
+    {
+      "row": 77,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NA(GG0402052R542P)",
+        "D0402",
+        "TVS2,TVS3"
+      ]
+    },
+    {
+      "row": 78,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "1",
+        "NA(SN74LVC1G04DBVR(SOT23-5))",
+        "SOT-23-5",
+        "U8"
+      ]
+    },
+    {
+      "row": 81,
+      "sheet": "ESP32-PoE_Rev_L1-BOM(WROVER)",
+      "cells": [
+        "2",
+        "NS(HN1x10)",
+        "HN1x10",
+        "EXT1, EXT2"
+      ]
+    }
+  ]
+}

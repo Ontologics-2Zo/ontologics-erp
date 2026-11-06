@@ -1,0 +1,2 @@
+# Preserve delivery bytes, including CSV CRLF endings, across clone and checkout.
+* -text

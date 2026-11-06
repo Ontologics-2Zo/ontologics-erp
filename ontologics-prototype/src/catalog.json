@@ -1,0 +1,46 @@
+[
+  {
+    "id": "SRC-L-ods",
+    "revision": "L",
+    "filename": "ESP32-PoE_Rev_L-BOM(WROOM) .ods",
+    "path": "HARDWARE/ESP32-PoE-hardware-revision-L/ESP32-PoE_Rev_L-BOM(WROOM) .ods",
+    "url": "https://raw.githubusercontent.com/OLIMEX/ESP32-POE/deb38a377d50eadb04ddc7118a17a5ae58b1ee53/HARDWARE/ESP32-PoE-hardware-revision-L/ESP32-PoE_Rev_L-BOM%28WROOM%29%20.ods",
+    "local": "/evidence/L-WROOM.ods",
+    "sha256": "ef4f04d46ca8f3961f6ac528320011679a14c57007717b5972c32551e9c51a5e",
+    "kind": "실제 공개 원본",
+    "commit": "deb38a377d50eadb04ddc7118a17a5ae58b1ee53"
+  },
+  {
+    "id": "SRC-L-pdf",
+    "revision": "L",
+    "filename": "ESP32-PoE_Rev_L-BOM(WROOM).pdf",
+    "path": "HARDWARE/ESP32-PoE-hardware-revision-L/ESP32-PoE_Rev_L-BOM(WROOM).pdf",
+    "url": "https://raw.githubusercontent.com/OLIMEX/ESP32-POE/deb38a377d50eadb04ddc7118a17a5ae58b1ee53/HARDWARE/ESP32-PoE-hardware-revision-L/ESP32-PoE_Rev_L-BOM%28WROOM%29.pdf",
+    "local": "/evidence/L-WROOM.pdf",
+    "sha256": "e268ebf562c5e6b36dab7bcd377922c7cb5883ad88ba024f8b949d0e9cae89d0",
+    "kind": "실제 공개 원본",
+    "commit": "deb38a377d50eadb04ddc7118a17a5ae58b1ee53"
+  },
+  {
+    "id": "SRC-L1-ods",
+    "revision": "L1",
+    "filename": "ESP32-PoE_Rev_L1-BOM(WROOM) .ods",
+    "path": "HARDWARE/ESP32-PoE-hardware-revision-L1/ESP32-PoE_Rev_L1-BOM(WROOM) .ods",
+    "url": "https://raw.githubusercontent.com/OLIMEX/ESP32-POE/deb38a377d50eadb04ddc7118a17a5ae58b1ee53/HARDWARE/ESP32-PoE-hardware-revision-L1/ESP32-PoE_Rev_L1-BOM%28WROOM%29%20.ods",
+    "local": "/evidence/L1-WROOM.ods",
+    "sha256": "773c8b3fb0fa9f9c354586d12fd6bffd02b156b94d07e23e671c1205ab918e95",
+    "kind": "실제 공개 원본",
+    "commit": "deb38a377d50eadb04ddc7118a17a5ae58b1ee53"
+  },
+  {
+    "id": "SRC-L1-pdf",
+    "revision": "L1",
+    "filename": "ESP32-PoE_Rev_L1-BOM(WROOM) .pdf",
+    "path": "HARDWARE/ESP32-PoE-hardware-revision-L1/ESP32-PoE_Rev_L1-BOM(WROOM) .pdf",
+    "url": "https://raw.githubusercontent.com/OLIMEX/ESP32-POE/deb38a377d50eadb04ddc7118a17a5ae58b1ee53/HARDWARE/ESP32-PoE-hardware-revision-L1/ESP32-PoE_Rev_L1-BOM%28WROOM%29%20.pdf",
+    "local": "/evidence/L1-WROOM.pdf",
+    "sha256": "30e2e7c881d9a7c74cd95b1a63af4ac2ac7ae623ea05ec16e9faaf5ad19f3e9a",
+    "kind": "실제 공개 원본",
+    "commit": "deb38a377d50eadb04ddc7118a17a5ae58b1ee53"
+  }
+]
