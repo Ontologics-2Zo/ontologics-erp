@@ -1,3 +1,5 @@
+import {actualBoms} from '../src/actual-boms';
+import {buildBomRegistrationPayload} from '../src/bom-registration';
 import {describe,it,expect} from 'vitest';
 import {initial,makeDraft,approve,apply,digest,content,totals,investigation,matchInterval,defaultConditions,validate,reserve,receive,allocateMaterial,allocation,reproduction,aiAnswer,A,B0,B1,type State,type Payload} from '../src/domain';
 async function commit(s:State,p:Payload){let d=await makeDraft(s,p,'Alice','test','UI08');d.status='검토 요청';d=await approve(s,d,'Bob');return apply({...s,drafts:[d,...s.drafts]},d)}
@@ -8,7 +10,7 @@ describe('AT01 / AT03 승인 버전과 분리',()=>{
  it('승인 후 내용 변조는 전부 미반영',async()=>{const s=initial(),d=await makeDraft(s,production,'Alice','test','UI08');d.status='검토 요청';const approved=await approve(s,d,'Bob');approved.payload.good=59;await expect(apply(s,approved)).rejects.toThrow('해시');expect(s.production).toBe(0);expect(s.stock).toBe(0)});
  it('오래된 기준 거부',async()=>{const s=initial(),d=await makeDraft(s,production,'Alice','test','UI08');d.status='검토 요청';const approved=await approve(s,d,'Bob');await expect(apply({...s,version:2},approved)).rejects.toThrow('오래된');});
  it('같은 키와 내용은 멱등, 다른 내용은 충돌',async()=>{const s=initial(),d=await makeDraft(s,production,'Alice','test','UI08');d.status='검토 요청';const approved=await approve(s,d,'Bob'),next=await apply(s,approved);expect(await apply(next,approved)).toEqual(next);await expect(apply(next,{...approved,hash:'different'})).rejects.toThrow('다른 내용')});
- it('BOM 잘못된 매핑·미검토 차단, 미확인 보존',async()=>{const s=initial();expect(()=>validate(s,{kind:'bom',mapping:'WROVER',reviewed:true,evidence:'SRC'})).toThrow('매핑');expect(()=>validate(s,{kind:'bom',mapping:'WROOM',reviewed:false,evidence:'SRC'})).toThrow('미확인');const n=await commit(s,{kind:'bom',mapping:'WROOM',reviewed:true,evidence:'SRC',unknown:'NA/NS/Opened'});expect(n.bomApplied).toBe(true);expect(n.drafts[0].payload.unknown).toBe('NA/NS/Opened')});
+ it('BOM 잘못된 매핑·미검토 차단, 미확인 보존',async()=>{const s=initial(),p=buildBomRegistrationPayload('L1',{reviewed:true,receivedSourceHash:actualBoms.L1.source.sha256});expect(()=>validate(s,{...p,mapping:'WROVER'})).toThrow('매핑');expect(()=>validate(s,{...p,reviewed:false})).toThrow('미확인');const n=await commit(s,{...p,unknown:'NA/NS/Opened'});expect(n.bomApplied).toBe(true);expect(n.drafts[0].payload.unknown).toBe('NA/NS/Opened')});
  it('최초 보드 중복과 빈 근거 차단',()=>{expect(()=>validate(initial(),{kind:'board',board:'U104',evidence:'demo'})).toThrow('중복');expect(()=>validate(initial(),{...production,evidence:''})).toThrow('근거')});
 });
 describe('AT02 시간 경계와 미확인',()=>{

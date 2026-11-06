@@ -1,11 +1,10 @@
 {
-  "generated_at": "2026-11-04T15:27:58.966Z",
+  "generated_at": "2026-11-06T03:44:06.213Z",
   "scope": "Local company-A fixture registry; not a production tenant aggregate or manufacturer part master. Immutable IDs are never merged by name.",
   "board_models": {
     "total": 7,
     "by_data_source": {
-      "실제 공개 원본": 1,
-      "원본 미확보": 3,
+      "실제 공개 원본": 4,
       "합성 예시": 3
     },
     "by_media_kind": {
@@ -14,38 +13,360 @@
     }
   },
   "parts": {
-    "total": 174,
+    "total": 383,
     "by_data_source": {
-      "합성 예시": 26,
-      "실제 공개 원본": 148
+      "합성 예시": 27,
+      "실제 공개 원본": 356
     },
     "by_media_kind": {
-      "ai-reference": 172,
-      "unregistered": 2
+      "ai-reference": 327,
+      "unregistered": 56
     },
-    "actual_bom_ids": 148,
-    "actual_designation_exact_unique": 76,
-    "actual_designation_whitespace_normalized_unique": 76,
-    "raw_package_keys": 35,
+    "actual_bom_ids": 356,
+    "actual_designation_exact_unique": 170,
+    "actual_designation_whitespace_normalized_unique": 166,
+    "raw_package_keys": 101,
     "unregistered": [
       {
         "id": "PART-POE-L-68",
         "package": "SJ_1_SMALLER",
-        "reason": "솔더 점퍼/보드 설정 · 별도 부품 사진 대상 아님"
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
       },
       {
         "id": "PART-POE-L1-67",
         "package": "SJ_1_SMALLER",
-        "reason": "솔더 점퍼/보드 설정 · 별도 부품 사진 대상 아님"
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-2",
+        "package": "Fiducial1x3",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-12",
+        "package": "Fiducial1x3_Paste",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-15",
+        "package": "L_2016_MM",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-18",
+        "package": "SOT-563-6",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-21",
+        "package": "SIP-7_Universal",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-23",
+        "package": "MSOP-10_Pitch-0.5mm_3.00x3.00x1.00mm",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-POEISO-N-37",
+        "package": "NPTH_2.2mm",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-2",
+        "package": "LED-5mm-PTH-AK",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-3",
+        "package": "OLIMEX_LOGO_TB",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-8",
+        "package": "TFC-WXCP11-08-LF",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-9",
+        "package": "TB3-3.5mm",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-10",
+        "package": "UEXT_ML10",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-11",
+        "package": "Relay_RAS-05-15",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-13",
+        "package": "SJ_Closed",
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-14",
+        "package": "SJ",
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-15",
+        "package": "Mounting_hole_3.3mm",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-16",
+        "package": "LIPO_BAT-CON2DW02R",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-22",
+        "package": "TB3-DG306-5.0_3P",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-23",
+        "package": "5032-4P_HCX-3S",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-28",
+        "package": "TESTPAD_40-ROUND",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-32",
+        "package": "PWRJ-2mm(YDJ-1136)",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-33",
+        "package": "TB2-DG306-5.0_2P",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-47",
+        "package": "MSOP-10_Pitch-0.5mm_3.00x3.00x1.00mm",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-49",
+        "package": "Mounting_hole_Shield_3.3mm",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-50",
+        "package": "HN2x20",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-51",
+        "package": "T1107A(6x3,8x2,5MM)",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-55",
+        "package": "Fiducial1x3",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-56",
+        "package": "SJ_2_SMALL_12_TIED",
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-58",
+        "package": "Q_49U3HMS",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-64",
+        "package": "RPM7236-H8",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-67",
+        "package": "LOGO_ANTISTATIC_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-68",
+        "package": "LOGO_OPENHARDWARE_8x8",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-69",
+        "package": "LOGO_PBFREE",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-70",
+        "package": "LOGO_RECYCLEBIN_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-EVB-C-71",
+        "package": "LOGO_ROHS_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-3",
+        "package": "USB2.0_TYPE-C(A40-00119-A52-12)",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-7",
+        "package": "MSOP-10_Pitch-0.5mm_3.00x3.00x1.00mm",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-9",
+        "package": "CE_Sign",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-10",
+        "package": "SJ",
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-11",
+        "package": "TFC-WXCP11-08-LF",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-12",
+        "package": "OLIMEX_LOGO_TB",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-20",
+        "package": "LOGO_ROHS_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-21",
+        "package": "LOGO_RECYCLEBIN_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-22",
+        "package": "LOGO_PBFREE",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-23",
+        "package": "LOGO_OPENHARDWARE_8x8",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-24",
+        "package": "LOGO_ANTISTATIC_1",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-26",
+        "package": "HN1x20",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-40",
+        "package": "TESTPAD_40-ROUND",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-43",
+        "package": "SJ",
+        "reason": "보드 설정 후보 · 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-44",
+        "package": "Mounting_hole_Shield_3.3mm",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-49",
+        "package": "T1107A(6x3,8x2,5MM)",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-51",
+        "package": "Fiducial1x3",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-57",
+        "package": "Fiducial1x3_Past",
+        "reason": "비조달 후보 · 분류 미검수, 참고 자산 미등록"
+      },
+      {
+        "id": "PART-GATEWAY-I-61",
+        "package": "SOT-563-6",
+        "reason": "검수 또는 종류별 참고 자산 미등록"
       }
     ]
   },
   "snapshots": {
-    "total": 5,
+    "total": 8,
     "by_data_source": {
-      "실제 공개 원본": 2,
+      "실제 공개 원본": 5,
       "합성 예시": 3
-    }
+    },
+    "actual_source_snapshots": [
+      {
+        "snapshot": "L",
+        "configuration_id": "CFG-POE-L",
+        "source_id": "SRC-L-ods",
+        "rows": 74,
+        "by_media_kind": {
+          "ai-reference": 73,
+          "unregistered": 1
+        }
+      },
+      {
+        "snapshot": "L1",
+        "configuration_id": "CFG-POE-L1",
+        "source_id": "SRC-L1-ods",
+        "rows": 74,
+        "by_media_kind": {
+          "ai-reference": 73,
+          "unregistered": 1
+        }
+      },
+      {
+        "snapshot": "ISO-N",
+        "configuration_id": "CFG-POEISO-N",
+        "source_id": "SRC-ISO-N-csv",
+        "rows": 75,
+        "by_media_kind": {
+          "unregistered": 7,
+          "ai-reference": 68
+        }
+      },
+      {
+        "snapshot": "EVB-C",
+        "configuration_id": "CFG-EVB-C",
+        "source_id": "SRC-EVB-C-csv",
+        "rows": 71,
+        "by_media_kind": {
+          "unregistered": 28,
+          "ai-reference": 43
+        }
+      },
+      {
+        "snapshot": "GATEWAY-I",
+        "configuration_id": "CFG-GATEWAY-I",
+        "source_id": "SRC-GATEWAY-I-csv",
+        "rows": 62,
+        "by_media_kind": {
+          "ai-reference": 43,
+          "unregistered": 19
+        }
+      }
+    ]
   },
   "assets": {
     "total": 32,
@@ -53,7 +374,7 @@
       "reference-photo": 4,
       "ai-reference": 28
     },
-    "bindings": 189,
+    "bindings": 347,
     "unique_files": 32,
     "missing_files": [],
     "unknown_entity_bindings": []

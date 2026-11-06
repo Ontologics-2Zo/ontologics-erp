@@ -15,8 +15,8 @@ const statuses:StatusRow[]=[
  {id:'action-identity',name:'Action / Identity',status:'UI 시뮬레이션',scope:'별도 승인·버전·멱등성 로컬 검증 · 서버 보안 아님'},
  {id:'agent',name:'AgentPort',status:'예시 응답',scope:'실제 Agent·LLM 미연결 · 지연 응답 격리'},
  {id:'media',name:'MediaPort',status:'제공 자료 / 미등록',scope:'사진의 대상·출처·개정 일치 별도 표시'},
- {id:'source-coverage',name:'4종 실제 보드 원본',status:'확보 미완료',scope:'실제 공개 자료는 ESP32-PoE L/L1 · 다른 확보 대상은 원본 미등록 / 합성 예시는 별도'},
- {id:'bom-parser',name:'BOM 파서',status:'대표 원본 추출',scope:'L/L1 원본 · 범용 OCR/파서 미연결'},
+ {id:'source-coverage',name:'4종 실제 보드 원본',status:'원본 확보 · 미검수',scope:'v1.7 실제4모델·5스냅샷·356원문행 · 독립 검수·실장·단위 확정 미완료 / 합성3스냅샷 별도'},
+ {id:'bom-parser',name:'BOM 파서',status:'고정 원본 구조 파싱',scope:'ODS2·CSV3 원문/locator/hash 대조 · PDF2 원본 보존 · 범용 OCR/파서 미연결'},
  {id:'ontology-engine',name:'RDF / OWL / SHACL',status:'운영 엔진 미연결',scope:'TBox 편집은 격리 초안 · 검증은 모의'},
  {id:'external-execution',name:'ERP · 메일 · 현장 제어',status:'연결 없음',scope:'실제 발주·메일·설비·결제 실행하지 않음'},
  {id:'scale-target',name:'10만 객체 검증',status:'구축 목표',scope:'실제 100,000개 적재·부하 시험 미수행'}

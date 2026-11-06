@@ -1,9 +1,12 @@
+import {actualBomForConfiguration} from './actual-boms';
+import {isBomRegistered} from './bom-registration';
 /** Home-table projections of the existing local fixture.
  * These records are presentation data, not an API, assignment, or new ledger.
  * They never change State and never infer a configuration from an unrelated demo.
  */
 import {NOW,materialQuantities,totals,type Draft,type State} from './domain';
 import {entities,snapshots,SNAPSHOT_AT,type Entity} from './entity-data';
+import {BOM_PURCHASE_DEMO,documentsForPurchasePart} from './demo-bom-links';
 
 export type WorkItemId='TASK-MAT'|'TASK-REV'|'TASK-IN'|'TASK-DL'|'TASK-QA';
 export type WorkGroup='부족 자재'|'검토 요청'|'입고 대기'|'납품'|'클레임';
@@ -61,13 +64,13 @@ const product={modelId:'MODEL-POE',modelName:'ESP32-PoE',revision:'L1',configId:
 export function buildWorkItems(s:State):WorkItem[]{
  const m=materialQuantities(s),t=totals(s),drafts=s.drafts.filter(inScope),bomDrafts=drafts.filter(isPoeL1Bom);
  const bomWaiting=bomDrafts.filter(d=>d.status==='검토 요청').length;
- const purchaseRequests=readDocuments<PurchaseRequest>(s,'purchase-request').filter(d=>d.part==='IM-0008'&&typeof d.id==='string'&&quantityKnown(d.qty));
- const orders=readDocuments<PurchaseOrder>(s,'purchase-order').filter(d=>d.part==='IM-0008'&&typeof d.orderId==='string'&&quantityKnown(d.qty));
+ const purchaseRequests=documentsForPurchasePart(readDocuments<PurchaseRequest>(s,'purchase-request'),BOM_PURCHASE_DEMO.partId).filter(d=>typeof d.id==='string'&&quantityKnown(d.qty));
+ const orders=documentsForPurchasePart(readDocuments<PurchaseOrder>(s,'purchase-order'),BOM_PURCHASE_DEMO.partId).filter(d=>typeof d.orderId==='string'&&quantityKnown(d.qty));
  const orderIds=new Set(orders.map(order=>order.orderId));
  const linkedSupplies=(s.supplyConfirmations??[]).filter(event=>orderIds.has(event.orderId));
  const supplyConfirmed=linkedSupplies.reduce((sum,event)=>sum+(quantityKnown(event.qty)?event.qty:0),0);
  const requested=purchaseRequests.length?purchaseRequests.reduce((sum,request)=>sum+request.qty,0):80;
- const purchaseDrafts=drafts.filter(d=>(d.payload.kind==='purchase_order'&&d.payload.part==='IM-0008')||(d.payload.kind==='supply'&&orderIds.has(String(d.payload.orderId))));
+ const purchaseDrafts=drafts.filter(d=>(d.payload.kind==='purchase_order'&&d.payload.part===BOM_PURCHASE_DEMO.partId)||(d.payload.kind==='supply'&&orderIds.has(String(d.payload.orderId))));
  const fulfillmentDrafts=drafts.filter(d=>['production','stock','shipment','arrival','contract'].includes(d.payload.kind));
  const fulfillmentReview=reviewState(fulfillmentDrafts,false,'이행 기록 검토');
  const traceDrafts=drafts.filter(d=>d.payload.kind==='trace');
@@ -92,15 +95,15 @@ export function buildWorkItems(s:State):WorkItem[]{
    unknowns:['WROOM 파일명·WROVER 시트명 불일치','NA·NS·Opened 상태 보존'],
    owner:owner('기술'),nextLabel:bomDrafts.length?'등록안 검토':'원본·개정 검토',route:bomDrafts.length?'UI05':'UI02',
    dataBasis:basis(['SRC-L1-ods','SRC-L1-pdf',...bomDrafts.map(d=>d.id)],['실제 공개 원본과 합성 운영의 검토 상태를 구분합니다.'])},
-  {id:'TASK-IN',group:'입고 대기',objectId:'IM-0008',contextObjectId:'IM-0008',configLabel:'구성 연결 미확인',
+  {id:'TASK-IN',group:'입고 대기',objectId:BOM_PURCHASE_DEMO.partId,contextObjectId:BOM_PURCHASE_DEMO.partId,modelId:BOM_PURCHASE_DEMO.modelId,modelName:'ESP32-EVB',revision:'C',configId:BOM_PURCHASE_DEMO.configurationId,configLabel:'C · C18,C26 합성 구매 매핑',
    title:'공급 확인과 부분 입고 근거를 연결하세요',
    detail:`MLCC 구매 수요 ${requested} EA · 연결된 공급 확인 ${supplyConfirmed} EA · 입고 연결 미확인`,
-   quantity:{value:requested,unit:'EA',label:purchaseRequests.length?'구매 요청 수량':'합성 구매 필요량',basis:purchaseRequests.length?'IM-0008을 명시한 구매 요청 문서의 수량 합계. MOQ를 반영한 발주 수량과 구분합니다.':'기존 IM-0008 합성 구매 fixture의 필요 수량 80 EA. PoE 생산 수요와 연결하지 않습니다.'},
-   needDate:due('09.23'),reviewStatus:reviewState(purchaseDrafts,orders.length>0,'구매 검토 전'),
+   quantity:{value:requested,unit:'EA',label:purchaseRequests.length?'구매 요청 수량':'합성 구매 필요량',basis:purchaseRequests.length?'EVB C 시연 품목을 명시한 구매 요청 문서의 수량 합계. 기존 IM-0008 요청·MOQ 발주량과 구분합니다.':'EVB C 원문행21(C18,C26) 수량2 × 합성40대 = 80EA. 원문 단위·실장 미검수, EA·가용0은 합성 가정이며 PoE 생산 수요와 별개입니다.'},
+   needDate:due('09.25'),reviewStatus:reviewState(purchaseDrafts,orders.length>0,'구매 검토 전'),
    materialStatus:status(supplyConfirmed?`공급 확인 ${supplyConfirmed} EA`:'입고 연결 미확인',supplyConfirmed?'blue':'gray','공급 확인은 입고·검사 합격·사용 가능한 재고가 아닙니다. 현재 입고 원장에 품목·발주라인 연결이 없습니다.'),
-   unknowns:['제품·개정·구성 연결 미확인','부분 입고의 품목·발주라인 연결 미확인'],
+   unknowns:['원본 단위·실장 미검수 · EA는 시연 가정','부분 입고의 품목·발주라인 연결 미확인'],
    owner:owner('구매'),nextLabel:'공급·입고 근거 검토',route:'PURCHASE',
-   dataBasis:basis(['SYN-DEMAND-IM0008-001',...purchaseRequests.map(d=>d.id),...orders.map(d=>d.orderId),...linkedSupplies.map(event=>event.evidence)],['State.receipt는 다른 합성 자재 시나리오의 수량이므로 IM-0008에 귀속하지 않습니다.','홈 기한은 구매 요청 문서의 개별 필요일과 별도인 기존 합성 표시값입니다.'])},
+   dataBasis:basis([BOM_PURCHASE_DEMO.demandId,BOM_PURCHASE_DEMO.mappingEvidence,BOM_PURCHASE_DEMO.sourceId,...purchaseRequests.map(d=>d.id),...orders.map(d=>d.orderId),...linkedSupplies.map(event=>event.evidence)],['State.receipt는 PoE의 별도 합성 자재 시나리오이며 EVB 구매 입고에 귀속하지 않습니다.','기존 IM-0008 문서는 구매 화면의 독립 예시 범위에서 원래 의미 그대로 조회합니다.'])},
   {id:'TASK-DL',group:'납품',objectId:'ROUND-01',contextObjectId:'ROUND-01',configLabel:'구성 연결 미확인',
    title:'1차 회차의 출하·도착 잔량을 확인하세요',
    detail:`약속 100대 · 도착 ${t.arrived}대 · 운송 중 ${t.transit}대 · 창고 ${t.warehouse}대`,
@@ -135,7 +138,7 @@ export function buildConfigurationItems(s:State):ConfigurationItem[]{
  const drafts=s.drafts.filter(inScope),representative=buildWorkItems(s).find(item=>item.id==='TASK-MAT')!;
  const registered=snapshots.map((snapshot):ConfigurationItem=>{
   const model=entities.find(entity=>entity.id===snapshot.modelId&&entity.company==='A');
-  const sourceIds=[snapshot.evidence,...(snapshot.source==='실제 공개 원본'?['SRC-'+snapshot.revision+'-pdf']:[])];
+  const sourceIds=[snapshot.evidence,...(snapshot.modelId==='MODEL-POE'&&snapshot.source==='실제 공개 원본'?['SRC-'+snapshot.revision+'-pdf']:[])];
   const linkedDrafts=drafts.filter(draft=>bomLinkedTo(draft,snapshot.id,sourceIds));
   const isL1=snapshot.id==='CFG-POE-L1',actual=snapshot.source==='실제 공개 원본';
   const unknownLines=snapshot.lines.filter(line=>line.qty===null||/미확인/.test(line.note));
@@ -143,15 +146,15 @@ export function buildConfigurationItems(s:State):ConfigurationItem[]{
    id:snapshot.id,contextObjectId:snapshot.id,modelId:snapshot.modelId,name:snapshot.name,
    modelName:model?.name??snapshot.modelId,revision:snapshot.revision,configLabel:snapshot.name,
    bomRows:snapshot.lines.length,bomUnit:'행',source:snapshot.source,
-   reviewStatus:reviewState(linkedDrafts,isL1&&s.bomApplied,actual?'원본 검토 전':'합성 스냅샷'),
+   reviewStatus:reviewState(linkedDrafts,actualBomForConfiguration(snapshot.id)?isBomRegistered(s,actualBomForConfiguration(snapshot.id)!.key):false,actual?'원본 검토 전':'합성 스냅샷'),
    materialStatus:isL1?{
     ...representative.materialStatus,label:'대표 품목 · '+representative.materialStatus.label,
     detail:'PART-TPS / U2의 합성 자재 검토만 표시합니다. 전체 BOM의 자재 확보 상태가 아닙니다. '+representative.materialStatus.detail,
    }:status('자재 미확인','gray','이 구성에 연결된 정상 수요·재고·예약·할당 근거가 없습니다. 다른 개정의 자재 상태를 적용하지 않습니다.'),
    unknowns:actual?[
-    'WROOM 파일명·WROVER 시트명 불일치',
+    ...(snapshot.modelId==='MODEL-POE'?['WROOM 파일명·WROVER 시트명 불일치']:[]),
     ...(snapshot.revision==='L'?['L 파일·Rev J 시트명 불일치']:[]),
-    ...(unknownLines.length?[`NA·NS·Opened 또는 수량 미확인 ${unknownLines.length}행`]:[]),
+    ...(unknownLines.length?[`단위·실장 또는 원문 해석 미검수 ${unknownLines.length}행`]:[]),
     'BOM 전체 소요·실제 실장 미확인',
    ]:['합성 설계 · 실제 제조 검증 없음','생산 수요·재고·실제 실장 미확인'],
    dataBasis:{asOf:SNAPSHOT_AT,version:s.version,origin:snapshot.source,evidenceRefs:[...sourceIds,...linkedDrafts.map(draft=>draft.id)],notes:[

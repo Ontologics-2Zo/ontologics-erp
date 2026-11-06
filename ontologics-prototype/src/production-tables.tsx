@@ -1,4 +1,5 @@
 import {useApp} from './context';
+import {planningMaterialRows} from './demo-bom-links';
 import {useEntity} from './entity';
 import {Badge,Button,Panel} from './ui';
 import {arrivedQuantity,materialQuantities,NOW,totals} from './domain';
@@ -27,16 +28,12 @@ export function PlanningWorkTable({onStep}:{onStep:(step:number)=>void}){
 
 export function MaterialRequirementsTable(){
  const {s,go,evidence}=useApp(),{select}=useEntity();
- const rows=[
-  {id:'PLAN-MATERIAL-M',objectId:'PART-TPS',part:'시연 부품 M',need:s.demandConfirmed?'100':'수요 미확인',stock:'100',other:'20',available:'80',short:'20',evidence:'DEMO-MATERIAL-01',note:'대표 부품 합성 매핑 · 전체 BOM 아님'},
-  {id:'PLAN-MATERIAL-UNRESOLVED',objectId:undefined,part:'NA / NS / Opened 실장 항목',need:'미확인',stock:'미확인',other:'미확인',available:'미확인',short:'미확인',evidence:'SRC-L1-ods',note:'행별 실장·품목 연결 확인 필요'},
-  {id:'PLAN-MATERIAL-CANDIDATE',objectId:undefined,part:'대체 부품 후보',need:'호환 근거 필요',stock:'0 (확인된 값)',other:'0',available:'0',short:'산출 보류',evidence:'미제공',note:'이 시연 수요의 후보 품목 ID 미등록'}
- ];
+ const rows=planningMaterialRows(s);
  return <WorkflowTable tableKey="planning-materials" data={rows} getRowId={r=>r.id} contextId={r=>r.objectId} searchLabel="계획 자재·미확인 검색" columns={[
   {id:'photo',header:'품목 사진',enableHiding:false,cell:c=><WorkflowPhoto id={c.row.original.objectId}/>},
   {id:'object',header:'부품 · 대상',accessorKey:'part',enableHiding:false,cell:c=><div className="workflow-stack"><strong>{c.row.original.part}</strong><WorkflowObject id={c.row.original.objectId} detail={c.row.original.note}/></div>},
-  ...(['need','stock','other','available','short'] as const).map((key,i)=>({id:key,accessorKey:key,header:['필요량 / 개','재고 / 개','타 계획 예약 / 개','가용량 / 개','비교 부족 / 개'][i],cell:(c:any)=><span className="workflow-numeric">{c.getValue()}</span>})),
-  {id:'next',header:'다음 조치',cell:c=>c.row.original.objectId?<Button onClick={()=>{select('PART-TPS',false);go('MATERIAL')}}>대표 품목·대체 검토</Button>:<Button disabled={c.row.original.evidence==='미제공'} onClick={()=>evidence(c.row.original.evidence)}>{c.row.original.evidence==='미제공'?'후보 근거 미제공':'원본 실장 조건 확인'}</Button>},
+  ...(['need','stock','other','available','allocated','short'] as const).map((key,i)=>({id:key,accessorKey:key,header:['필요량 / EA','재고 / EA','타 계획 예약 / EA','원품 가용 / EA','합격분 할당 / EA','비교 부족 / EA'][i],cell:(c:any)=><span className="workflow-numeric">{c.getValue()}</span>})),
+  {id:'next',header:'다음 조치',cell:c=>c.row.original.objectId?<Button onClick={()=>{select(c.row.original.objectId!,false);go('MATERIAL')}}>대표 품목·대체 검토</Button>:<Button disabled={c.row.original.evidence==='미제공'} onClick={()=>evidence(c.row.original.evidence)}>{c.row.original.evidence==='미제공'?'후보 근거 미제공':'원본 실장 조건 확인'}</Button>},
   {id:'basis',header:'데이터 기준',cell:c=><WorkflowBasis version={s.version} at={NOW} evidence={c.row.original.evidence}/>}
  ]}/>;
 }

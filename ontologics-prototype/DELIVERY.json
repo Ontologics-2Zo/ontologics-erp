@@ -1,29 +1,29 @@
 {
   "service": "ontologics",
-  "version": "UI v2.6 — stable media during graph polling",
-  "date": "2026-11-05",
+  "version": "UI v2.6 — all 5 actual BOM registrations and ABox application provenance",
+  "date": "2026-11-06",
   "runtime": "browser Mock + separate loopback in-memory graph projection",
   "stack": "Existing React 19 + TypeScript + Vite retained",
   "verified_commands": [
-    "npm run dev -- --port 5175 --strictPort",
-    "npm run graph",
+    "npm run dev -- --port 5177 --strictPort",
+    "ONTO_GRAPH_ALLOWED_ORIGINS=http://127.0.0.1:5177 node server/graph-server.mjs --port 5186",
     "npm run build",
     "npm test",
-    "ONTO_PREVIEW_URL=http://127.0.0.1:5175 npm run test:e2e -- tests/media.e2e.ts tests/flows.e2e.ts -g '이미지|미디어|사진|별도 그래프|그래프 연결의 반복'"
+    "npm run test:graph",
+    "npx playwright test --config output/all-bom-validation/playwright.config.ts",
+    "npx playwright test --config output/all-bom-validation/graph-final.config.ts tests/flows.e2e.ts --grep \"실제 BOM 별도 그래프\"",
+    "npx playwright test --config output/all-bom-validation/context-final.config.ts --grep \"실제 BOM 등록|실제 BOM 별도 그래프|객체 프리뷰|이미지 일관성\"",
+    "python3 scripts/import-actual-boms.py --input /Users/steadyguk/Downloads/ontologics_solo_docs_data_v1.7.zip --check"
   ],
-  "unit_tests_passed": 72,
-  "browser_tests_passed": 9,
+  "unit_tests_passed": 128,
+  "browser_tests_passed": 75,
   "server_connected": false,
   "published": false,
-  "actual_board_types": 1,
-  "actual_bom_snapshots": 2,
+  "actual_board_types": 4,
+  "actual_bom_snapshots": 5,
   "synthetic_board_types": 3,
   "synthetic_bom_snapshots": 3,
-  "actual_missing_models": [
-    "ESP32-POE-ISO",
-    "ESP32-EVB",
-    "ESP32-GATEWAY"
-  ],
+  "actual_missing_models": [],
   "actual_200_percent_zoom_verified": false,
   "narrow_viewports_verified": [
     390,
@@ -40,9 +40,9 @@
     "unregistered": 0
   },
   "media_part_objects": {
-    "ai_reference": 172,
-    "unregistered": 2,
-    "total": 174
+    "ai_reference": 327,
+    "unregistered": 56,
+    "total": 383
   },
   "media_verified_actual_photos": 0,
   "media_cad_renders": 0,
@@ -137,9 +137,30 @@
       "browser": 21,
       "server": 6,
       "detail": "21 tests passed on5177; after theme/status style and timeout-test additions, finalbuild and3 live scenarios passed on5175+5176. Earlier20-test run had one row-count expectationfailure, retainedseparately."
+    },
+    {
+      "version": "UI v2.6 — stable media during graph polling",
+      "date": "2026-11-05 23:27~23:31 KST",
+      "unit": 72,
+      "browser": 9,
+      "browser_report": "output/playwright/image-flicker-fixed-report/index.html"
+    },
+    {
+      "version": "UI v2.6 — BOM source consistency and supply overview",
+      "date": "2026-11-06 10:39~10:40 KST",
+      "unit": 78,
+      "browser": 22,
+      "browser_report": "output/playwright/bom-supply-final-report/index.html"
+    },
+    {
+      "version": "UI v2.6 — read-only class browsing and BOM component graph",
+      "date": "2026-11-06 12:01~12:03 KST",
+      "unit": 78,
+      "browser": 27,
+      "browser_report": "output/playwright/class-components-final-report/index.html"
     }
   ],
-  "verification_time": "2026-11-05 23:27~23:31 KST",
+  "verification_time": "2026-11-06 14:21~14:30 KST",
   "dense_lists": {
     "work_items": 5,
     "configuration_rows": 8,
@@ -171,8 +192,8 @@
     "immutable_files_verified": 44,
     "unchanged_from": "v2.3"
   },
-  "new_browser_tests": 1,
-  "browser_report": "output/playwright/image-flicker-fixed-report/index.html",
+  "new_browser_tests": 6,
+  "browser_report": "output/playwright/all-bom-final-report/index.html",
   "history_artifacts": {
     "v2.1": 21,
     "v2.2": 28,
@@ -186,9 +207,12 @@
     "documents_evidence": 2,
     "revision_bom_rows": {
       "L": 74,
-      "L1": 74
+      "L1": 74,
+      "ISO-N": 75,
+      "EVB-C": 71,
+      "GATEWAY-I": 62
     },
-    "source_documents": 4,
+    "source_documents": 7,
     "synthetic_evidence_records": 7,
     "shared": "WorkflowTable",
     "state_scope": "company + actor",
@@ -214,16 +238,8 @@
     "unchanged_from": "v2.5"
   },
   "downloads_live_smoke": {
-    "url": "http://127.0.0.1:5175",
-    "graph_url": "http://127.0.0.1:5176",
-    "time": "2026-11-05 23:30 KST",
-    "isolated_test_profile": true,
-    "scenario_passed": 9,
-    "user_state_unchanged": true,
-    "approval_apply_separate": true,
-    "graph_properties_updated": true,
-    "account_revocation_late_response": true,
-    "network_timeout_and_retry": true
+    "status": "local release sync recorded in repository/REVIEW.json",
+    "user_state_unchanged": true
   },
   "supplier_quote_cards": {
     "suppliers": 2,
@@ -233,7 +249,7 @@
     "only_v26": true,
     "post_label_fix": "build and manual browser checks; no full 17-test rerun"
   },
-  "browser_validation_detail": "Beforefix reproducer failed as expected due to replacedbusiness tableimage DOM. Final72unit and9 focusedbrowser checks passed; earlier21/49 fullbrowser and6 servertests were not rerun.",
+  "browser_validation_detail": "75 unique cases: full run74 passed/1 test click-order failure; remaining1 passed after closing modal before retry. Final context fixes:8 passed. Not a single75-pass run.",
   "change_impact": {
     "screens": [
       "UI02",
@@ -242,7 +258,7 @@
     ],
     "local_read_only_projection": true,
     "graph_properties_use_current_object": true,
-    "graph_edges_changed": false,
+    "graph_edges_changed": true,
     "actual_realtime_collaboration": false,
     "rdf_projection_connected": false,
     "approval_policy_changed": false
@@ -258,8 +274,8 @@
     "real_auth": false,
     "multi_user_editing": false,
     "same_entity_ids": true,
-    "fixture_entities": 202,
-    "fixture_relations": 191,
+    "fixture_entities": 414,
+    "fixture_relations": 405,
     "new_edges_invented": false,
     "approval_policy_changed": false,
     "production_public_api_finalized": false,
@@ -285,5 +301,160 @@
     "immutable_business_data_media_files_verified": 35,
     "graph_content_removed": false,
     "tests_auto_run_in_app": false
+  },
+  "bom_supply_overview": {
+    "bom_rows_per_revision": 74,
+    "reference_notation_count_per_revision": 128,
+    "l1_unresolved_rows": 12,
+    "l_unresolved_rows": 11,
+    "l1_default_check_issues": 13,
+    "source_checks_only": true,
+    "schematic_datasheet_comparison_connected": false,
+    "photo_coordinates_verified": false,
+    "supply_mapped_items": 1,
+    "whole_bom_supply_calculated": false,
+    "supplier_quote_due_date_connected": false,
+    "approval_policy_changed": false,
+    "public_contract_changed": false,
+    "existing_graph_preserved": true,
+    "immutable_files_verified": 37
+  },
+  "class_browser": {
+    "classes": 6,
+    "relations": 5,
+    "definition_values_unchanged": true,
+    "read_definition_separate_from_drafts": true,
+    "type_mapping": "exact Entity.type after scoped QueryPort search; not RDF membership",
+    "initial_mapped_objects": 44,
+    "initial_company_objects": 414,
+    "runtime_board_query_verified": true,
+    "existing_map_editor_versions_preserved": true,
+    "company_scope_verified": true,
+    "structured_shacl_connected": false,
+    "class_selection_changes_business_ai": false
+  },
+  "bom_component_graph": {
+    "source_rows_per_revision": {
+      "L": 74,
+      "L1": 74,
+      "ISO-N": 75,
+      "EVB-C": 71,
+      "GATEWAY-I": 62
+    },
+    "initial_displayed_rows": 6,
+    "source_package_strings_per_revision": {
+      "L": 35,
+      "L1": 35,
+      "ISO-N": 38,
+      "EVB-C": 50,
+      "GATEWAY-I": 37
+    },
+    "image_mapped_rows_per_revision": {
+      "L": 73,
+      "L1": 73,
+      "ISO-N": 68,
+      "EVB-C": 43,
+      "GATEWAY-I": 43
+    },
+    "unregistered_image_rows_per_revision": {
+      "L": 1,
+      "L1": 1,
+      "ISO-N": 7,
+      "EVB-C": 28,
+      "GATEWAY-I": 19
+    },
+    "new_media_assets": 0,
+    "reference_prefix_round_robin_is_display_only": true,
+    "source_order_available": true,
+    "original_graph_preserved": true,
+    "physical_coordinates_verified": false,
+    "actual_mounting_proved": false,
+    "policy_or_public_contract_changed": false,
+    "immutable_files_verified": 46
+  },
+  "graph_tests_passed": 6,
+  "bom_v17": {
+    "models": 4,
+    "snapshots": 5,
+    "rows": [
+      74,
+      74,
+      75,
+      71,
+      62
+    ],
+    "total_source_rows": 356,
+    "source_quantity_sum": 660,
+    "quantity_sum_is_installed_or_procurement": false,
+    "raw_files": 7,
+    "source_as_of": "2026-11-05",
+    "all_mount_unit_mpn_unreviewed": true,
+    "source_zip_sha256": "314b731fb899378961cffccadab2d1b49bf8f0cec0c376f9b101af67c90c13dc",
+    "entities": 414,
+    "relations": 405,
+    "registration_adapter": "All5 fixed acquired snapshots, browser Mock only",
+    "backend_added": false,
+    "approval_policy_changed": false,
+    "protected_files_identical": 40
+  },
+  "abox": {
+    "read_source": "shared current QueryPort and GraphPort, registration provenance included",
+    "query_page_size": 100,
+    "initial_table_rows": 12,
+    "runtime_boards": true,
+    "filtered_export_has_no_dangling_edges": true,
+    "rdf_engine": false,
+    "load_100000_tested": false
+  },
+  "github": {
+    "repository": "Ontologics-2Zo/ontologics-erp",
+    "branch": "feat/v17-bom-alignment",
+    "base": "31437ef5d9f170541b6ea9809613dc2b848a8a41",
+    "auto_merge": false,
+    "pull_request": "https://github.com/Ontologics-2Zo/ontologics-erp/pull/2",
+    "merged": false
+  },
+  "previous_validation": [
+    {
+      "version": "UI v2.6 — v1.7 actual BOM alignment and current ABox",
+      "date": "2026-11-06",
+      "unit": 96,
+      "browser_report": "output/playwright/v17-final-report/index.html",
+      "browser_validation_detail": "Final application full run:68 passed/1 isolated-proxy test failure. Test-only module fetch corrected and remaining1 passed separately. Not a single69-pass run. See verification-summary.json.",
+      "verified_commands": [
+        "npm run dev -- --port 5175 --strictPort",
+        "npm run graph",
+        "npm run build",
+        "npm test",
+        "ONTO_PREVIEW_URL=http://127.0.0.1:5175 npx playwright test tests/product-grid.e2e.ts tests/ontology-grid.e2e.ts tests/new-workspaces.e2e.ts tests/flows.e2e.ts tests/media.e2e.ts tests/exploration.e2e.ts --grep '제품 원본 목록|BOM 원본행|BOM 정합성:|BOM 부품 구성도:|온톨로지 객체 표:|온톨로지 정책·버전 표:|클래스 탐색:|관리자 TBox 격리 초안:|AT01|AT03|AT04|변경 영향:|별도 그래프:|이미지|미디어|사진|이전 대상의 늦은 AI|그래프 연결의 반복'"
+      ]
+    }
+  ],
+  "all_bom_registration": {
+    "snapshots": [
+      "L",
+      "L1",
+      "ISO-N",
+      "EVB-C",
+      "GATEWAY-I"
+    ],
+    "unit_tests_passed": 128,
+    "browser_unique_cases_verified": 75,
+    "final_context_retests_passed": 8,
+    "source_bound_payload": true,
+    "approval_policy_changed": false,
+    "legacy_l1_boolean_infers_provenance": false,
+    "source_unknowns_preserved": true,
+    "operational_quantities_changed": false,
+    "per_apply_new_abox_objects": 2,
+    "per_apply_new_flow_relations": 3,
+    "initial_objects": 414,
+    "initial_relations": 405,
+    "all_five_registered_objects": 424,
+    "all_five_registered_relations": 420,
+    "mock_only": true,
+    "real_db_or_agent_added": false,
+    "tbox_definition_changed": false,
+    "public_api_changed": false
   }
 }

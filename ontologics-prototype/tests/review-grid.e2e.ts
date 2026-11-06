@@ -1,3 +1,4 @@
+import {actualBoms} from '../src/actual-boms';
 import {test,expect,type Page} from '@playwright/test';
 import {initial,makeDraft,type State,type Payload} from '../src/domain';
 
@@ -7,9 +8,9 @@ async function reviewFixture(){
   [{kind:'production',total:66,good:60,defects:4,pending:2,jobId:'JOB-2609-01',at:'2026-09-20T09:00:00+09:00',evidence:'DEMO-REVIEW-PRODUCTION'},'생산 후보 60대','UI08'],
   [{kind:'material_receipt',total:40,pass:30,fail:5,pending:5,evidence:'DEMO-REVIEW-RECEIPT'},'입고 후보 40개','UI07'],
   [{kind:'trace',removed:'2026-09-12T09:00:00+09:00',coverage:true,evidence:'DEMO-TRACE-02'},'U104 이력 검토','UI04'],
-  [{kind:'bom',mapping:'WROOM',reviewed:true,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 원본 검토','UI02'],
+  [{kind:'bom',mapping:'WROOM',reviewed:true,sourceHash:actualBoms.L1.source.sha256,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 원본 검토','UI02'],
   [{kind:'board',board:'U999',evidence:'DEMO-NEW-BOARD'},'미등록 보드 식별 검토','UI03'],
-  [{kind:'bom',mapping:'WROOM',reviewed:true,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 추가 검토','UI02'],
+  [{kind:'bom',mapping:'WROOM',reviewed:true,sourceHash:actualBoms.L1.source.sha256,evidence:'SRC-L1-ods · SRC-L1-pdf'},'L1 추가 검토','UI02'],
   [{kind:'trace',removed:'2026-09-12T09:00:00+09:00',coverage:true,evidence:'DEMO-TRACE-02'},'U104 추가 검토','UI04']
  ];
  for(const [payload,title,origin] of cases)s.drafts.push({...await makeDraft(s,payload,'Alice',title,origin),companyId:'A'});

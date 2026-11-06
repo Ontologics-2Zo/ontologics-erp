@@ -8,7 +8,7 @@ const ledger=(page:Page)=>page.evaluate(()=>localStorage.getItem('ontologics-v1'
 test.beforeEach(async({page})=>{await page.goto('/');await page.evaluate(()=>localStorage.clear());await page.goto('/#UI06');await page.reload()});
 
 test('근거 표: 실제 원문·명시 참조의 사진/객체/AI 분리와 검색 장애·보기 보존',async({page})=>{
- const table=grid(page,'evidence-sources');await table.getByRole('combobox',{name:'페이지당 행'}).selectOption('15');await expect(table.locator('tbody tr')).toHaveCount(11);
+ const table=grid(page,'evidence-sources');await table.getByRole('combobox',{name:'페이지당 행'}).selectOption('15');await expect(table.locator('tbody tr')).toHaveCount(14);
  const before=await ledger(page),row=table.locator('tr[data-row-id="SRC-L1-ods"]');
  await expect(row.locator('[data-column-id="kind"]')).toContainText('실제 공개 원본');
  await expect(row.locator('[data-column-id="basis"]')).not.toContainText('로컬 합성');

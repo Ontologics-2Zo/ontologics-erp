@@ -42,5 +42,38 @@
     "sha256": "30e2e7c881d9a7c74cd95b1a63af4ac2ac7ae623ea05ec16e9faaf5ad19f3e9a",
     "kind": "실제 공개 원본",
     "commit": "deb38a377d50eadb04ddc7118a17a5ae58b1ee53"
+  },
+  {
+    "id": "SRC-ISO-N-csv",
+    "revision": "N",
+    "filename": "ESP32-PoE-ISO_Rev_N_BOM.csv",
+    "path": "HARDWARE/ESP32-PoE-ISO-Rev.N/ESP32-PoE-ISO_Rev_N_BOM.csv",
+    "url": "https://github.com/OLIMEX/ESP32-POE-ISO/blob/c19307ecd8a9d8c5703de7a1571cd89945e39c01/HARDWARE/ESP32-PoE-ISO-Rev.N/ESP32-PoE-ISO_Rev_N_BOM.csv",
+    "local": "/evidence/ESP32-PoE-ISO_Rev_N_BOM.csv",
+    "sha256": "a3a3af329d7fa1e6e86a92badfde1c189513a76c2510d31d3f5bfcd7e93b472c",
+    "kind": "실제 공개 원본",
+    "commit": "c19307ecd8a9d8c5703de7a1571cd89945e39c01"
+  },
+  {
+    "id": "SRC-EVB-C-csv",
+    "revision": "C",
+    "filename": "ESP32-EVB_Rev_C.csv",
+    "path": "HARDWARE/REV-C/ESP32-EVB_Rev_C.csv",
+    "url": "https://github.com/OLIMEX/ESP32-EVB/blob/a3ec2f448109cb8f35ce7cb21a027bb7c837ab61/HARDWARE/REV-C/ESP32-EVB_Rev_C.csv",
+    "local": "/evidence/ESP32-EVB_Rev_C.csv",
+    "sha256": "aad5f832c81f6ae1ebdb169cf482f02f538944078bb2d7242b52eed619b82ab6",
+    "kind": "실제 공개 원본",
+    "commit": "a3ec2f448109cb8f35ce7cb21a027bb7c837ab61"
+  },
+  {
+    "id": "SRC-GATEWAY-I-csv",
+    "revision": "I",
+    "filename": "ESP32-GATEWAY_Rev_I_BOM.csv",
+    "path": "HARDWARE/Hardware revision I/ESP32-GATEWAY_Rev_I_BOM.csv",
+    "url": "https://github.com/OLIMEX/ESP32-GATEWAY/blob/d45c9bc8120534b130a4f8bb8fa6cd3dc78e4ea0/HARDWARE/Hardware%20revision%20I/ESP32-GATEWAY_Rev_I_BOM.csv",
+    "local": "/evidence/ESP32-GATEWAY_Rev_I_BOM.csv",
+    "sha256": "ec160e7d7d9dfc8e1673e9e8f15df7d8d4314d49c05f8dcface38e81acaa3247",
+    "kind": "실제 공개 원본",
+    "commit": "d45c9bc8120534b130a4f8bb8fa6cd3dc78e4ea0"
   }
 ]

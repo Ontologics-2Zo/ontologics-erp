@@ -7,7 +7,7 @@ import {NOW} from './domain';
 import type {Entity,Relation} from './entity-data';
 
 const photoTarget=(e:Entity)=>/제품 모델|제품 구성|확보 대상 모델|개별 보드|사내 품목|BOM 원문 품목|부품 로트/.test(e.type);
-/** The same authorized fixture scope used by the map; no inferred runtime objects. */
+/** The same authorized fixture scope used by the map; current runtime objects from the shared QueryPort. */
 export function OntologyObjectTable({rows,relations}:{rows:Entity[];relations:Relation[]}){
  const {go,evidence}=useApp(),{select}=useEntity();
  return <WorkflowTable tableKey="ontology-objects" data={rows} getRowId={row=>row.id} contextId={row=>row.id} pageSizes={[12,24,60]} searchLabel="확장한 객체의 유형·상태·근거 검색" footer="행 선택은 같은 객체를 AI에 공유하고 객체 이름은 상세를 엽니다. 현재 표는 확장한 로컬 fixture 범위입니다. 전체 검색 결과는 위 검색·점진 확장·다운로드로 확인하며 표시 제한을 조사 완료로 취급하지 않습니다." columns={[
@@ -18,7 +18,7 @@ export function OntologyObjectTable({rows,relations}:{rows:Entity[];relations:Re
   {id:'relations',header:'허용 관계 수',accessorFn:r=>relations.filter(l=>l.from===r.id||l.to===r.id).length,cell:c=><span className="work-quantity"><strong>{c.getValue()} <small>개</small></strong><span>로컬 명시 관계 · 사실 판정 아님</span></span>},
   {id:'evidence',header:'원문 근거',accessorFn:r=>r.evidence.join(' '),cell:c=><div className="workflow-cell">{c.row.original.evidence.length?c.row.original.evidence.map(id=><button className="text-btn" key={id} onClick={()=>evidence(id)}>{id}</button>):<span className="muted">근거 미등록</span>}</div>},
   {id:'next',header:'다음 조치',cell:c=><Button onClick={()=>{select(c.row.original.id,false);go('EXPLORE')}}>객체·관계 탐색</Button>},
-  {id:'basis',header:'개정 / 데이터 기준',accessorKey:'revision',cell:c=><span className="workflow-basis"><span>개정/버전 {c.row.original.revision}</span><small>{NOW.replace('T',' ').replace('+09:00',' KST')}</small><small>정적 fixture 속성 · {c.row.original.source}</small></span>}
+  {id:'basis',header:'개정 / 데이터 기준',accessorKey:'revision',cell:c=><span className="workflow-basis"><span>개정/버전 {c.row.original.revision}</span><small>{NOW.replace('T',' ').replace('+09:00',' KST')}</small><small>현재 QueryPort 속성 · {c.row.original.source}</small></span>}
  ]}/>;
 }
 
