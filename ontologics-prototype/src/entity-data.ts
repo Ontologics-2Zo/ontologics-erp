@@ -1,16 +1,14 @@
-import rawBom from './bom-source.json';
+import {actualBomList,actualPartId} from './actual-boms';
 import type {EntityMedia} from './media-data';
 export type Entity={id:string;type:string;name:string;company:'A'|'B';revision:string;status:string;source:'실제 공개 원본'|'합성 예시'|'원본 미확보';properties:Record<string,string>;evidence:string[];photo?:EntityMedia};
 export type Relation={id:string;from:string;to:string;type:'design'|'mount'|'flow'|'substitution'|'reservation';label:string;scope:string;evidence:string;validFrom?:string;validTo?:string};
-export type BomLine={id:string;partId:string;position:string;qty:number|null;unit:string;raw:string;parent?:string;note:string;sourceRow?:number};
+export type BomLine={id:string;partId:string;position:string;qty:number|null;unit:string;raw:string;parent?:string;note:string;sourceRow?:number;sourceRowId?:string;package?:string;quantityUnit?:null;populationStatus?:'unreviewed';sourceLocator?:string};
 export type Snapshot={id:string;modelId:string;name:string;revision:string;source:Entity['source'];evidence:string;lines:BomLine[]};
 export const SNAPSHOT_AT='2026-09-20T12:00:00+09:00';
 const e=(id:string,type:string,name:string,status:string,props:Record<string,string>={},revision='1',source:Entity['source']='합성 예시',evidence=['SYN-LOCAL-01']):Entity=>({id,type,name,company:'A',revision,status,source,properties:props,evidence});
 export const entities:Entity[]=[
  e('MODEL-POE','제품 모델','ESP32-PoE','원본 확보',{'제조사':'OLIMEX','용도':'Ethernet / PoE 개발 보드','원본 범위':'L · L1 WROOM BOM'},'L1','실제 공개 원본',['SRC-L1-ods','SRC-L1-pdf']),
- e('MODEL-POEISO','확보 대상 모델','ESP32-POE-ISO','원본 미등록',{'제조사':'OLIMEX','목표 원본':'Rev N CSV','자료 상태':'제공 요구사항에 조사 기록만 있음 · 로컬 전체 원본 미확보','BOM':'미등록 · 다른 모델의 예시로 대체하지 않음','근거':'ONT-REQ-1.5 §02.1'},'N','원본 미확보',[]),
- e('MODEL-EVB','확보 대상 모델','ESP32-EVB','원본 미등록',{'제조사':'OLIMEX','목표 원본':'Rev C CSV','자료 상태':'제공 요구사항에 일부 행 조사 기록만 있음 · 로컬 전체 원본 미확보','BOM':'미등록 · 다른 모델의 예시로 대체하지 않음','근거':'ONT-REQ-1.5 §02.1'},'C','원본 미확보',[]),
- e('MODEL-GATEWAY','확보 대상 모델','ESP32-GATEWAY','원본 미등록',{'제조사':'OLIMEX','목표 원본':'Rev I CSV / ODS / PDF','자료 상태':'제공 요구사항에 일부 행 조사 기록만 있음 · 로컬 전체 원본 미확보','BOM':'미등록 · 다른 모델의 예시로 대체하지 않음','근거':'ONT-REQ-1.5 §02.1'},'I','원본 미확보',[]),
+ ...actualBomList.filter(bom=>bom.modelId!=='MODEL-POE').map(bom=>e(bom.modelId,'제품 모델',bom.modelName,'원본 확보 · 미검수',{'제조사':'OLIMEX','원본 범위':`Rev ${bom.revision} CSV · ${bom.lines.length} 원문 행`,'자료 상태':'v1.7 실제 원본 확보 · 구조적 파싱 완료 · 독립 검수 전','실장·수량 단위':'미확인 · 제조 승인 또는 원장 반영 아님','근거':bom.sourceId},bom.revision,'실제 공개 원본',[bom.sourceId])),
  e('TRACE-LOT-02','부품 로트','TRACE-LOT-02 · 독립 추적 예시','합성 연결 확인',{'데이터셋':'독립 합성 추적 fixture · 생산/납품 원장 수량에 포함하지 않음','사내 품목':'합성 추적용 제어 부품','장착 범위':'TRACE-U201 / U1','주의':'U104·LOT-L07 조사와 별도 사례'},'1','합성 예시',['SYN-TRACE-CONFIRMED-01']),
  e('TRACE-MOUNT-201','장착 사건','TRACE-U201 / U1 장착','장착 이력 확인',{'데이터셋':'독립 합성 추적 fixture','발생시각':'2026-09-10T09:00:00+09:00','기록시각':'2026-09-10T09:15:00+09:00','확인 범위':'2026-09-10 09:00 ~ 2026-09-19 18:00 KST','확인 내용':'위 기간 장착 확인 · 이후 상태는 미확인','결함':'판정하지 않음'},'1','합성 예시',['SYN-TRACE-CONFIRMED-01']),
  e('TRACE-U201','개별 보드','TRACE-U201 · 독립 합성 보드','출하 연결 확인',{'데이터셋':'독립 합성 추적 fixture · 생산/납품 원장 수량과 별도','구성':'IO-24 / A · 합성 설계','장착 위치':'U1','확인 출하':'TRACE-SHP-01 · 합성 명세의 보드 ID 직접 참조','주의':'원장 집계에서 역으로 생성한 serial이 아님'},'1','합성 예시',['SYN-TRACE-CONFIRMED-01']),
@@ -20,6 +18,7 @@ export const entities:Entity[]=[
  e('MODEL-SENSE','제품 모델','SENSE-4','합성 설계',{'용도':'4채널 센서 인터페이스','구성':'ADC · 절연 통신'}),
  e('MODEL-PWR','제품 모델','PWR-12','합성 설계',{'용도':'12V 전원 분배','구성':'과전류 감시'}),
  e('IM-0008','사내 품목','MLCC 10uF / 25V','구매 검토',{'필요 수량':'80 EA','단위':'EA','사양':'합성 구매 fixture'}),
+ e('IM-EVB-C-C18-C26','사내 품목','10uF / 6.3V / X5R / C0603','합성 구매 검토',{'원문 행':'PART-EVB-C-21 · ESP32-EVB C / C18,C26','원문 표기':'10uF/6.3V/20%/X5R/C0603','패키지':'C_0603_5MIL_DWS','수요 가정':'합성 40대 × 2 EA = 80 EA','단위':'EA · 합성 운영 가정, 원문 단위 미확인','실장 상태':'원문 미검수 · 합성 소요 가정은 실장 승인 아님','품목 매핑':'SYN-MAP-EVB-C-C18-C26 · 합성 시연용, 실제 품목 승인 아님'},'C','합성 예시',['SYN-MAP-EVB-C-C18-C26']),
  e('PART-TPS','사내 품목','TPS2375D','부족',{'품목 코드':'IC-00042','패키지':'SOIC-8','수요 기준':'PoE L1 · 100대 × 1 EA','원품 재고':'100 EA','타 계획 예약':'20 EA','이번 계획 가용':'80 EA','부족':'20 EA'}),
  e('PART-ALT','사내 품목','TPS2375DR','범위 승인',{'패키지':'SOIC-8 · Reel','대체 범위':'PoE L1 / U2 / JOB-2609-01','승인 근거':'SYN-ALT-01 · 정확 버전 1','가용':'45 EA'}),
  e('PART-CAND','사내 품목','TPS2376D','미승인 후보',{'패키지':'SOIC-8','주의':'회로·열·핀 호환성 검토 필요','가용':'미확인'}),
@@ -36,7 +35,24 @@ export const entities:Entity[]=[
  e('CLAIM-01','클레임','U104 동작 중단 신고','신고',{'대상':'U104','원인':'미확인','판정':'시험 결과 필요'},'1','합성 예시',['DEMO-CLAIM-01'])
 ];
 const synthParts=[['MCU','제어 MCU'],['ADC','4채널 ADC'],['REG','3.3V 레귤레이터'],['R','10kΩ 저항'],['C','100nF 커패시터'],['CON','터미널 커넥터'],['D','보호 다이오드'],['PCB','인쇄 회로 기판']];
-export const snapshots:Snapshot[]=(['L','L1'] as const).map(rev=>({id:'CFG-POE-'+rev,modelId:'MODEL-POE',name:'ESP32-PoE / '+rev+' WROOM',revision:rev,source:'실제 공개 원본',evidence:'SRC-'+rev+'-ods',lines:rawBom[rev].filter(r=>r.row>2).map(r=>{const id=`BOM-POE-${rev}-${r.row}`,partId=`PART-POE-${rev}-${r.row}`;const n=Number(r.cells[0]);entities.push(e(partId,'BOM 원문 품목',r.cells[1]||'원문 미확인',/^(NA|NS|Opened)/.test(r.cells[1])?'미확인':'원문 표기',{'참조 위치':r.cells[3]||'미기재','원문 수량':r.cells[0]||'미기재','실제 장착':'별도 사건 근거 필요'},rev,'실제 공개 원본',['SRC-'+rev+'-ods']));return {id,partId,position:r.cells[3]||'미기재',qty:Number.isFinite(n)&&r.cells[0]!==''?n:null,unit:'EA',raw:r.cells[1],note:/^(NA|NS|Opened)/.test(r.cells[1])?'실장 미확인':'원문 수량 표기 · 장착 증거 아님',sourceRow:r.row};})}));
+export const snapshots:Snapshot[]=actualBomList.map(bom=>({
+ id:bom.configurationId,modelId:bom.modelId,name:`${bom.modelName} / ${bom.revision}${bom.modelId==='MODEL-POE'?' WROOM':' · 구성 미검수'}`,
+ revision:bom.revision,source:'실제 공개 원본',evidence:bom.sourceId,
+ lines:bom.lines.map(row=>{
+  const partId=actualPartId(bom,row),id=`BOM-${partId.slice('PART-'.length)}`;
+  entities.push(e(partId,'BOM 원문 품목',row.cells[1]||'원문 품명 미기재',row.warnings.length?'미확인 · 검수 필요':'원문 표기 · 미검수',{
+   '참조 위치':row.cells[3]||'미기재','원문 수량':row.cells[0]||'미기재','수량 단위':'미확인 · 원문 단위 미기재',
+   '패키지':row.cells[2]||'미기재','실장 상태':'미확인 · 독립 검수 전','실제 장착':'별도 사건 근거 필요',
+   '원본 행 ID':row.sourceRowId,'원본 위치':row.locator,'원본 SHA-256':bom.source.sha256,
+   '제조사·정확 MPN':'미확인 · 원문 명칭은 검증된 품번 아님','사내 품목 연결':'별도 합성 매핑은 운영 승인 아님',
+   '원문 분류 힌트':row.categoryHint==='non_procurement_candidate'?'비조달 후보 · 검수 전':row.categoryHint==='board_setting_candidate'?'보드 설정 후보 · 검수 전':'부품 후보 · 검수 전',
+   '자료 검수':'파싱 완료 · 독립 검수 전 · 승인/원장 반영 아님'
+  },bom.revision,'실제 공개 원본',[bom.sourceId]));
+  return {id,partId,position:row.cells[3]||'미기재',qty:row.sourceQuantity,unit:'미확인',raw:row.cells[1],
+   note:'원문 수량 표기 · 단위/실장 미검수 · 장착 증거 아님',sourceRow:row.row,sourceRowId:row.sourceRowId,
+   package:row.cells[2],quantityUnit:null,populationStatus:'unreviewed' as const,sourceLocator:row.locator};
+ })
+}));
 for(const [model,name,rev] of [['IO','IO-24','A'],['SENSE','SENSE-4','A'],['PWR','PWR-12','B']]){
  const parts=synthParts.filter(([p])=>model==='SENSE'||p!=='ADC');
  const lines:BomLine[]=parts.map(([p,label],i)=>{const id=`BOM-${model}-${p}`,partId=`PART-${model}-${p}`;entities.push(e(partId,'사내 품목',`${name} · ${label}`,'합성 설계',{'대상 모델':name,'설계':'데모용 전체 BOM · 실물 제조 검증 없음'},rev));return {id,partId,position:p==='PCB'?'PCB1':p+(i+1),qty:p==='C'?8:p==='R'?4:1,unit:'EA',raw:label,note:'합성 설계 스냅샷의 전체 구성'};});
@@ -48,7 +64,10 @@ export const relations:Relation[]=[
  {id:'trace-confirmed-2',from:'TRACE-MOUNT-201',to:'TRACE-U201',type:'mount',label:'장착 대상',scope:'2026-09-19 18:00까지 장착 확인 / 확인 종료는 제거 사건 아님',evidence:'SYN-TRACE-CONFIRMED-01',validFrom:'2026-09-10T09:00:00+09:00',validTo:'2026-09-19T18:00:00+09:00'},
  {id:'trace-confirmed-3',from:'TRACE-U201',to:'TRACE-SHP-01',type:'flow',label:'출하 명세에 포함',scope:'합성 명세의 보드 ID 직접 참조 / 실제 고객 납품 사실 아님',evidence:'SYN-TRACE-CONFIRMED-01',validFrom:'2026-09-19T14:00:00+09:00'},
  {id:'trace-confirmed-4',from:'TRACE-SHP-01',to:'TRACE-ROUND-01',type:'flow',label:'납품회차 연결',scope:'독립 추적용 1대 / 도착 확인 없음 / 운영 회차 집계 제외',evidence:'SYN-TRACE-CONFIRMED-01'},
- ...snapshots.flatMap(s=>[{id:'rel-model-'+s.id,from:s.modelId,to:s.id,type:'design' as const,label:'개정 구성',scope:s.revision,evidence:s.evidence},...s.lines.map(l=>({id:'rel-'+l.id,from:s.id,to:l.partId,type:'design' as const,label:'BOM 사용 위치',scope:l.position+' · '+(l.qty??'미확인')+' EA',evidence:s.evidence+(l.sourceRow?' / 행 '+l.sourceRow:'')}))]),
+ ...snapshots.flatMap(s=>[{id:'rel-model-'+s.id,from:s.modelId,to:s.id,type:'design' as const,label:'개정 구성',scope:s.revision,evidence:s.evidence},...s.lines.map(l=>({id:'rel-'+l.id,from:s.id,to:l.partId,type:'design' as const,label:'BOM 사용 위치',scope:l.position+' · 원문 수량 '+(l.qty??'미확인')+' / 단위 '+l.unit,evidence:s.evidence+(l.sourceRow?' / 행 '+l.sourceRow:'')}))]),
+ {id:'rel-map-evb-c-purchase',from:'PART-EVB-C-21',to:'IM-EVB-C-C18-C26',type:'design',label:'합성 구매 품목 매핑',scope:'EVB C / C18,C26 · 40대 × 2 EA 가정 · 실장/매핑 승인 아님',evidence:'SYN-MAP-EVB-C-C18-C26'},
+ {id:'rel-map-evb-c-config',from:'CFG-EVB-C',to:'IM-EVB-C-C18-C26',type:'design',label:'합성 구매 수요',scope:'합성 80 EA · 원문 수량 단위 미확인과 별도',evidence:'SYN-MAP-EVB-C-C18-C26'},
+ {id:'rel-map-poe-l1-source',from:'PART-POE-L1-56',to:'PART-TPS',type:'design',label:'합성 사내 품목 매핑',scope:'PoE L1 / U2 · 100대 × 1 EA 가정 · 실제 품목 승인 아님',evidence:'SYN-MAP-01'},
  {id:'r1',from:'CFG-POE-L1',to:'PART-TPS',type:'design',label:'품목 매핑 예시',scope:'U2 · 매핑 검토 별도',evidence:'SYN-MAP-01'},
  {id:'r2',from:'PART-TPS',to:'LOT-L07',type:'flow',label:'재고 로트',scope:'회사 A / 공급처 S',evidence:'SYN-STOCK-01'},
  {id:'r3',from:'LOT-L07',to:'RES-01',type:'reservation',label:'예약됨',scope:'20 EA · 소비 아님',evidence:'SYN-RES-01'},

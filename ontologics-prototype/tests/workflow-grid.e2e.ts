@@ -6,7 +6,7 @@ const ledger=(page:Page)=>page.evaluate(()=>localStorage.getItem('ontologics-v1'
 test.beforeEach(async({page})=>{const state=await workflowFixture();await page.goto('/');await page.evaluate(s=>{localStorage.clear();localStorage.setItem('ontologics-v1',JSON.stringify(s))},state);await page.reload()});
 
 test('구매 표: 요청·발주·공급 수량 분리, 사진·객체·필터·선택 복원',async({page})=>{
- await page.goto('/#PURCHASE');const before=await ledger(page);const requests=grid(page,'purchase-requests');
+ await page.goto('/#PURCHASE');await page.getByLabel('구매 시연 범위',{exact:true}).selectOption('IM-0008');const before=await ledger(page);const requests=grid(page,'purchase-requests');
  await expect(requests.locator('tbody tr')).toHaveCount(1);
  await expect(requests.locator('tbody [data-column-id="quantity"] strong')).toContainText('80');
  await expect(requests.locator('tbody [data-column-id="quantity"]')).toContainText('원수요 요청 · 발주량 아님');

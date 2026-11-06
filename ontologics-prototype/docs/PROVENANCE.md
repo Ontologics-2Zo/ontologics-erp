@@ -1,4 +1,30 @@
-# 원본 출처와 시연 자료
+# v1.7 실제 BOM 출처 확장 — 2026-11-06
+
+현재 사용자 요청에 따라 확보된 실제 4모델·5스냅샷을 UI의 공통 원문 데이터에 연결했다. 이전 L/L1 원본4파일을 그대로 보존하고 아래 CSV3개를 추가했다. `src/catalog.json`과 다운로드 가능한 `public/evidence/catalog.json`은 같은7개 출처·경로·해시를 가진다. 파생 데이터는 구조적 파싱 후보이며 원문 실장·단위·제조사/MPN·매핑·승인 완료를 의미하지 않는다.
+
+입력 패키지: `ontologics_solo_docs_data_v1.7.zip`,907,658bytes,SHA-256 `314b731fb899378961cffccadab2d1b49bf8f0cec0c376f9b101af67c90c13dc`. 원본 출처는 패키지 `data/source_manifest.json`의 저장소·고정commit·Git blob SHA·SHA-256을 보존했다. 새 CSV3개를 네트워크에서 재수집한 것으로 보고하지 않는다.
+
+| 출처 ID | 고정 원본 URL | commit | SHA-256 |
+|---|---|---|---|
+| `SRC-ISO-N-csv` | [ESP32-PoE-ISO_Rev_N_BOM.csv](https://github.com/OLIMEX/ESP32-POE-ISO/blob/c19307ecd8a9d8c5703de7a1571cd89945e39c01/HARDWARE/ESP32-PoE-ISO-Rev.N/ESP32-PoE-ISO_Rev_N_BOM.csv) | `c19307ecd8a9d8c5703de7a1571cd89945e39c01` | `a3a3af329d7fa1e6e86a92badfde1c189513a76c2510d31d3f5bfcd7e93b472c` |
+| `SRC-EVB-C-csv` | [ESP32-EVB_Rev_C.csv](https://github.com/OLIMEX/ESP32-EVB/blob/a3ec2f448109cb8f35ce7cb21a027bb7c837ab61/HARDWARE/REV-C/ESP32-EVB_Rev_C.csv) | `a3ec2f448109cb8f35ce7cb21a027bb7c837ab61` | `aad5f832c81f6ae1ebdb169cf482f02f538944078bb2d7242b52eed619b82ab6` |
+| `SRC-GATEWAY-I-csv` | [ESP32-GATEWAY_Rev_I_BOM.csv](https://github.com/OLIMEX/ESP32-GATEWAY/blob/d45c9bc8120534b130a4f8bb8fa6cd3dc78e4ea0/HARDWARE/Hardware%20revision%20I/ESP32-GATEWAY_Rev_I_BOM.csv) | `d45c9bc8120534b130a4f8bb8fa6cd3dc78e4ea0` | `ec160e7d7d9dfc8e1673e9e8f15df7d8d4314d49c05f8dcface38e81acaa3247` |
+
+## 기준시각의 구분
+
+- **원본 출처 명세 기준:** v1.7 `data/source_manifest.json`의 `as_of`는 `2026-11-05`다. 패키지 검증·UI 연결 작업은2026-11-06에 수행했다. 이는 BOM 파일의 촬영·제조·실장 시각이 아니다.
+- **합성 운영 기준:** UI의 재고·예약·생산·납품 예시는 기존 `SNAPSHOT_AT=2026-09-20T12:00:00+09:00`을 유지한다. 합성 원장 기준을 새 원본 수집일이나 실제 현장 관측일로 해석하지 않는다.
+- **UI 버전:** `dataVersion`은 로컬 시연 업무 상태의 버전이다. 고정commit의 원본 바이트·소스 해시와 서로 다른 축이다. 승인·반영 이후에도 원본 출처는 덮어쓰지 않는다.
+
+원문356행의 숫자 합660은 조달·실장 수량이 아니다. 합성 EA 단위와 수요 가정은 별도 매핑에 명시한다. 기존 PoE U2 시연과 신규 EVB C C18/C26 구매 시연을 서로 다른 구성·품목·근거 ID로 연결하며 미검수 원문을 실제 ERP 생산명세로 승격하지 않는다.
+
+`python3 scripts/import-actual-boms.py --input /path/to/ontologics_solo_docs_data_v1.7.zip --check`가 공통 파생 데이터·원본 CSV3개·두 카탈로그를 비교한다. 입력 ODS 원본2개도 해시·셀·locator 검사를 거친다. 같은 출력 바이트는 다시 쓰지 않으므로 검증을 위한 반복 실행이 화면 데이터를 임의 변경하지 않는다. 전체 범위·예외·수행 결과는 [BOM_SOURCE_AUDIT.md](BOM_SOURCE_AUDIT.md), 이미지의 출처는 [MEDIA_ASSET_AUDIT.md](MEDIA_ASSET_AUDIT.md)에 기록한다.
+
+원본 출처 고지와 권리 검토 상태를 유지한다. 실제 제조사 사진4장의 공개 Git 제외·로컬 복원 규칙은 BOM 원본 확보와 별개다. 아래는 기존 L/L1만 확보했던 당시의 기록이며 현재 확보 범위를 뜻하지 않는다.
+
+---
+
+# 이전 기록 — L/L1 원본 출처와 시연 자료
 
 요구사항의 단일 기준은 첨부된 「ONTOLOGICS 서비스 요구사항 정의서」입니다. 기능 범위를 외부 자료로 확대하지 않았습니다. 실제 제품 근거만 문서가 지정한 OLIMEX 고정 커밋에서 확보했습니다.
 

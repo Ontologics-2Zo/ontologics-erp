@@ -1,4 +1,7 @@
 import {projectChangeImpact,impactNextStep} from '../src/change-impact-model';
+import {auditBom,analyzeBomRows,type BomSourceRow} from '../src/bom-consistency';
+import sourceBom from '../src/bom-source.json';
+import sourceCatalog from '../src/catalog.json';
 import {describe,it,expect} from 'vitest';
 import {initial,type State,type Payload,makeDraft,approve,apply,totals,receive,validate,reserve,allocateMaterial,materialQuantities} from '../src/domain';
 import {ContextRequestGate,createMockActionPort,createMockAgentPort,createMockGraphPort,createMockIdentityPort,createMockMediaPort,createMockQueryPort,isCurrentResult,requireRealAdapter,pendingActionIds,type PortContext} from '../src/ports';
@@ -121,5 +124,42 @@ describe('읽기 전용 변경 영향 가정',()=>{
   expect(projectChangeImpact({...state,version:2},draft).status).toBe('stale');
   expect(projectChangeImpact(state,draft,{...payload,pass:30}).status).toBe('invalid');
   expect(projectChangeImpact(state,draft,{...payload,pass:NaN}).status).toBe('invalid');
+ });
+});
+
+describe('BOM 원문 정합성 검토의 범위와 미확인 보존',()=>{
+ it.each([
+  {revision:'L' as const,unknownRows:11,unknownReferences:14},
+  {revision:'L1' as const,unknownRows:12,unknownReferences:16},
+ ])('$revision 원문을 변경하지 않고 표기 수량·참조·미확인을 집계',({revision,unknownRows,unknownReferences})=>{
+  const before=JSON.stringify({sourceBom,sourceCatalog});
+  const result=auditBom({revision,mapping:'WROOM',uploaded:''});
+  expect(result).toMatchObject({rowCount:74,referenceCount:128,unknownRows,unknownReferences,issueCount:unknownRows+1});
+  expect(result.checks.find(row=>row.id===`source-label-${revision}`)?.status).toBe('불일치');
+  expect(result.checks.find(row=>row.id===`reception-${revision}`)?.status).toBe('미접수');
+  expect(result.checks.find(row=>row.id===`cross-document-${revision}`)?.status).toBe('미검증');
+  expect(result.checks.filter(row=>row.category==='BOM 행'&&row.status==='불일치')).toEqual([]);
+  expect(JSON.stringify({sourceBom,sourceCatalog})).toBe(before);
+ });
+ it.each([
+  {name:'표기 불일치는 NA로 숨기지 않음',cells:[['2','NA(10k)','R0402','R1']],statuses:['불일치'],unknownRows:1,referenceCount:1},
+  {name:'서로 다른 행의 같은 위치는 모두 중복 검토',cells:[['1','10k','R0402','R1'],['1','20k','R0402','R1']],statuses:['불일치','불일치'],unknownRows:0,referenceCount:2},
+  {name:'미기재·NA는 정상 또는 DNP로 추정하지 않음',cells:[['1','NA(10k)','R0402','R1'],['1','10k','','R2'],['1','10k','R0402','']],statuses:['미확인','미확인','미확인'],unknownRows:3,referenceCount:null},
+ ])('$name',({cells,statuses,unknownRows,referenceCount})=>{
+  const rows:BomSourceRow[]=cells.map((entry,index)=>({row:index+3,sheet:'fixture',cells:entry}));
+  const before=JSON.stringify(rows),result=analyzeBomRows(rows);
+  expect(result.rows.map(row=>row.status)).toEqual(statuses);
+  expect(result.unknownRows).toBe(unknownRows);expect(result.referenceCount).toBe(referenceCount);
+  expect(JSON.stringify(rows)).toBe(before);
+ });
+ it('접수 해시·현재 개정·변형을 구분하며 BOM PDF를 회로도 검증으로 바꾸지 않음',()=>{
+  const l1=sourceCatalog.find(source=>source.id==='SRC-L1-ods')!;
+  const mismatched=auditBom({revision:'L',mapping:'WROVER',uploaded:l1.sha256});
+  expect(mismatched.checks.find(row=>row.id==='reception-L')).toMatchObject({status:'불일치',sourceId:l1.id});
+  expect(mismatched.checks.find(row=>row.id==='mapping-L')?.status).toBe('불일치');
+  const pdf=sourceCatalog.find(source=>source.id==='SRC-L1-pdf')!;
+  const matching=auditBom({revision:'L1',mapping:'WROOM',uploaded:pdf.sha256});
+  expect(matching.checks.find(row=>row.id==='reception-L1')).toMatchObject({status:'범위 일치',sourceId:pdf.id});
+  expect(matching.checks.find(row=>row.id==='cross-document-L1')?.status).toBe('미검증');
  });
 });

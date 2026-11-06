@@ -1,0 +1,8 @@
+/** Existing local schema examples, shared by read-only browsing and isolated drafting. */
+export type ClassLink={from:string;to:string;name:string};
+export type ClassNode={id:string;label:string;domain:string;x:number;y:number;properties:string[];constraint:string};
+export const initialClasses:ClassNode[]=[{id:'ProductConfiguration',label:'제품 구성',domain:'제품',x:25,y:35,properties:['configuration_id','revision','bom_snapshot_id'],constraint:'configuration_id 최소 1 / 최대 1'},{id:'Part',label:'사내 품목',domain:'자재',x:280,y:35,properties:['part_id','unit','manufacturer_part_no'],constraint:'part_id 회사 범위 내 유일'},{id:'PartLot',label:'부품 로트',domain:'자재',x:280,y:205,properties:['lot_id','supplier_id','received_at'],constraint:'lot_id + supplier_id 복합 식별'},{id:'BoardUnit',label:'개별 보드',domain:'생산',x:25,y:205,properties:['board_id','configuration_id'],constraint:'board_id 불변 / 구성 참조 필수'},{id:'Shipment',label:'출하',domain:'이행',x:25,y:375,properties:['shipment_id','quantity','departed_at'],constraint:'quantity 양의 정수 / 재고 상한'},{id:'DeliveryRound',label:'납품회차',domain:'이행',x:280,y:375,properties:['round_id','contract_id','promised_qty'],constraint:'회차 합계 ≤ 계약 약속 수량'}];
+export const classLinks:ClassLink[]=[{from:'ProductConfiguration',to:'Part',name:'hasBOMLine / 사용 위치 경유'},{from:'Part',to:'PartLot',name:'lotOf / 품목 식별'},{from:'PartLot',to:'BoardUnit',name:'mountEvent / 사건 경유'},{from:'BoardUnit',to:'Shipment',name:'verifiedShipment / 확인된 연결'},{from:'Shipment',to:'DeliveryRound',name:'fulfills / 이행'}];
+
+/** Exact UI type filters; these are not RDF membership assertions. */
+export const classEntityTypes:Record<string,string>={ProductConfiguration:"제품 구성",Part:"사내 품목",PartLot:"부품 로트",BoardUnit:"개별 보드",Shipment:"출하",DeliveryRound:"납품회차"};

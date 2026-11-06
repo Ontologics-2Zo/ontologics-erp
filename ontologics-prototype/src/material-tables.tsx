@@ -4,7 +4,13 @@ import {Badge,Button,Panel} from './ui';
 import {NOW,materialQuantities,type State} from './domain';
 import {WorkflowTable,WorkflowPhoto,WorkflowObject,QuantityCell,WorkflowBasis} from './workflow-tables';
 
-type MaterialComparisonRow={id:string;kind:string;stock:number|null;reserved:number|null;available:number|null;scope:string;status:string;reason:string;lead:string};
+export type MaterialComparisonRow={id:string;kind:string;stock:number|null;reserved:number|null;available:number|null;scope:string;status:string;reason:string;lead:string};
+
+/** Shared read model for the existing fixed material example; no new supply records. */
+export function materialComparisonRows(s:State):MaterialComparisonRow[]{
+ const m=materialQuantities(s);
+ return [{id:'PART-TPS',kind:'원품',stock:m.originalStock,reserved:m.otherReserved,available:m.originalAvailable,scope:'PoE L1 / U2',status:'원품 기준',reason:`필요 ${m.required} EA · 재고 스냅샷`,lead:'확인 필요'},{id:'PART-ALT',kind:'승인 대체품',stock:45,reserved:0,available:45,scope:'L1 / U2 / JOB-2609-01',status:'범위 승인',reason:'SYN-ALT-01 · 정확 버전 1',lead:'즉시 사용 가능 여부 확인'},{id:'PART-CAND',kind:'미승인 후보',stock:null,reserved:null,available:null,scope:'미승인',status:'기술 검토 필요',reason:'대체 승인 전 배정 불가',lead:'공급 확인 필요'}];
+}
 
 export function MaterialComparisonTable({rows,onReview}:{rows:MaterialComparisonRow[];onReview:(id:string)=>void}){
  const {s}=useApp(),{resolve}=useEntity();

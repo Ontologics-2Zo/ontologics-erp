@@ -10,7 +10,7 @@ const draft=(payload:Payload,overrides:Partial<Draft>={}):Draft=>({
 });
 
 describe('제품 구성 표: 등록 범위와 수량 단위',()=>{
- it('전체 스냅샷 5개와 미확보 모델 3개를 구분하고 없는 BOM을 0행으로 바꾸지 않는다',()=>{
+ it('실제 BOM 5개와 독립 합성 3개를 구분하고 새 모델의 근거·미검수를 보존한다',()=>{
   const items=buildConfigurationItems(initial());
   expect(items).toHaveLength(8);
   expect(new Set(items.map(item=>item.id)).size).toBe(8);
@@ -21,12 +21,15 @@ describe('제품 구성 표: 등록 범위와 수량 단위',()=>{
    expect(item.bomUnit).toBe('행');
    expect(item.dataBasis.notes.join(' ')).toContain('제품 수량이나 부품 총수량이 아닙니다');
   }
-  const missing=items.filter(item=>item.source==='원본 미확보');
-  expect(missing.map(item=>item.id)).toEqual(['MODEL-POEISO','MODEL-EVB','MODEL-GATEWAY']);
-  for(const item of missing){
-   expect(item.bomRows).toBeNull();
-   expect(item.reviewStatus.label).toBe('미등록');
-   expect(item.configLabel).toContain('목표 개정');
+  expect(items.filter(item=>item.source==='실제 공개 원본')).toHaveLength(5);
+  expect(items.filter(item=>item.source==='합성 예시')).toHaveLength(3);
+  expect(items.filter(item=>item.source==='원본 미확보')).toHaveLength(0);
+  for(const id of ['CFG-POEISO-N','CFG-EVB-C','CFG-GATEWAY-I']){
+   const item=items.find(item=>item.id===id)!;
+   expect(item.dataBasis.evidenceRefs).toHaveLength(1);
+   expect(item.dataBasis.evidenceRefs[0]).toMatch(/-csv$/);
+   expect(item.unknowns.join(' ')).not.toContain('WROVER');
+   expect(item.reviewStatus.label).toBe('원본 검토 전');
   }
   for(const item of items){expect(item).not.toHaveProperty('owner');expect(item).not.toHaveProperty('needDate');}
  });
@@ -63,9 +66,9 @@ describe('운영 홈 업무 투영: 대상·근거·수량 의미',()=>{
   const s=initial(),before=structuredClone(s),items=buildWorkItems(s);
   expect(items.map(item=>[item.id,item.objectId,item.contextObjectId])).toEqual([
    ['TASK-MAT','PART-TPS','PART-TPS'],['TASK-REV','CFG-POE-L1','CFG-POE-L1'],
-   ['TASK-IN','IM-0008','IM-0008'],['TASK-DL','ROUND-01','ROUND-01'],['TASK-QA','U104','U104'],
+   ['TASK-IN','IM-EVB-C-C18-C26','IM-EVB-C-C18-C26'],['TASK-DL','ROUND-01','ROUND-01'],['TASK-QA','U104','U104'],
   ]);
-  expect(items.map(item=>item.needDate.label)).toEqual(['09.21','09.21','09.23','09.30','09.20']);
+  expect(items.map(item=>item.needDate.label)).toEqual(['09.21','09.21','09.25','09.30','09.20']);
   for(const item of items){
    expect(item.needDate.isSynthetic).toBe(true);
    expect(item.owner.isSynthetic).toBe(true);
@@ -78,14 +81,15 @@ describe('운영 홈 업무 투영: 대상·근거·수량 의미',()=>{
 
  it('다른 합성 입고를 구매 품목에 귀속하거나 제품·구성·사진 연결을 추정하지 않는다',()=>{
   const s=receive(initial(),50,40,5,5),purchase=find('TASK-IN',s),delivery=find('TASK-DL',s);
-  for(const item of [purchase,delivery]){
+  expect(purchase.configId).toBe('CFG-EVB-C');expect(purchase.boardId).toBeUndefined();
+  for(const item of [delivery]){
    expect(item.boardId).toBeUndefined();expect(item.modelId).toBeUndefined();expect(item.configId).toBeUndefined();
    expect(item.configLabel).toContain('미확인');
   }
   expect(purchase.quantity.value).toBe(80);
   expect(purchase.materialStatus.label).toBe('입고 연결 미확인');
   expect(purchase.detail).not.toContain('합격 40');
-  expect(purchase.dataBasis.notes.join(' ')).toContain('IM-0008에 귀속하지 않습니다');
+  expect(purchase.dataBasis.notes.join(' ')).toContain('EVB 구매 입고에 귀속하지 않습니다');
   expect(find('TASK-MAT').configId).toBe('CFG-POE-L1');
   expect(find('TASK-QA').boardId).toBe('U104');
  });
@@ -130,9 +134,9 @@ describe('운영 홈 업무 투영: 대상·근거·수량 의미',()=>{
 
  it('구매 요청·공급 확인은 명시된 품목과 발주만 집계하고 입고로 변환하지 않는다',()=>{
   const s={...initial(),docs:[
-   document({type:'purchase-request',id:'PR-1',part:'IM-0008',qty:35}),
+   document({type:'purchase-request',id:'PR-1',part:'IM-EVB-C-C18-C26',qty:35}),
    document({type:'purchase-request',id:'PR-OTHER',part:'OTHER',qty:90}),
-   document({type:'purchase-order',orderId:'PO-1',part:'IM-0008',qty:40}),
+   document({type:'purchase-order',orderId:'PO-1',part:'IM-EVB-C-C18-C26',qty:40}),
    {name:'깨진 문서',body:'{invalid',status:'초안'},
   ],supplyConfirmations:[
    {orderId:'PO-1',qty:20,at:'2026-09-20T10:00:00+09:00',evidence:'SUPPLY-1'},

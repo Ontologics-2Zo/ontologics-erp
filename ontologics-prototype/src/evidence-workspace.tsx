@@ -54,7 +54,7 @@ export function Evidence(){
     {id:'basis',header:'조회 기준',cell:()=> <WorkflowBasis version={s.version} at={NOW} evidence="문서 고유 ID·생성 시각·버전 미기록"/>}
    ]} footer="원문 전체와 중복 문서를 보존합니다. 행 식별자는 목록 상태 보존용이며 업무 문서 ID가 아닙니다. 문서 선택만으로 AI 대상을 추정하거나 승인·반영·송신하지 않습니다."/>
   </Panel>
-  <Notice>원본 4개 파일을 지정 커밋에서 내려받아 SHA-256을 계산했습니다. 기존 프로젝트 data/catalog.json은 제공되지 않아 기존 카탈로그와의 일치 검증은 미완료입니다. PDF와 ODS 전체의 의미 일치 검증도 완료로 주장하지 않습니다.</Notice>
+  <Notice>v1.7의 실제 BOM 5스냅샷 원본(ODS2·CSV3)과 보조 PDF2를 보존했습니다. 제공 출처 기록의 SHA-256과 대조했으며, 독립 검수·MPN·단위·실장 및 PDF/ODS 의미 대조는 미완료입니다.</Notice>
   <Button onClick={()=>go('TRACE')}>요구사항 추적표 · 미결 사항</Button><div className="req"><ShieldCheck size={13}/>EV01~02 · CM01 · CM05</div>
   <Modal open={!!opened} onClose={()=>O(null)} title="저장 업무 문서 원문" description="저장된 원문 전체를 읽습니다. 승인·원장 반영·외부 송부를 수행하지 않습니다.">{opened&&<><h3>{opened.name}</h3><Badge>{opened.status}</Badge><pre style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere',fontFamily:'inherit',fontSize:14,lineHeight:1.6}}>{opened.body}</pre><Notice>본문에 표시된 ID·수량은 검토 문서의 내용입니다. 구조화된 객체·승인 버전·원장 실적의 근거로 자동 등록하지 않습니다.</Notice><Button onClick={()=>download(opened.name,opened.body)}><Download size={13}/>다운로드</Button></>}</Modal>
   <Modal open={!!linked} onClose={()=>L(null)} title="원문을 참조하는 객체" description="현재 회사의 기존 객체에 명시된 근거 참조입니다. 연결만으로 장착·결함·호환성을 확정하지 않습니다.">{linked&&<><h3>{linked.id}</h3><p>조회 가능한 명시 참조 {linked.related.length}개 · 대표 객체는 표시 순서의 첫 항목</p><div style={{display:'grid',gap:8,maxHeight:'50vh',overflow:'auto'}}>{linked.related.map(e=><div key={e.id}><WorkflowObject id={e.id} detail={e.type+' · 회사 '+e.company+' · 개정 '+e.revision}/></div>)}</div></>}</Modal>
